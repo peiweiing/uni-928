@@ -28,8 +28,9 @@
 		methods:{
 			fun(num){
 				this.$router.push("idetails"+num)
+				// this.$Router.push({ name: 'idetails', params: { userId: 'num' }})
 				// uni.navigateTo({
-				// 	url: 'test?id=1&name=uniapp'
+				// 	url: 'idetails?id=num'
 				// });
 			}
 		}

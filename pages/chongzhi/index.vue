@@ -1,7 +1,7 @@
 <template>
 	<view>
-		<view class="Iindex">
-			<Idetails class="Iindex"></Idetails>
+		<view>
+			<Idetails></Idetails>
 		</view>
 	</view>
 </template>
