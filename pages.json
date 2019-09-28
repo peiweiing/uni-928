@@ -1,0 +1,77 @@
+{
+	"pages":[{//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+        "path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",
+                "app-plus": {
+                    "titleNView": {
+						"titleNView":false,
+                        "type": "transparent",//透明渐变导航栏
+                        "searchInput": {
+                            "backgroundColor": "#fff",
+                            "borderRadius": "6px", //输入框圆角
+                            "placeholder": "请输入搜索内容",
+                            "disabled": true //disable时点击输入框不置焦，可以跳到新页面搜索
+                        }
+                    }
+                }
+            }
+		}, 
+		{
+        "path": "pages/liaotian/index",
+        "style": {
+            "navigationBarTitleText": "聊天"
+			}
+		}, 
+		{
+        "path": "pages/chongzhi/index",
+        "style": {
+            "navigationBarTitleText": "充值送话费"
+			}
+		},
+		{
+		"path":"pages/user/index",
+		"style": {
+				"navigationBarTitleText": "我的"
+			}
+		}
+    ],	
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar":{
+		"color": "#7A7E83",
+		"selectedColor": "#3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/logo.png",
+			"selectedIconPath": "static/logo.png",
+			"text": "首页"
+			},
+			{
+			"pagePath": "pages/liaotian/index",
+			"iconPath": "static/待付款.png",
+			"selectedIconPath": "static/待付款.png",
+			"text": "聊天"
+			},
+			{
+			"pagePath": "pages/chongzhi/index",
+			"iconPath": "static/订单中心.png",
+			"selectedIconPath": "static/订单中心.png",
+			"text": "充值送话费"
+			},
+			{
+			"pagePath": "pages/user/index",
+			"iconPath": "static/我的.png",
+			"selectedIconPath": "static/我的.png",
+			"text": "我的"
+			}
+		]
+	}
+}

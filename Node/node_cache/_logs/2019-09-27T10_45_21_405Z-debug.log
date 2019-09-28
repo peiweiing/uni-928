@@ -1,0 +1,38 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'D:\\Node\\node.exe',
+1 verbose cli   'D:\\Node\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'uni-simple-router'
+1 verbose cli ]
+2 info using npm@6.10.3
+3 info using node@v12.10.0
+4 verbose npm-session 36241781ffbd777d
+5 silly install loadCurrentTree
+6 silly install readLocalPackageData
+7 silly fetchPackageMetaData error for uni-simple-router@latest request to https://registry.npmjs.org/uni-simple-router failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+8 timing stage:rollbackFailedOptional Completed in 1ms
+9 timing stage:runTopLevelLifecycles Completed in 12104ms
+10 verbose type system
+11 verbose stack FetchError: request to https://registry.npmjs.org/uni-simple-router failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+11 verbose stack     at ClientRequest.<anonymous> (D:\Node\node_modules\npm\node_modules\node-fetch-npm\src\index.js:68:14)
+11 verbose stack     at ClientRequest.emit (events.js:209:13)
+11 verbose stack     at TLSSocket.socketErrorListener (_http_client.js:406:9)
+11 verbose stack     at TLSSocket.emit (events.js:209:13)
+11 verbose stack     at emitErrorNT (internal/streams/destroy.js:91:8)
+11 verbose stack     at emitErrorAndCloseNT (internal/streams/destroy.js:59:3)
+11 verbose stack     at processTicksAndRejections (internal/process/task_queues.js:80:21)
+12 verbose cwd D:\apeiweiing\同城约会
+13 verbose Windows_NT 6.1.7601
+14 verbose argv "D:\\Node\\node.exe" "D:\\Node\\node_modules\\npm\\bin\\npm-cli.js" "install" "uni-simple-router"
+15 verbose node v12.10.0
+16 verbose npm  v6.10.3
+17 error code ENOTFOUND
+18 error errno ENOTFOUND
+19 error network request to https://registry.npmjs.org/uni-simple-router failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+20 error network This is a problem related to network connectivity.
+20 error network In most cases you are behind a proxy or have bad network settings.
+20 error network
+20 error network If you are behind a proxy, please make sure that the
+20 error network 'proxy' config is set properly.  See: 'npm help config'
+21 verbose exit [ 1, true ]

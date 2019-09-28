@@ -1,0 +1,121 @@
+<template>
+	<view>
+		<view class="boxall">
+			<!-- <text>我的好友</text>
+			<text>我的通话</text> -->
+			<view class="header">
+				
+				<view class="box">
+					<view class="imgcs">
+						<img src="../../static/1.jpg" alt="">
+					</view>
+					<view class="txtcs">
+						<text class="txtup">系统消息</text>
+						<text class="txtend">系统消息</text>
+					</view>
+				</view>
+				<view class="box">
+					<view class="imgcs">
+						<img src="../../static/2.jpg" alt="">
+					</view>
+					<view class="txtcs">
+						<text class="txtup">客户咨询</text>
+						<text class="txtend">欢迎来撩客服小姐姐</text>
+					</view>
+				</view>
+				<view class="box">
+					<view class="imgcs">
+						<img src="../../static/3.jpg" alt="">
+					</view>
+					<view class="txtcs">
+						<text class="txtup">同城美女相约</text>
+						<text class="txtend">同城美女相约提醒</text>
+					</view>
+				</view>
+				
+			</view>
+		
+			<view class="box" v-for="(v,i) in arr" :key="i">
+				<view class="imgcs">
+					<img :src="v.src" alt="">
+				</view>
+				<view class="boxtxt">
+					<view class="boxcs">
+						<text class="txtup">{{v.name}}</text>
+						<text class="txtend">{{v.text}}</text>
+					</view>
+					<view class="boxend">
+						<text class="txtend">{{v.time}}</text>
+					</view>
+				</view>
+			</view>
+		
+		</view>
+		
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				arr:[
+					{src:"../../static/1.jpg",name:'刘涛',text:"帅哥有空吗",time:"16:00"},
+					{src:"../../static/2.jpg",name:'柳岩',text:"帅哥你有空吗",time:"2:00"},
+					{src:"../../static/3.jpg",name:'杨幂',text:"帅哥你有没有空",time:"0:50"},
+					{src:"../../static/4.jpg",name:'杨紫',text:"帅哥你到底有空吗",time:"0:10"},
+					{src:"../../static/5.jpg",name:'刘涛',text:"帅哥你到底有没有空",time:"0:20"},
+					{src:"../../static/5.jpg",name:'刘涛',text:"帅哥你到底有没有空",time:"0:20"},
+					{src:"../../static/5.jpg",name:'刘涛',text:"帅哥你到底有没有空",time:"0:20"},
+					{src:"../../static/5.jpg",name:'刘涛',text:"帅哥你到底有没有空",time:"0:20"},
+					{src:"../../static/5.jpg",name:'刘涛',text:"帅哥你到底有没有空",time:"0:20"},
+				]
+			};
+		}
+	}
+</script>
+
+<style>
+	img{
+		width: 80upx;
+		height: 80upx;
+		border-radius: 50%;
+	}
+	.header{
+		position: sticky;
+		top: 44px;
+		left: 0;
+	}
+	.box{
+		height: 160upx;
+		display: flex;
+		align-items: center;
+		background-color: #EBEFF3;
+		padding: 20upx;
+		border-bottom:1px solid #ccc;
+	}
+	.imgcs{
+		margin-right:20upx;
+	}
+	.txtcs,
+	.boxcs{
+		width: 520UPX;
+		overflow: hidden;
+		display: flex;
+		flex-flow: column;	
+	}
+	.txtup{
+		font-size: 1rem;
+	}
+	.txtend{
+		font-size: 0.8rem;
+		color: #A9A9A9;
+	}
+	.boxtxt{
+		display: flex;
+	}
+	.boxend{
+		display: flex;
+		align-items:flex-start;
+	}
+</style>
