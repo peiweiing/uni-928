@@ -1,16 +1,16 @@
 <template>
 	<view>
 		<view>
-			<Idetails></Idetails>
+			<Chongzhi></Chongzhi>
 		</view>
 	</view>
 </template>
 
 <script>
-	import Idetails from '@/components/iindex/idetails.vue'
+	import Chongzhi from '@/components/chongzhi/chongzhi.vue'
 	export default {
 		components: {
-			Idetails,
+			Chongzhi,
 		},
 		data() {
 			return {

@@ -3,12 +3,16 @@
 		
 		<view class="box">
 			<view class="swiper">
-				<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
+				<swiper class="swipercs" :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000">
 					<swiper-item v-for="(v,i) in arr" :key="i">
 						<image :src="v.src"></image>
 					</swiper-item>
 				</swiper>
 				<view class="kuang">
+					<view class="close">
+						<text @click="fun()"><</text>
+						<text class="tanchu">···</text>
+					</view>
 					<view class="anniu">
 						<view class="left">
 							<text>空闲</text>
@@ -25,13 +29,14 @@
 					</view>
 				</view>
 			</view>
+			
 			<view class="moduleone">
 				<view class="left">
-					<image src="../../static/收货地址.png" mode=""></image>
+					<image src="../../static/i视频.png" mode=""></image>
 					<text>500聊币/分钟</text>
 				</view>
 				<view class="right">
-					<image src="../../static/收货地址.png" mode=""></image>
+					<image src="../../static/i麦.png" mode=""></image>
 					<text>500聊币/分钟</text>
 				</view>
 			</view>
@@ -49,22 +54,36 @@
 				<h4>送出的礼物</h4>
 				<text>TA还没有送出礼物哦</text>
 			</view>
+		
+		<view class="zhezhao">
+			<view class="tankuang">
+				<view class="tanup" @click.stop>
+					<text class="tantxt">加入黑名单</text>
+					<text>举报</text>
+				</view>
+				<view class="tanend">
+					<text class="quxiao">取消</text>
+				</view>
+			</view>
+		</view>
+		
 		<footer>
 			<view class="foot">
 				<view class="sixin">
-					<image src="../../static/收货地址.png" mode=""></image>
+					<image src="../../static/i私密.png" mode=""></image>
 					<text>私信</text>
 				</view>
 				<view class="dashang">
-					<image src="../../static/收货地址.png" mode=""></image>
+					<image src="../../static/i打赏.png" mode=""></image>
 					<text>打赏</text>
 				</view>
 				<view class="shipin">
-					<image src="../../static/收货地址.png" mode=""></image>
+					<image src="../../static/i视频.png" mode=""></image>
 					<text>看看TA</text>
 				</view>
 			</view>
 		</footer>
+		
 		</view>
 	
 	</view>
@@ -94,25 +113,82 @@
 					{tab:'恋爱'},
 					{tab:'恋爱'},
 					{tab:'恋爱'},
-					{tab:'恋爱'},
-					{tab:'恋爱'},
-					{tab:'恋爱'},
-					{tab:'恋爱'},
-					{tab:'恋爱'},
 				]
 			};
-		}
+		},
+		methods: {
+			
+			fun(){
+				uni.switchTab({
+					url: '/pages/index/index'
+				});
+			}
+		},
+		mounted (){
+			var zhezhao=document.getElementsByClassName('zhezhao')[0];
+			var tanchu=document.getElementsByClassName('tanchu')[0];
+			var tankuang=document.getElementsByClassName('tankuang')[0];
+			var quxiao=document.getElementsByClassName('quxiao')[0];
+				   
+				tanchu.onclick =function()  { 
+					zhezhao.style.cssText=" display:flex;flex-flow:column-reverse;bottom:0"
+				};
+				quxiao.onclick=function(){
+					zhezhao.style.display="none";
+				}
+				zhezhao.onclick = function()  {
+					zhezhao.style.display="none";
+				}
+			}
+	
 	}
 </script>
 <style>
 	.box{
 		background-color:#ebeff3;
 	}
+	.swipercs{
+		height: 600upx;
+	}
 	.swiper{
 		position: relative;
 	}
 	.swiper image{
 		width: 100%;
+		height: 600upx;
+	}
+	.zhezhao{
+		z-index: 99;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		background-color: rgba(105,105,105,0.5);
+		bottom: 0;
+		display: flex;
+		flex-flow: column-reverse;
+		display: none;
+	}
+	.tankuang{
+		width:100%;
+		height: 300upx;
+		background-color: #FFFFFF;
+		text-align: center;
+	}
+	.tankuang .tanup{
+		display: flex;
+		flex-flow: column;
+		border-bottom: 3px solid #a9a9a9;
+	}
+	.tankuang .tantxt{
+		border-bottom: 1px solid #A9A9A9;
+	}
+	.tankuang text{
+		padding: 20upx;
+	}
+	.tankuang .tanend{
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	.kuang{
 		width: 100%;
@@ -120,9 +196,23 @@
 		left: 0;
 		bottom: 0;
 	}
+	.kuang .close{
+		position: relative;
+		bottom: 350upx;
+	}
+	.kuang .close text{
+		text-align: center;
+		width: 50upx;
+		height:50upx;
+		border-radius: 50%;
+		background-color: rgba(105,105,105,0.9);
+	}
 	.kuang .anniu{
+		position: relative;
+		bottom: 40upx;
 		font-size:0.8rem ;
 	}
+	.kuang .close,
 	.kuang .anniu,
 	.kuang .bottom{
 		display: flex;
@@ -153,7 +243,7 @@
 		height: 60upx;
 		background-color:rgba(105,105,105,0.5);
 	}
-	.moduleone,.moduletwo,.modulethree,.modulefour{
+	.moduleone,.moduletwo,.modulethree,.modulefour,.foot{
 		margin-bottom:20upx ;
 		background-color: #fff;
 	}
@@ -163,6 +253,7 @@
 	.moduleone{
 		display: flex;
 		justify-content: center;
+		padding: 20upx;
 	}
 	.moduleone .left,
 	.moduleone .right{
@@ -173,7 +264,8 @@
 	}
 	.moduleone image{
 		width: 60upx;
-		height: 60upx;
+		height: 60upx;	
+		border-radius: 50%;
 	}
 	.moduleone text{
 		font-size: 0.8rem;
@@ -182,6 +274,12 @@
 		display:flex;
 		justify-content: center;
 		align-items: center;
+	}
+	.moduleone .left image{
+		background-color: #bd6eb9;
+	}
+	.moduleone .right image{
+		background-color: #b769fc;
 	}
 	.moduletwo text{
 		display: inline-block;
@@ -208,9 +306,11 @@
 		bottom:0;
 	}
 	footer .foot{
+		font-size: 0.8rem;
 		display: flex;
 		justify-content:center;
 		align-items: center;
+		padding: 10upx;
 	}
 	footer image{
 		width: 60upx;
@@ -220,7 +320,7 @@
 	footer .dashang{
 		display: flex;
 		flex-flow: column;
-		width: 25%;
+		width: 25%;	
 	}
 	footer .shipin{
 		display: flex;
@@ -230,5 +330,13 @@
 		height: 80upx;
 		width: 220upx;
 		background-color:#D096C3;
+		color: #fff;
+		background: linear-gradient(to right, #D096C3 0%,#ff9569 80%, #e92758 100%);
+	}
+	footer .sixin{
+		color: #ad68f1;
+	}
+	footer .dashang{
+		color: #ed78b7;
 	}
 </style>

@@ -4,10 +4,13 @@
 			<!-- <text>我的好友</text>
 			<text>我的通话</text> -->
 			<view class="header">
-				
+				<view class="topcs">
+					<text>我的好友</text>
+					<text>我的通话</text>
+				</view>
 				<view class="box">
 					<view class="imgcs">
-						<img src="../../static/1.jpg" alt="">
+						<img src="../../static/L系统消息.png" alt="">
 					</view>
 					<view class="txtcs">
 						<text class="txtup">系统消息</text>
@@ -16,7 +19,7 @@
 				</view>
 				<view class="box">
 					<view class="imgcs">
-						<img src="../../static/2.jpg" alt="">
+						<img src="../../static/L客户咨询.png" alt="">
 					</view>
 					<view class="txtcs">
 						<text class="txtup">客户咨询</text>
@@ -25,7 +28,7 @@
 				</view>
 				<view class="box">
 					<view class="imgcs">
-						<img src="../../static/3.jpg" alt="">
+						<img src="../../static/L同城提醒.png" alt="">
 					</view>
 					<view class="txtcs">
 						<text class="txtup">同城美女相约</text>
@@ -83,8 +86,15 @@
 	}
 	.header{
 		position: sticky;
-		top: 44px;
+		top: 0;
 		left: 0;
+	}
+	.topcs{
+		display: flex;
+		justify-content: space-between;
+		padding: 20upx;
+		color: #fff;
+		background-color: #FA62A8;
 	}
 	.box{
 		height: 160upx;
