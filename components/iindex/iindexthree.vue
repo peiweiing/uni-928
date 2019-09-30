@@ -35,10 +35,6 @@
 					{id:8,text:'7km',src:'../../static/8.jpg'},
 					{id:7,text:'9km',src:'../../static/7.jpg'},
 					{id:6,text:'8km',src:'../../static/6.jpg'},
-					{id:5,text:'4km',src:'../../static/5.jpg'},
-					{id:4,text:'5km',src:'../../static/4.jpg'},
-					{id:3,text:'6km',src:'../../static/3.jpg'},
-					{id:2,text:'2km',src:'../../static/2.jpg'},
 				]
 			};
 		},

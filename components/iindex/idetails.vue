@@ -48,7 +48,7 @@
 			</view>
 			<view class="modulethree">
 				<h4>守护的礼物</h4>
-				<text>TA还没有收到礼物哦</text>
+				<text>{{title}}</text>
 			</view>
 			<view class="modulefour">
 				<h4>送出的礼物</h4>
@@ -92,10 +92,11 @@
 	export default {
 		data() {
 			return {
+				title: '',
 				arr: [
-					{src:'../../static/1.jpg'},
-					{src:'../../static/2.jpg'},
-					{src:'../../static/3.jpg'},
+					{src:'../../static/u2.jpg'},
+					{src:'../../static/u4.jpg'},
+					{src:'../../static/u5.jpg'},
 				],
 				brr:[
 					{txt:"asd",age:'20岁',dis:"20km",bsi:"4.00"},
@@ -106,15 +107,21 @@
 				],
 				tab:[
 					{tab:'情感'},
+					{tab:'情感'},
+					{tab:'电影'},
 					{tab:'电影'},
 					{tab:'婚史'},
-					{tab:'恋爱'},
+					{tab:'婚史'},
 					{tab:'恋爱'},
 					{tab:'恋爱'},
 					{tab:'恋爱'},
 					{tab:'恋爱'},
 				]
 			};
+		},
+		onLoad(v) {
+			this.title = v.title || '';
+			console.log(66666);
 		},
 		methods: {
 			
@@ -148,14 +155,14 @@
 		background-color:#ebeff3;
 	}
 	.swipercs{
-		height: 600upx;
+		height: 660upx;
 	}
 	.swiper{
 		position: relative;
 	}
 	.swiper image{
 		width: 100%;
-		height: 600upx;
+		height: 660upx;
 	}
 	.zhezhao{
 		z-index: 99;
@@ -198,7 +205,7 @@
 	}
 	.kuang .close{
 		position: relative;
-		bottom: 350upx;
+		bottom: 400upx;
 	}
 	.kuang .close text{
 		text-align: center;
@@ -271,6 +278,7 @@
 		font-size: 0.8rem;
 	}
 	.moduletwo .block{
+		width: 23%;
 		display:flex;
 		justify-content: center;
 		align-items: center;

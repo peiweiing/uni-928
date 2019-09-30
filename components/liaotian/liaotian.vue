@@ -101,7 +101,7 @@
 		display: flex;
 		align-items: center;
 		background-color: #EBEFF3;
-		padding: 20upx;
+		padding:10upx 20upx;
 		border-bottom:1px solid #ccc;
 	}
 	.imgcs{
@@ -115,10 +115,10 @@
 		flex-flow: column;	
 	}
 	.txtup{
-		font-size: 1rem;
+		font-size: 0.9rem;
 	}
 	.txtend{
-		font-size: 0.8rem;
+		font-size: 0.6rem;
 		color: #A9A9A9;
 	}
 	.boxtxt{

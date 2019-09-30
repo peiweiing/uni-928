@@ -39,13 +39,19 @@
 					{id:8,text:'7km',src:'../../static/8.jpg'},
 					{id:9,text:'11km',src:'../../static/9.jpg'},
 					{id:10,text:'10km',src:'../../static/10.jpg'},
+					{id:6,text:'8km',src:'../../static/6.jpg'},
+					{id:7,text:'9km',src:'../../static/7.jpg'},
+					{id:8,text:'7km',src:'../../static/8.jpg'},
+					{id:9,text:'11km',src:'../../static/9.jpg'},
+					{id:9,text:'11km',src:'../../static/9.jpg'},
+					{id:10,text:'10km',src:'../../static/10.jpg'},
 				]
 			};
 		},
 		methods:{
-			fun(num){
+			fun(v){
 				uni.navigateTo({
-					url: '/pages/index/idetails'
+					url: '/pages/index/idetails?title=' + v.text
 				});
 				
 				// this.$router.push("idetails"+num)
