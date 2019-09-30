@@ -30,12 +30,8 @@
 
 		</view>
 		<view class="money">
-			<view class="deposit">
-				提现
-			</view>
-			<view class="recharge">
-				充值
-			</view>
+			<view class="deposit" @click="navTo('/pages/deposit/index')">提现</view>
+			<view class="recharge"  @click="navTo('/pages/moneyCz/index')">充值</view>
 		</view>
 		<view class="history-section icon">
 			<list-cell icon="icon-iconfontweixin" iconColor="#e07472" title="同城约泡" tips="查看VIP特权"></list-cell>
@@ -56,15 +52,17 @@
 
 <script>
 	import listCell from '@/components/uuser/mix-list-cell.vue';
-	import { mapState	} from 'vuex';
+	import {
+		mapState
+	} from 'vuex';
 	export default {
 		components: {
 			listCell
 		},
-		
+
 		data() {
 			return {
-				
+
 			}
 		},
 		// #ifndef MP
@@ -72,19 +70,19 @@
 			this.navTo('/pages/set/set');
 		},
 		// #endif
-		computed:{
-			...mapState(['hasLogin','userInfo'])
+		computed: {
+			...mapState(['hasLogin', 'userInfo'])
 		},
-		methods:{
-			navTo(url){
-				if(!hasLogin){
-						url=''
-					}
-					uni.navigateTo({
-						url
-					})
-				}
-			}	
+		methods: {
+			navTo(url) {
+				// if (!this.hasLogin) {
+				// 	url = '/pages/set/set';
+				// }
+				uni.navigateTo({
+					url
+				})
+			}
+		}
 	}
 </script>
 
@@ -108,8 +106,9 @@
 		height: 378upx;
 		padding: 100upx 30upx 0;
 		position: relative;
-		
-		font-size:30upx;
+
+		font-size: 30upx;
+
 		.bg {
 			position: absolute;
 			left: 0;
@@ -143,21 +142,25 @@
 		.username {
 			margin-left: 20upx;
 		}
+
 		.pay-money {
 			width: 100%;
 			display: flex;
 			justify-content: center;
 		}
+
 		.pay-money text {
 			flex: 1;
 		}
-		 .money-num {
-			 display: flex;
-			 width: 100%;
-		 }
-		  text {
+
+		.money-num {
+			display: flex;
+			width: 100%;
+		}
+
+		text {
 			flex: 1;
-			text-align: center ;
+			text-align: center;
 		}
 	}
 
@@ -263,10 +266,12 @@
 			}
 		}
 	}
+
 	.money {
 		display: flex;
 		justify-content: center;
-		color:#fff;
+		color: #fff;
+
 		.deposit {
 			width: 50%;
 			height: 102upx;

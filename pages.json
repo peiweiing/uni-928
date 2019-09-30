@@ -51,8 +51,51 @@
                     }
                 }
 			}
-        }
-    ],	
+        },
+    	{
+			"path": "pages/user/index",
+			"style": {
+				"navigationBarTitleText": "我的",
+				// #ifdef MP
+				"navigationStyle": "custom",
+				// #endif
+				"app-plus": {
+					"bounce": "none",
+					"titleNView": {
+						"type": "transparent",
+						"buttons": [{
+								"fontSrc": "/static/yticon.ttf",
+								"text": "\ue60f",
+								"fontSize": "24",
+								"color": "#303133",
+								"width": "46px",
+								"background": "rgba(0,0,0,0)"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"path": "pages/set/set",
+			"style": {
+				"navigationBarTitleText": "设置"
+			}
+		},
+		{
+			"path":"pages/deposit/index",
+			"style":{
+				"navigationBarTitleText":"提现申请"
+			}
+		},
+		{
+			"path":"pages/moneyCz/index",
+			"style":{
+				"navigationBarTitleText":"充值"
+			}
+			
+		}
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "uni-app",
