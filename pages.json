@@ -31,7 +31,6 @@
 		},
 		{
 			"path": "pages/user/index",
-
 			"style": {
 				"navigationBarTitleText": "我的",
 				// #ifdef MP
@@ -53,6 +52,25 @@
 					}
 				}
 			}
+		},
+		{
+			"path": "pages/set/set",
+			"style": {
+				"navigationBarTitleText": "设置"
+			}
+		},
+		{
+			"path":"pages/deposit/index",
+			"style":{
+				"navigationBarTitleText":"提现申请"
+			}
+		},
+		{
+			"path":"pages/moneyCz/index",
+			"style":{
+				"navigationBarTitleText":"充值"
+			}
+			
 		}
 	],
 	"globalStyle": {
