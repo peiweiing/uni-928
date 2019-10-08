@@ -72,7 +72,19 @@
 			}
 			
 		}
-	],
+	    ,{
+            "path" : "pages/client/index",
+            "style" : {
+							"navigationBarTitleText":"客户咨询"
+						}
+        },
+				{
+					"path":"pages/invite/invite",
+					"style":{
+						"navigationBarTitleText":"邀请赚钱"
+					}
+				}
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarBackgroundColor": "#F8F8F8",
