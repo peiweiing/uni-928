@@ -1,13 +1,17 @@
 import Vue from 'vue'
-import store from './store'
 import App from './App'
+import $ from 'jquery'
+import store from './store'
 
 // import Router from 'uni-simple-router'
-// Vue.use(Router)
 
+import Router from 'vue-router'
+
+Vue.use(Router)
 
 import routerLink from './node_modules/uni-simple-router/component/router-link.vue'
 Vue.component('router-link',routerLink)
+
 
 Vue.config.productionTip = false
 Vue.prototype.$store = store;
