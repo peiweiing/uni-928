@@ -5,8 +5,8 @@
 			<text>我的通话</text> -->
 			<view class="header">
 				<view class="topcs">
-					<text>我的好友</text>
-					<text>我的通话</text>
+					<text @click="fun()">我的好友</text>
+					<text @click="fen()">我的通话</text>
 				</view>
 				<view class="box">
 					<view class="imgcs">
@@ -38,7 +38,7 @@
 				
 			</view>
 		
-			<view class="box" v-for="(v,i) in arr" :key="i">
+			<view class="box" v-for="(v,i) in arr" :key="i" @click="liaotian">
 				<view class="imgcs">
 					<img :src="v.src" alt="">
 				</view>
@@ -74,7 +74,24 @@
 					{src:"../../static/5.jpg",name:'刘涛',text:"帅哥你到底有没有空",time:"0:20"},
 				]
 			};
-		}
+		},
+		methods: {
+			fun() {
+				uni.navigateTo({
+					url: '/pages/login/login'
+				});
+			},
+			fen(){
+				uni.navigateTo({
+					url: '/pages/register/register'
+				});
+			},
+			liaotian(){
+				uni.navigateTo({
+					url:'../../pages/duihua/duihua'
+				})
+			}
+		},
 	}
 </script>
 
