@@ -124,7 +124,19 @@
             "style" : {
 				"navigationStyle":"custom"
 			}
-        }
+		}
+		,{
+            "path" : "pages/client/index",
+            "style" : {
+				"navigationBarTitleText":"客户咨询"
+			}
+		}
+		,{
+			"path":"pages/invite/invite",
+			"style":{
+				"navigationBarTitleText":"邀请赚钱"
+			}
+		}
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

@@ -35,13 +35,13 @@
 		</view>
 		<view class="history-section icon">
 			<list-cell icon="icon-iconfontweixin" iconColor="#e07472" title="同城约泡" tips="查看VIP特权"></list-cell>
-			<list-cell icon="icon-iconfontweixin" iconColor="#e07472" title="邀请赚钱"></list-cell>
+			<list-cell icon="icon-iconfontweixin" iconColor="#e07472" title="邀请赚钱" @eventClick="navTo('/pages/invite/invite')"></list-cell>
 			<list-cell icon="icon-dizhi" iconColor="#5fcda2" title="收支明细" @eventClick="navTo('/pages/address/address')"></list-cell>
 			<list-cell icon="icon-share" iconColor="#9789f7" title="情书"></list-cell>
 			<list-cell icon="icon-pinglun-copy" iconColor="#ee883b" title="谁看过我"></list-cell>
 			<list-cell icon="icon-shoucang_xuanzhongzhuangtai" iconColor="#54b4ef"></list-cell>
 			<list-cell icon="icon-shezhi1" iconColor="#e07472" title="撩妹指南" @eventClick="navTo('/pages/set/set')"></list-cell>
-			<list-cell icon="icon-shezhi1" iconColor="#e07472" title="客户咨询 " @eventClick="navTo('/pages/set/set')"></list-cell>
+			<list-cell icon="icon-shezhi1" iconColor="#e07472" title="客户咨询 " @eventClick="navTo('/pages/client/index')"></list-cell>
 		</view>
 
 	</view>
