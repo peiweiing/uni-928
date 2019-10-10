@@ -10,22 +10,22 @@
 				</swiper>
 				<view class="kuang">
 					<view class="close">
-						<text @click="fun()"><</text>
-						<text class="tanchu">···</text>
+						<text class="text" @click="fun()"><</text>
+						<text></text>
 					</view>
 					<view class="anniu">
 						<view class="left">
 							<text>空闲</text>
 						</view>
 						<view class="right">
-							<text @click="tongzhi">+好友</text>
+							<text></text>
 						</view>
 					</view>
 					<view class="bottom" v-for="(v,i) in brr" :key="i">
 						<text>{{v.txt}}</text>
 						<text>{{v.age}}</text>
-						<text>{{v.dis}}</text>
-						<text style="margin-left: -40upx;margin-right: 40upx;">魅力值{{v.bsi}}</text>
+						<text></text>
+						<text style="margin-left: -40upx;margin-right: 40upx;">总聊币{{v.bsi}}</text>
 					</view>
 				</view>
 			</view>
@@ -33,54 +33,32 @@
 			<view class="moduleone">
 				<view class="left">
 					<image src="../../static/i视频.png" mode=""></image>
-					<text>500聊币/分钟</text>
+					<text>0聊币/分钟</text>
 				</view>
 				<view class="right">
 					<image src="../../static/i麦.png" mode=""></image>
-					<text>500聊币/分钟</text>
+					<text>0聊币/分钟</text>
 				</view>
 			</view>
 			<view class="moduletwo">
 				<h4>聊天话题</h4>
-				<block class="block" v-for="(v,i) in tab" :key="i">
-					<text>{{v.tab}}</text>	
+				<block class="block">
+					<text>你还没有设置聊天话题</text>	
 				</block>
 			</view>
 			<view class="modulethree">
 				<h4>守护的礼物</h4>
-				<text>{{title}}</text>
+				<text>你还没有收到礼物哦</text>
 			</view>
 			<view class="modulefour">
 				<h4>送出的礼物</h4>
-				<text>TA还没有送出礼物哦</text>
+				<text>你还没有送出礼物哦</text>
 			</view>
 		
-		<view class="zhezhao">
-			<view class="tankuang">
-				<view class="tanup" @click.stop>
-					<text class="tantxt">加入黑名单</text>
-					<text>举报</text>
-				</view>
-				<view class="tanend">
-					<text class="quxiao">取消</text>
-				</view>
-			</view>
-		</view>
 		
 		<footer>
-			<view class="foot">
-				<view class="sixin" @click="vip">
-					<image src="../../static/i私密.png" mode=""></image>
-					<text>私信</text>
-				</view>
-				<view class="dashang" @click="gift">
-					<image src="../../static/i打赏.png" mode=""></image>
-					<text>打赏</text>
-				</view>
-				<view class="shipin" @click="vip">
-					<image src="../../static/i视频.png" mode=""></image>
-					<text>看看TA</text>
-				</view>
+			<view class="foot" @click="redact">
+				<text>编辑</text>
 			</view>
 		</footer>
 		
@@ -99,7 +77,7 @@
 					{src:'../../static/u5.jpg'},
 				],
 				brr:[
-					{txt:"asd",age:'20岁',dis:"20km",bsi:"4.00"},
+					{txt:"asd",age:'20岁',dis:"20km",bsi:"0"},
 					// {txt:"bsd",age:'18岁',dis:"15km",bsi:"2.00"},
 					// {txt:"csd",age:'22岁',dis:"30km",bsi:"0.50"},
 					// {txt:"dsd",age:'26岁',dis:"18km",bsi:"0.10"},
@@ -113,9 +91,6 @@
 					{tab:'婚史'},
 					{tab:'婚史'},
 					{tab:'恋爱'},
-					{tab:'恋爱'},
-					{tab:'恋爱'},
-					{tab:'恋爱'},
 				]
 			};
 		},
@@ -127,42 +102,15 @@
 			
 			fun(){
 				uni.switchTab({
-					url: '/pages/index/index'
+					url: '/pages/user/index'
 				});
 			},
-			gift(){
+			redact(){
 				uni.navigateTo({
-					url:'../../pages/index/gift'
-				})
-			},
-			vip(){
-				uni.showModal({
-					title: '请充值VIP会员继续畅聊',
-					success: function (res) {
-						if (res.confirm) {
-							uni.navigateTo({
-								url: '/pages/moneyCz/index'
-							});
-							console.log('用户点击确定');
-						} else if (res.cancel) {
-							console.log('用户点击取消');
-						}
-					}
+					url: '/pages/user/redact'
 				});
-			},
-			tongzhi(){
-				// uni.showToast({
-				// 	title: '已向对方发送添加好友请求',
-				// 	duration: 2000
-				// });
-				uni.showLoading({
-					title: '已向对方发送添加好友请求'
-				});
-
-				setTimeout(function () {
-					uni.hideLoading();
-				}, 1000);
 			}
+			
 		},
 		mounted (){
 			var zhezhao=document.getElementsByClassName('zhezhao')[0];
@@ -240,7 +188,7 @@
 		position: relative;
 		bottom: 400upx;
 	}
-	.kuang .close text{
+	.kuang .close .text{
 		text-align: center;
 		width: 50upx;
 		height:50upx;
@@ -273,8 +221,8 @@
 		background-color: #90d156;
 	}
 	.kuang .anniu .right{
-		width: 130upx;
-		height: 60upx;
+		/* width: 130upx;
+		height: 60upx; */
 		border-radius: 60upx ;
 		background-color: #ccc;
 	}
@@ -323,14 +271,14 @@
 		background-color: #b769fc;
 	}
 	.moduletwo text{
-		display: inline-block;
+		margin: 30upx 0 30upx 40upx;
+		/* display: inline-block;
 		text-align: center;
 		font-size: 0.9rem;
-		margin: 30upx 0 30upx 40upx;
 		width:120upx ;
 		height:50upx ;
 		border: 1px solid #d096c3;
-		border-radius: 40upx;
+		border-radius: 40upx; */
 	}
 	.modulethree text,
 	.modulefour text{
@@ -342,7 +290,7 @@
 	footer{
 		width: 100%;
 		background-color:#EBEFF3 ;
-		position: sticky;
+		position:fixed;
 		left: 0;
 		bottom:0;
 	}
@@ -352,32 +300,12 @@
 		justify-content:center;
 		align-items: center;
 		padding: 10upx;
+		width: 100%;
+		background-color: #FA62A8;
 	}
-	footer image{
-		width: 60upx;
-		height: 60upx;
-	}
-	footer .sixin,
-	footer .dashang{
-		display: flex;
-		flex-flow: column;
-		width: 25%;	
-	}
-	footer .shipin{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border-radius: 30upx;
-		height: 80upx;
-		width: 220upx;
-		background-color:#D096C3;
-		color: #fff;
-		background: linear-gradient(to right, #D096C3 0%,#ff9569 80%, #e92758 100%);
-	}
-	footer .sixin{
-		color: #ad68f1;
-	}
-	footer .dashang{
-		color: #ed78b7;
+	footer .foot text{
+		text-align: center;
+		height: 70upx;
+		line-height: 70upx;
 	}
 </style>

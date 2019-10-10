@@ -8,7 +8,7 @@
 					<text @click="fun()">我的好友</text>
 					<text @click="fen()">我的通话</text>
 				</view>
-				<view class="box">
+				<view class="box" @click="xiaoxi">
 					<view class="imgcs">
 						<img src="../../static/L系统消息.png" alt="">
 					</view>
@@ -17,7 +17,7 @@
 						<text class="txtend">系统消息</text>
 					</view>
 				</view>
-				<view class="box">
+				<view class="box" @click="zixun">
 					<view class="imgcs">
 						<img src="../../static/L客户咨询.png" alt="">
 					</view>
@@ -26,7 +26,7 @@
 						<text class="txtend">欢迎来撩客服小姐姐</text>
 					</view>
 				</view>
-				<view class="box">
+				<view class="box" @click="tixin">
 					<view class="imgcs">
 						<img src="../../static/L同城提醒.png" alt="">
 					</view>
@@ -89,6 +89,21 @@
 			liaotian(){
 				uni.navigateTo({
 					url:'../../pages/duihua/duihua'
+				})
+			},
+			xiaoxi(){
+				uni.navigateTo({
+					url:'../../pages/liaotian/xiaoxi'
+				})
+			},
+			tixin(){
+				uni.navigateTo({
+					url:'../../pages/liaotian/tixin'
+				})
+			},
+			zixun(){
+				uni.navigateTo({
+					url:'../../pages/client/index'
 				})
 			}
 		},

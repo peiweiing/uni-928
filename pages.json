@@ -128,15 +128,71 @@
 		,{
             "path" : "pages/client/index",
             "style" : {
-				"navigationBarTitleText":"客户咨询"
+				"navigationBarTitleText":"客户咨询",
+				"navigationBarBackgroundColor":"#FA62A8"
 			}
 		}
 		,{
 			"path":"pages/invite/invite",
 			"style":{
-				"navigationBarTitleText":"邀请赚钱"
+				"navigationBarTitleText":"邀请赚钱",
+				"navigationBarBackgroundColor":"#FA62A8"
 			}
 		}
+        ,{
+            "path" : "pages/liaotian/xiaoxi",
+            "style" : {
+				"navigationBarTitleText":"系统消息",
+				"navigationBarBackgroundColor":"#FA62A8"
+			}
+        }
+        ,{
+            "path" : "pages/liaotian/tixin",
+            "style" : {
+				"navigationBarTitleText":"美女约会提醒",
+				"navigationBarBackgroundColor":"#FA62A8"
+			}
+        }
+        ,{
+            "path" : "pages/user/liaomei",
+            "style" : {
+				"navigationBarTitleText":"撩妹指南",
+				"navigationBarBackgroundColor":"#FA62A8"
+			}
+        }
+        ,{
+            "path" : "pages/user/vip",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+        }
+        ,{
+            "path" : "pages/user/alter",
+            "style" : {
+				"navigationStyle":"custom"
+			}
+        }
+        ,{
+            "path" : "pages/user/redact",
+            "style" : {
+				"navigationBarTitleText":"修改信息",
+				"navigationBarBackgroundColor":"#FA62A8"
+			}
+        }
+        ,{
+            "path" : "pages/index/gift",
+            "style" : {
+				"navigationBarTitleText":"打赏",
+				"navigationBarBackgroundColor":"#FA62A8"
+			}
+        }
+        ,{
+            "path" : "pages/user/billet",
+            "style" : {
+				"navigationBarTitleText":"情书",
+				"navigationBarBackgroundColor":"#FA62A8"
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
