@@ -1,0 +1,227 @@
+<extend name="Public/base"/>
+<block name="maincontent">
+ <div class="ce member">
+    <div class="left ri">
+      <div class="content">
+        <div class="search_box" id="searchBox" style="display:block;width:100%">
+          <h3>高级搜索</h3>
+          <div>
+              <div class="search_cont">
+
+				<form method="post" action="__MODULE__/HighSearch/doSearch" id="search_high_level">
+				<input id="s_searchtype" name="s_searchtype" value="adv" type="hidden">
+				
+                <div class="search_cont_l">
+                  <label class="t">我要找：</label>
+                  <input type="radio" name="gender" id="gender" value="2">
+                  <label class="r" for="sex_1">女会员</label>
+                  <input type="radio" name="gender" id="gender" value="1">
+                  <label class="r" for="sex_2">男会员</label>
+                </div>
+				
+				<div class="search_cont_l">
+                  <label id="height" class="t">交友类型：</label>
+				  <select name="lovesort" id="lovesort">
+					  <option selected="selected" value="">=不限=</option>
+					  <option value="1">朋友</option>
+					  <option value="2">知己</option>
+					  <option value="3">恋爱</option>
+					  <option value="4">结婚</option>
+				  </select>
+				</div>
+                <div class="search_cont_l">
+                  <label id="age" class="t">年龄：</label>
+				  <select name="min_age" id="min_age">
+				  <option value=""selected="selected">=不限=</option>
+					  <for start="18" end="61">
+						<option value="{$i}">{$i}</option>
+					  </for>
+				  </select>
+				  <span>&nbsp;~&nbsp;</span>
+				  <select name="max_age" id="max_age">
+					  <option value="" selected="selected">=不限=</option>
+					  <for start="18" end="61">
+						<option value="{$i}">{$i}</option>
+					  </for>
+				  </select> 岁
+                </div>
+				
+				<div class="search_cont_l">
+                  <label id="height" class="t">身高：</label>
+				  <select name="min_height" id="min_height">
+					  <option value="" selected="selected">=不限=</option>
+					  <for start="130" end="201">
+						<option value="{$i}">{$i}</option>
+					  </for>
+				  </select>
+				  <span>&nbsp;~&nbsp;</span>
+				  <select name="max_height" id="max_height">
+				  <option value="" selected="selected">=不限=</option>
+					  <for start="130" end="201">
+						<option value="{$i}">{$i}</option>
+					  </for>
+				  </select> CM
+				</div>
+				
+				<div class="search_cont_l">
+                  <label id="workCity" class="t">地区：</label>
+				  <select name="province" id="province" style='width:80px;' >
+					  
+				  </select>&nbsp;
+				  <span id="json_s_dist2"></span>&nbsp;
+                </div>
+				
+				 <div class="search_cont_l">
+                  <label id="education" class="t">学历：</label>
+				  <select name="edu" id="edu">
+					  <option selected="selected" value="">=不限=</option>
+					  <option value="1">中专以下学历</option>
+					  <option value="2">中专</option>
+					  <option value="3">大专</option>
+					  <option value="4">本科</option>
+					  <option value="5">硕士</option>
+					  <option value="6">博士</option>
+					  <option value="7">博士后</option>
+				  </select>
+				</div>
+                
+                <div class="search_cont_l">
+                  <label id="salary" class="t">月收入：</label>
+				  <select name="salary" id="s_ssalary">
+					  <option selected="selected" value="">=不限=</option>
+					  <option value="1">2000元以下</option>
+					  <option value="2">2000~5000元</option>
+					  <option value="3">5000~10000元</option>
+					  <option value="4">10000~20000元</option>
+					  <option value="5">20000元以上</option>
+				  </select>
+				  </div>
+               
+
+				<div style="line-height:40px;">
+				  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tbody>
+					<tr>
+					  <td align="right" width="75px">婚史：</td>
+					  <td style="margin-left:5px;">
+						  <table border="0" cellpadding="0" cellspacing="0" align="left" width="98%">
+						  <tbody>
+							  <tr>
+								  <td class="hback" width="20%">
+									<input name="marry[]" id="marry[]"  value="1" type="checkbox"> 未婚 
+								  </td> 
+								  <td class="hback" width="20%"> 
+									<input name="marry[]" id="marry[]"  value="2" type="checkbox"> 已婚 
+								  </td> 
+								  <td class="hback" width="20%"> 
+									<input name="marry[]" id="marry[]"  value="3" type="checkbox"> 离异 
+								  </td> 
+								  <td class="hback" width="20%"> 
+									<input name="marry[]" id="marry[]"  value="4" type="checkbox"> 丧偶 
+								  </td>  
+							  </tr>
+						  </tbody>
+						  </table>
+					  </td>
+					</tr>
+				  </tbody></table>
+				  <div class="c"></div>
+				</div>
+
+
+				<div style="line-height:40px;">
+				  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tbody>
+						<tr>
+						  <td align="right" width="75px">有无子女：</td>
+						  <td style="margin-left:5px;">
+							  <table border="0" cellpadding="0" cellspacing="0" align="left" width="98%">  
+							  <tbody>
+								  <tr> 
+									  <td class="hback" width="20%"> 
+										<input name="child[]" id="child[]"  value="1" type="checkbox"> 无小孩 
+									  </td> 
+									  <td class="hback" width="20%"> 
+										<input name="child[]" id="child[]"  value="2" type="checkbox"> 有,和我住一起 
+									  </td> 
+									  <td class="hback" width="20%"> 
+										<input name="child[]" id="child[]"  value="3" type="checkbox"> 有,有时和我住一起 
+									  </td> 
+									  <td class="hback" width="20%"> 
+										<input name="child[]" id="child[]"  value="4" type="checkbox"> 有,不和我住一起 
+									  </td>  
+								  </tr>
+							  </tbody>
+							  </table>
+						  </td>
+						</tr>
+					</tbody>
+				  </table>
+				  <div class="c"></div>
+				</div>
+
+
+                <div class="search_cont_l">
+                  <label id="house" class="t">住房：</label>
+                  <select name="house" id="s_house">
+					  <option selected="selected" value="">=不限=</option>
+					  <option value="1">暂未购房</option>
+					  <option value="2">需要时置房</option>
+					  <option value="3">已购住房</option>
+					  <option value="4">与人合租</option>
+					  <option value="5">独自租房</option>
+					  <option value="6">与父母同住</option>
+					  <option value="7">住亲朋家</option>
+					  <option value="8">住单位房</option>
+				  </select>
+                </div>
+                <div class="search_cont_l">
+                  <label class="t">购车：</label>
+                  <select name="car" id="car">
+					  <option selected="selected" value="">=不限=</option>
+					  <option value="1">暂未购车</option>
+					  <option value="2">已经购车</option>
+				  </select>
+                </div>
+                <div class="search_cont_l">
+                  <label class="t">形像照：</label>
+                  <input type="checkbox" value="1" name="avatar" id="avatar">
+                  <label class="padd_r" for="ph_1">有</label>
+                </div>
+                <div class="search_cont_l">
+                  <label class="t">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                  <button type="submit" id="btn_search"><span>搜 索</span></button>
+                </div>
+				</form>
+              </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="right yue1">
+      <h2>热门日记</h2>
+      <ul class="list_blog">
+	  <volist name='hotdiary' id="diary">
+		<li><a target="_blank" href="__MODULE__/DiaryShow/single/id/{$diary.id}" title="{$diary.title}">{$diary.title}</a> </li>
+		</volist>
+	  </ul>
+      <h2 style="margin-top:10px;">猜你喜欢</h2>
+	  <volist name='gueuser' id='gue'>
+	  	<div class="img_list"> 
+			<a href="__MODULE__/HomePage/index/id/{$gue.userid}"><img src="__PUBLIC__/Uploads/pic/{$gue.user.avatar}" class="h3h" height="96" width="80"></a><br>
+			<img src="__PUBLIC__/images/{$gue.icon}" class="" border="0">
+			<a href="__MODULE__/HomePage/index/id/{$gue.userid}">{$gue.user.username}</a><br>
+		</div>
+	    </volist>    
+		
+	  <div style="clear:both;"></div>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  <div style="clear:both;"></div>
+  <script type="text/javascript">
+		loadDist();
+	</script>
+</block>

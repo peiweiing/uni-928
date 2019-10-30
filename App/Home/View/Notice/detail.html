@@ -1,0 +1,64 @@
+<extend name="Public/base" />
+
+<block name="maincontent">
+<!-- 搜索 -->
+    
+<div id="page-index" class="page">
+    <div class="member">
+	<include file="Public:search" />
+        <div class="current_path">
+            <div id="rank" class="search_sle">你的位置：<a href="__MODULE__/Index/index">首页</a> &gt;&gt; <a href="__MODULE__/Notice/lists/typeid/{$type['typeid']}">{$type['typename']}</a> &gt;&gt; 正文 </div>
+        </div>
+
+        <div class="ableft">
+            
+			<volist name="list" id="vo">
+				<h2 class="ablefth3"><a href="__MODULE__/Notice/lists/typeid/{$vo['typeid']}">{$vo['typename']}</a></h2>
+			</volist>
+        </div>
+
+        <div class="abright">
+            <h2>{$find.title}</h2>
+        <div class="jian">发表时间：{$find['addtime']|date="m-d H:i:s",###}&nbsp;&nbsp;&nbsp;&nbsp;浏览：
+            <font id="json_hits">{$find['views']}</font>
+        </div>
+        <div class="abcontent">
+            {$find['content']}
+        </div>
+        <div class="share">
+        
+            上一篇：
+            <if condition='$prev eq null'>
+            没有了
+            <else />
+            <a href="__MODULE__/Notice/detail/id/{$prev['id']}">{$prev['title']}</a>
+            </if>
+        <br>
+            下一篇：
+            <if condition='$next eq null'>
+            没有了
+            <else />
+            <a href="__MODULE__/Notice/detail/id/{$next['id']}">{$next['title']}</a>
+            </if>
+        </div>
+
+        <div class="related_content">
+            <div class="related_title">相关文章</div>
+            <div class="related_w">
+                
+                <volist name="data" id="vo">
+                    <div class="related_wl">
+                        <a href="__MODULE__/Notice/detail/id/{$vo['id']}"> ▪ {$vo['title']}</a>
+                    </div>
+                </volist>
+            </div>
+        </div>
+
+
+        </div>
+        <div style="clear:both;"></div>
+
+    </div>
+    <div style="clear:both;"></div>
+</div>
+</block>

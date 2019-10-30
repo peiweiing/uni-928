@@ -1,0 +1,88 @@
+
+<form id="pagerForm" method="post" action="demo_page1.html">
+	<input type="hidden" name="status" value="${param.status}">
+	<input type="hidden" name="keywords" value="${param.keywords}" />
+	<input type="hidden" name="pageNum" value="1" />
+	<input type="hidden" name="numPerPage" value="${model.numPerPage}" />
+	<input type="hidden" name="orderField" value="${param.orderField}" />
+</form>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="demo_page4.html" target="navTab"><span>添加</span></a></li>
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="138">
+		<thead>
+			<tr>
+				<th width="20">ID</th>
+				<th width="20">血型</th>
+				<th width="30">星座</th>
+				<th width="50">有无子女</th>
+				<th width="50">是否有车</th>
+				<th width="50">是否有房</th>
+				<th width="50">个性</th>
+				<th width="50">外貌自评</th>
+				<th width="50">魅力部位</th>
+				<th width="50">发型</th>
+				<th width="50">发色</th>
+				<th width="50">脸型</th>
+				<th width="50">体型</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr target="sid_user" rel="1">
+				<td>{$list.userid}</td>
+				<td>{$bloodtype}</td>
+				<td>
+					<between  name="birthday" value="1.20,2.18">
+						水瓶座
+					</between >						
+					<between  name="birthday" value="2.19,3.20">
+						双鱼座
+					</between >
+					<between  name="birthday" value="3.21,4.19">
+						白羊座
+					</between >							
+					<between  name="birthday" value="4.20,5.20">
+						金牛座
+					</between >							
+					<between  name="birthday" value="5.21,6.21">
+						双子座
+					</between >							
+					<between  name="birthday" value="6.22,7.22">
+						巨蟹座
+					</between >							
+					<between  name="birthday" value="7.23,8.22">
+						狮子座
+					</between >					
+					<between  name="birthday" value="8.23,9.22">
+						处女座
+					</between >						
+					<between  name="birthday" value="9.23,10.23">
+						天枰座
+					</between >						
+					<between  name="birthday" value="10.24,11.22">
+						天蝎座
+					</between >						
+					<between  name="birthday" value="11.23,12.21">
+						射手座
+					</between >						
+					<between  name="birthday" value="12.22,1.19">
+						摩羯座
+					</between >	
+				</td>
+				<td>{$child}</td>
+				<td><if condition="$list.car eq 1">暂未购车<elseif condition="$list.car eq 2"/>已经购车<else/>未填写</if></td>
+				<td>{$house}</td>
+				<td>{$personality}</td>
+				<td>{$zjappearance}</td>
+				<td>{$attr}</td>
+				<td>{$haircut}</td>
+				<td>{$haircolor}</td>
+				<td>{$face}</td>
+				<td>{$size}</td>
+			</tr>	
+		</tbody>
+	</table>
+</div>

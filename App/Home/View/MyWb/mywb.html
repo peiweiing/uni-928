@@ -1,0 +1,125 @@
+<extend name='Public/base' />
+<block name='maincontent'>
+<div class="search_max w960 online_page">
+<include file="Public:search"/>
+    <div class="container app_mood" id="ICFeedsContainer">
+      <div class="main_wrap bg3">
+        <div class="main bg bor3">
+
+          <div class="bo3 comments">
+            <ul>
+		    <div class="fbk">
+		    <img src="__PUBLIC__/images/send.png" style="margin-left:52px;">
+			<form action='' method='post' name='form' onsubmit='return doSubmit();'>
+			<div class="tex"><textarea id="content"  onkeyup="textCounter();" name="content"></textarea></div>
+			<div class="texb">
+			  只能输入<span class="zs" id="counter">140</span>个字 
+			  <input type='submit' id="btn_roll" value='' style="width:90px;height:28px;border:0; background:url(__PUBLIC__/images/gbweibo.gif) no-repeat left top"/>
+			</div>
+          </div> 
+				<foreach name='list' item='vo' key='k'>
+			   <li>
+                <div class="lou"> 
+				  <a href="http://www.yyw1314.com/home/184630" target="_blank" class="head" title="查看资料"><img src="__PUBLIC__/Uploads/pic/{$user.avatar}" border="0" height="61" width="50"> </a>
+                  <div class="weinei1"> 
+				  <span class="you"><a href="__MODULE__/MyWb/index/id/{$id}" title="查看TA的心情微播"><b>{$user.username}</b></a>：</span>
+				  {$vo.text}
+				  </div>
+                  <div style="clear:both"></div>
+                  <div class="huifu">
+				  
+				  <font color="#999999">{$vo.time}</font>&nbsp;
+				  <a href="javascript:void(0)" onclick="showBox('greet',{$vo['uid']});">打招呼</a> 
+				  <a href="javascript:void(0)" onclick="showBox('message',{$vo['uid']});">写信件</a> 
+				  <a href="__MODULE__/HomePage/index/id/{$vo['uid']}" target="_blank">看资料</a> 
+				 <a href="__MODULE__/WbPerson/index/id/{$vo['id']}"" title='跳转到单条信息评论'>评论</a> ({$num[$k]})
+
+				  </div>
+                </div>
+                <div style="clear:both"></div>
+                <div style="clear:both"></div>
+
+              </li>
+			  </foreach>
+			  
+			    
+			  
+			  <center>
+			  <div class="page1">
+        <div class="pagecode">
+		{$pageInfo}
+        </div>
+        <div style="clear:both;"></div>
+      </div></center>
+			  
+			  
+              <div style="clear:both"></div>
+			  
+            </ul>
+			
+          </div>
+		  
+        </div>
+		
+		
+      </div>
+      <div class="sidebar author_display lite_hide">
+		
+		
+        <!--二级导航 开始-->
+        <div class="sub_menu bbor3">
+          <ul>
+            <li class="nav_home"> <a href="__MODULE__/WbSquare/index"><i></i>微播广场</a> </li>
+			
+            <li class="nav_hot current"> <a href="__MODULE__/MyWb/index/id/{$Think.session.user.id}"><i></i>我的微播</a> </li>
+			          </ul>
+        </div>
+
+        <div class="or3">
+          <div><b>最新日记</b></div>
+          <ul>
+		  <volist name='newdiary' id='vo'>
+			<li class="nav_my"> <a href="__MODULE__/DiaryShow/single/id/{$vo.id}" class="c_tx" target="_blank" title="{$vo['title']}"> ◈ {$vo['title']}</a> </li>
+		  </volist>
+		  </ul>
+        </div>
+
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  <div style="clear:both;"></div>
+  
+  <script type='text/javascript'>
+		function doSubmit(){
+			if(0<$('#content').val().length && $('#content').val().length < 140){
+				$('.xxoo').empty();
+				$.ajax({
+					url:'__MODULE__/WeiBo/insert',
+					type:'post',
+					dataType:'json',
+					data:{content:$('#content').val()},
+					success:function(info){
+						if(info['error'] == false){
+							$('.texb').before("<div>{info['data']}</div>");
+						}else{
+							alert('发表成功，在微博广场显示');
+							location.replace('__MODULE__/WbSquare/index');
+						}
+					}
+				});
+			}else{
+				$('.xxoo').remove();
+				$('.texb').prepend("<strong><span style=\"color:red;size:25px\" class='xxoo'>内容不能为空</span></strong>");
+			}
+			return false;
+		}
+		
+		function textCounter(){
+			
+			var hanzi = document.getElementById('content').value.length;
+			var num = parseFloat(140)-parseFloat(hanzi);
+			$('#counter').html(num);
+		}
+  </script>
+</block>

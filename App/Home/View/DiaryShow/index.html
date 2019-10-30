@@ -1,0 +1,122 @@
+<extend name="Public/base" />
+<block name="maincontent">
+ <div class="ce member">
+    <include file="Public:search"/>
+    <div class="left blog">
+
+      <div class="ad">
+        <div class="leftad">
+	    	<a><img src="__PUBLIC__/images/abc42bd94ed9d3a1.gif" title="" border="0" height="225" width="270"></a>
+	    	<a><img src="__PUBLIC__/images/53d6a915f484f50a.gif" title="" border="0" height="65" width="270"></a>
+	    </div>
+        <div class="le2">
+		  
+
+          <div class="elite">
+		    			          </div>
+
+          <ul class="rzul">
+			<volist name="newdiary" id="new" offset="0" length="6">
+			<li><a href="__URL__/single/id/{$new.id}"><span> ▪ </span>{$new.title}</a></li>
+			</volist>
+			<div style="clear:both"></div>
+          </ul>
+          <div class="rztu">
+		    			          </div>
+          <span class="neww"> <img src="__PUBLIC__/images/new_diary.png"></span> </div>
+        <div style="clear:both"></div>
+      </div>
+
+      <div class="aa">
+        <div class="a1">
+          <h2>
+            <div>⿻ <a href="__URL__/diaryList/catid/1" target="_blank">婚恋课堂</a></div>
+            <a href="__URL__/diaryList/catid/1" class="mo" target="_blank">更多&gt;&gt;</a>
+		  </h2>
+          <ul>
+		  <volist name="hunlian" id="hunlian">
+			<li><a href="__URL__/single/id/{$hunlian.id}" target="_blank"><span> ▪ </span>{$hunlian.title}</a></li>
+			</volist>
+			<div style="clear:both"></div>
+          </ul>
+        </div>
+        <div class="a2">
+          <h2>
+            <div>⿻ <a href="__URL__/diaryList/catid/2" target="_blank">爱情故事</a></div>
+            <a href="__URL__/diaryList/catid/2" class="mo" target="_blank">更多&gt;&gt;</a></h2>
+          <ul>
+			<volist name="aiqing" id="aiqing">
+			<li><a href="__URL__/single/id/{$aiqing.id}" target="_blank"><span> ▪ </span>{$aiqing.title}</a></li>
+			</volist>
+			<div style="clear:both"></div>
+          </ul>
+        </div>
+		<div style="clear:both"></div>
+        <div class="a1">
+          <h2>
+            <div>⿻ <a href="__URL__/diaryList/catid/3" target="_blank">两性私语</a></div>
+            <a href="__URL__/diaryList/catid/3" class="mo" target="_blank">更多&gt;&gt;</a></h2>
+          <ul>
+			<volist name="liangxing" id="liangxing">
+			<li><a href="__URL__/single/id/{$liangxing.id}" target="_blank"><span> ▪ </span>{$liangxing.title}</a></li>
+			</volist>
+			<div style="clear:both"></div>
+          </ul>
+        </div>
+        <div class="a2">
+          <h2>
+            <div>⿻ <a href="__URL__/diaryList/catid/4" target="_blank">情感物语</a></div>
+            <a href="__URL__/diaryList/catid/4" class="mo" target="_blank">更多&gt;&gt;</a></h2>
+          <ul>
+			<volist name="qinggan" id="qinggan">
+			<li><a href="__URL__/single/id/{$qinggan.id}" target="_blank"><span> ▪ </span>{$qinggan.title}</a></li>
+			</volist>
+			<div style="clear:both"></div>
+          </ul>
+        </div>
+		<div style="clear:both"></div>
+        <div class="a1">
+          <h2>
+            <div>⿻ <a href="__URL__/diaryList/catid/5" target="_blank">生活点滴</a></div>
+            <a href="__URL__/diaryList/catid/5" class="mo" target="_blank">更多&gt;&gt;</a></h2>
+          <ul>
+			<volist name="shenghuo" id="shenghuo">
+			<li><a href="__URL__/single/id/{$shenghuo.id}" target="_blank"><span> ▪ </span>{$shenghuo.title}</a></li>
+			</volist>
+			<div style="clear:both"></div>
+          </ul>
+        </div>
+        <div class="a2">
+          <h2>
+            <div>⿻ <a href="__URL__/diaryList/catid/6" target="_blank">文学随笔</a></div>
+            <a href="__URL__/diaryList/catid/6" class="mo" target="_blank">更多&gt;&gt;</a></h2>
+          <ul>
+			<volist name="wenxue" id="wenxue">
+			<li><a href="__URL__/single/id/{$wenxue.id}" target="_blank"><span> ▪ </span>{$wenxue.title}</a></li>
+			</volist>
+			<div style="clear:both"></div>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <h2>猜你喜欢</h2>
+	  <volist name='gueuser' id='gue'>
+	  <div class="iemg"> 
+	    <a href="__MODULE__/HomePage/index/id/{$gue.userid}" target="_blank"><img src="__PUBLIC__/Uploads/pic/{$gue.user.avatar}" border="0" height="96" width="80"></a>
+        <img src="__PUBLIC__/images/{$gue.icon}" class="" border="0">
+		<a href="__MODULE__/HomePage/index/id/{$gue.userid}" title="{$gue.user.username}" target="_blank">{$gue.user.username}</a><br>
+	  </div>
+	   </volist>   
+	  <div style="clear:both;"></div>
+      <h2 style="margin-top:5px;">最新日记</h2>
+      <ul class="list_blog">
+		<volist name="newdiary" id="new">
+			<li><a target="_blank" href="__URL__/single/id/{$new.id}" title="{$new.title}">{$new.title}</a> </li>
+		</volist>
+	  </ul>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+</block>

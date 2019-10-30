@@ -1,0 +1,380 @@
+<extend name="Public/member" />
+<block name="mainright">
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+	<div class="main_right">
+	<div class="div_">个人中心 &gt;&gt; 编辑资料</div>
+	<!--TAB BEGIN-->
+	<div class="tab_list">
+		<div class="tab_nv">
+			<ul>
+				<li class="tab_item current"><a href="__URL__/index">基本资料</a></li>
+				<li class="tab_item"><a href="__MODULE__/Profile/index">详细资料</a></li>
+				<li class="tab_item"><a href="__MODULE__/Monologue/index">内心独白</a></li>
+				<li class="tab_item"><a href="__MODULE__/Information/index">联系资料</a></li>
+			</ul>
+		</div>
+	</div>
+	<!--TAB END-->
+	<div class="div_smallnav_content_hover basicdata">   
+		<!--基本资料 Begin-->
+		<form name="myform" id="myform" action="__URL__/update" method="post">
+		<table class="user-table table-margin lh35" border="0" cellpadding="0" cellspacing="0" width="98%">
+			<tbody>
+			<tr>
+				<td colspan="4" style="padding-bottom:10px;"><div class="item_title" style="width:100%"><p>基本资料</p><span class="shadow"></span></div></td>
+			</tr>
+			<!-- 邮箱、名称 -->
+			<tr>
+				<td class="lblock" width="15%">登录邮箱 <span class="f_red"></span></td>
+				<td class="rblock" width="35%"><font color="#999999">{$email}</font></td>
+				<td class="lblock" width="15%">用 户 名 <span class="f_red"></span></td>
+				<td class="rblock" width="35%">
+					<if condition="$userparams.gender eq 1">
+					<img src="__PUBLIC__/images/f2fde8e7d8aa2a10.gif" class="" border="0">&nbsp;
+					<else />
+					<img src="__PUBLIC__/images/87197a0d51022068.gif" class="" border="0">&nbsp;
+					</if>
+					<font color="#999999">{$username}</font>
+				</td>
+			</tr>
+			<!-- 性别、生日 -->
+			<tr>
+				<td class="lblock">性 别 <span class="f_red"></span></td>
+				<td class="rblock">
+					<font color="#999999">
+						<if condition="$userparams.gender eq 1">男
+							<else />女
+						</if>
+					</font> 
+				</td>
+				<td class="lblock">生 日 <span class="f_red"></span></td>
+				<td class="rblock"><font color="#999999">{$ageyear}-{$agemonth}-{$ageday}&nbsp;&nbsp;{$age}  岁</font></td>
+			</tr>
+			<!-- 星座、生肖 -->
+			<tr>
+				<td class="lblock">星 座 <span class="f_red"></span></td>
+				<td class="rblock">
+					<font color="#999999">
+						<between  name="birthday" value="1.20,2.18">
+							水瓶座
+						</between >						
+						<between  name="birthday" value="2.19,3.20">
+							双鱼座
+						</between >
+						<between  name="birthday" value="3.21,4.19">
+							白羊座
+						</between >							
+						<between  name="birthday" value="4.20,5.20">
+							金牛座
+						</between >							
+						<between  name="birthday" value="5.21,6.21">
+							双子座
+						</between >							
+						<between  name="birthday" value="6.22,7.22">
+							巨蟹座
+						</between >							
+						<between  name="birthday" value="7.23,8.22">
+							狮子座
+						</between >					
+						<between  name="birthday" value="8.23,9.22">
+							处女座
+						</between >						
+						<between  name="birthday" value="9.23,10.23">
+							天枰座
+						</between >						
+						<between  name="birthday" value="10.24,11.22">
+							天蝎座
+						</between >						
+						<between  name="birthday" value="11.23,12.21">
+							射手座
+						</between >						
+						<between  name="birthday" value="12.22,1.19">
+							摩羯座
+						</between >						
+					</font>
+				</td>
+				<td class="lblock">生 肖 <span class="f_red"></span></td>
+				<td class="rblock">
+					<font color="#999999">
+						{$shuxing}
+					</font> 
+				</td>
+			</tr>
+			<!-- 婚姻、身高 -->
+			<tr>
+				<td class="lblock">婚姻状态 <span class="f_red"></span></td>
+				<td class="rblock"><font color="#999999">{$marrystatus}</font> <span class="f_red" id="dmarrystatus"></span></td>
+				<td class="lblock">身 高 <span class="f_red"></span></td>
+				<td class="rblock"><font color="#999999">{$height} CM</font> <span class="f_red" id="dheight"></span></td>
+			</tr>
+			<!-- 户籍、有无子女 -->
+			<tr>
+				<td class="lblock">所在城市<span class="f_red"></span></td>
+				<td class="rblock">
+				<font color="#999999">{$sheng}省</font>&nbsp;&nbsp;<font color="#999999">{$shi}</font>
+				<span id="provinceid" class="f_red"></span>
+					<span id="json_cityid">
+					</span>&nbsp; <span id="dcityid" class="f_red"></span>
+					<span id="json_distid">	
+					</span>
+				</td>
+				<td class="lblock">
+					有无子女 <span class="f_red"></span>
+				</td>
+				<td class="rblock">
+					<select name="child" id="childrenstatus">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$userparams.child eq 1">selected='selected'</if>>无小孩</option>
+						<option value="2"<if condition="$userparams.child eq 2">selected='selected'</if>>有,和我住一起</option>
+						<option value="3"<if condition="$userparams.child eq 3">selected='selected'</if>>有,有时和我住一起</option>
+						<option value="4"<if condition="$userparams.child eq 4">selected='selected'</if>>有,不和我住一起</option>
+					</select>				
+					<span id="dchildrenstatus" class="f_red"></span>
+				</td>
+			</tr>
+			<!-- 所在地、交友目的 -->
+			<tr>
+				<td class="lblock">户籍 <span class="f_red"></span></td>
+				<td class="rblock">
+				<input name="hukou" type="text" value="{$userparams.hukou}" size="4"/>&nbsp;省/市&nbsp;<input name="huji" type="text" value="{$userparams.huji}" size="4"/>&nbsp;区/县
+					<span id="dnationprovinceid" class="f_red"></span>
+				<span id="json_nationcityid">
+			
+				</span>&nbsp;<span id="dnationcityid" class="f_red"></span>
+				</td>
+				<td class="lblock">交友类别 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="lovesort" id="lovesort">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$userparams.lovesort eq 1">selected='selected'</if>>朋友</option>
+						<option value="2"<if condition="$userparams.lovesort eq 2">selected='selected'</if>>知己</option>
+						<option value="3"<if condition="$userparams.lovesort eq 3">selected='selected'</if>>恋爱</option>
+						<option value="4"<if condition="$userparams.lovesort eq 4">selected='selected'</if>>结婚</option>
+					</select> <span id="dlovesort" class="f_red"></span>
+				</td>
+			</tr>
+			<!-- 个性、血型 -->
+			<tr>
+				<td class="lblock">个 性 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="personality" id="personality">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$userparams.personality eq 1">selected='selected'</if>>浪漫迷人</option>
+						<option value="2"<if condition="$userparams.personality eq 2">selected='selected'</if>>成熟稳重</option>
+						<option value="3"<if condition="$userparams.personality eq 3">selected='selected'</if>>风趣幽默</option>
+						<option value="4"<if condition="$userparams.personality eq 4">selected='selected'</if>>乐天达观</option>
+						<option value="5"<if condition="$userparams.personality eq 5">selected='selected'</if>>活泼可爱</option>
+						<option value="6"<if condition="$userparams.personality eq 6">selected='selected'</if>>忠厚老实</option>
+						<option value="7"<if condition="$userparams.personality eq 7">selected='selected'</if>>淳朴害羞</option>
+						<option value="8"<if condition="$userparams.personality eq 8">selected='selected'</if>>温柔体贴</option>
+						<option value="9"<if condition="$userparams.personality eq 9">selected='selected'</if>>多愁善感</option>
+						<option value="10"<if condition="$userparams.personality eq 10">selected='selected'</if>>新潮时尚</option>
+						<option value="11"<if condition="$userparams.personality eq 11">selected='selected'</if>>热辣动感</option>
+						<option value="12"<if condition="$userparams.personality eq 12">selected='selected'</if>>豪放不羁</option>
+					</select> 
+					<span id="dpersonality"></span>
+				</td>
+				<td class="lblock">血 型 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="bloodtype" id="blood">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$userparams.bloodtype eq 1">selected='selected'</if>>A型</option>
+						<option value="2"<if condition="$userparams.bloodtype eq 2">selected='selected'</if>>B型</option>
+						<option value="3"<if condition="$userparams.bloodtype eq 3">selected='selected'</if>>O型</option>
+						<option value="4"<if condition="$userparams.bloodtype eq 4">selected='selected'</if>>AB型</option>
+						<option value="5"<if condition="$userparams.bloodtype eq 5">selected='selected'</if>>其他</option>
+					</select> <span id="dblood" class="f_red"></span>
+				</td>
+			</tr>
+			<!-- 行业、月薪 -->
+			<tr>
+				<td class="lblock">职 业 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="job" id="jobs">					
+						<volist name="zhiye" id="zhiye">
+						<option value="{$key}"<if condition="$userparams.job eq $key">selected='selected'</if>>{$zhiye}</option>
+						</volist>
+					</select> 
+					<span id="djobs"></span>
+				</td>
+				<td class="lblock">月薪收入 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="salary" id="salary">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$userparams.salary eq 1">selected='selected'</if>>2000元以下</option>
+						<option value="2"<if condition="$userparams.salary eq 2">selected='selected'</if>>2000~5000元</option>
+						<option value="3"<if condition="$userparams.salary eq 3">selected='selected'</if>>5000~10000元</option>
+						<option value="4"<if condition="$userparams.salary eq 4">selected='selected'</if>>10000~20000元</option>
+						<option value="5"<if condition="$userparams.salary eq 5">selected='selected'</if>>20000元以上</option>
+					</select> <span id="dsalary" class="f_red"></span>
+				</td>
+			</tr>
+			<!-- 住房、购车 -->
+			<tr>
+				<td class="lblock">住房情况 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="house" id="housing">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$userparams.house eq 1">selected='selected'</if>>暂未购房</option>
+						<option value="2"<if condition="$userparams.house eq 2">selected='selected'</if>>需要时置房</option>
+						<option value="3"<if condition="$userparams.house eq 3">selected='selected'</if>>已购住房</option>
+						<option value="4"<if condition="$userparams.house eq 4">selected='selected'</if>>与人合租</option>
+						<option value="5"<if condition="$userparams.house eq 5">selected='selected'</if>>独自租房</option>
+						<option value="6"<if condition="$userparams.house eq 6">selected='selected'</if>>与父母同住</option>
+						<option value="7"<if condition="$userparams.house eq 7">selected='selected'</if>>住亲朋家</option>
+						<option value="8"<if condition="$userparams.house eq 8">selected='selected'</if>>住单位房</option>
+					</select> <span id="dhousing"></span>
+				</td>
+				<td class="lblock">购车情况 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="car" id="caring">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$userparams.car eq 1">selected='selected'</if>>暂未购车</option>
+						<option value="2"<if condition="$userparams.car eq 2">selected='selected'</if>>已经购车</option>
+					</select> <span id="dcaring"></span>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" style="padding-top:10px;padding-bottom:10px;">
+					<div class="item_title" style="width:100%"><p>外貌体型</p><span class="shadow"></span></div>
+				</td>
+			</tr>
+			<!-- 体重、外貌自评 -->
+			<tr>
+				<td class="lblock">体 重 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="weight" id="weight">
+						<option selected="selected" value="0">=请选择=</option>
+						<for start="30" end="151">
+							<option value="{$i}"<if condition="$userparams.weight eq $i">selected='selected'</if>>{$i}</option>
+						</for>
+					</select> 公斤
+				</td>
+				<td class="lblock">外貌自评 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="zjappearance" id="profile">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$userparams.zjappearance eq 1">selected='selected'</if>>文质彬彬型</option>
+						<option value="2"<if condition="$userparams.zjappearance eq 2">selected='selected'</if>>西部牛仔型</option>
+						<option value="3"<if condition="$userparams.zjappearance eq 3">selected='selected'</if>>阳光帅气型</option>
+						<option value="4"<if condition="$userparams.zjappearance eq 4">selected='selected'</if>>风度翩翩型</option>
+						<option value="5"<if condition="$userparams.zjappearance eq 5">selected='selected'</if>>成熟魅力型</option>
+						<option value="6"<if condition="$userparams.zjappearance eq 6">selected='selected'</if>>健壮高大型</option>
+						<option value="7"<if condition="$userparams.zjappearance eq 7">selected='selected'</if>>朴实无华型</option>
+						<option value="8"<if condition="$userparams.zjappearance eq 8">selected='selected'</if>>内敛酷男型</option>
+						<option value="9"<if condition="$userparams.zjappearance eq 9">selected='selected'</if>>秀外慧中</option>
+						<option value="10"<if condition="$userparams.zjappearance eq 10">selected='selected'</if>>眉清目秀</option>
+						<option value="11"<if condition="$userparams.zjappearance eq 11">selected='selected'</if>>明眸善睐</option>
+						<option value="12"<if condition="$userparams.zjappearance eq 12">selected='selected'</if>>娇小依人</option>
+						<option value="13"<if condition="$userparams.zjappearance eq 13">selected='selected'</if>>青春活泼</option>
+						<option value="14"<if condition="$userparams.zjappearance eq 14">selected='selected'</if>>成熟魅力</option>
+						<option value="15"<if condition="$userparams.zjappearance eq 15">selected='selected'</if>>雍容华贵</option>
+						<option value="16"<if condition="$userparams.zjappearance eq 16">selected='selected'</if>>淡雅如菊</option>
+					</select> 
+				</td>
+			</tr>	  
+			<!-- 特征、发型 -->
+			<tr>
+				<td class="lblock">魅力部位 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="attractive" id="charmparts">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$userparams.attractive eq 1">selected='selected'</if>>笑容</option>
+						<option value="2"<if condition="$userparams.attractive eq 2">selected='selected'</if>>眉毛</option>
+						<option value="3"<if condition="$userparams.attractive eq 3">selected='selected'</if>>眼睛</option>
+						<option value="4"<if condition="$userparams.attractive eq 4">selected='selected'</if>>头发</option>
+						<option value="5"<if condition="$userparams.attractive eq 5">selected='selected'</if>>鼻梁</option>
+						<option value="6"<if condition="$userparams.attractive eq 6">selected='selected'</if>>嘴唇</option>
+						<option value="7"<if condition="$userparams.attractive eq 7">selected='selected'</if>>牙齿</option>
+						<option value="8"<if condition="$userparams.attractive eq 8">selected='selected'</if>>颈部</option>
+						<option value="9"<if condition="$userparams.attractive eq 9">selected='selected'</if>>耳朵</option>
+						<option value="10"<if condition="$userparams.attractive eq 10">selected='selected'</if>>手</option>
+						<option value="11"<if condition="$userparams.attractive eq 11">selected='selected'</if>>胳膊</option>
+						<option value="12"<if condition="$userparams.attractive eq 12">selected='selected'</if>>胸部</option>
+						<option value="13"<if condition="$userparams.attractive eq 13">selected='selected'</if>>腰部</option>
+						<option value="14"<if condition="$userparams.attractive eq 14">selected='selected'</if>>臀部</option>
+						<option value="15"<if condition="$userparams.attractive eq 15">selected='selected'</if>>腿</option>
+						<option value="16"<if condition="$userparams.attractive eq 16">selected='selected'</if>>脚</option>
+						<option value="17"<if condition="$userparams.attractive eq 17">selected='selected'</if>>没有太特别的</option>
+					</select> 
+				</td>
+				<td class="lblock">发 型 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="haircut" id="hairstyle">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$userparams.haircut eq 1">selected='selected'</if>>顺直长发</option>
+						<option value="2"<if condition="$userparams.haircut eq 2">selected='selected'</if>>卷曲长发</option>
+						<option value="3"<if condition="$userparams.haircut eq 3">selected='selected'</if>>中等长度</option>
+						<option value="4"<if condition="$userparams.haircut eq 4">selected='selected'</if>>短发</option>
+						<option value="5"<if condition="$userparams.haircut eq 5">selected='selected'</if>>很短</option>
+						<option value="6"<if condition="$userparams.haircut eq 6">selected='selected'</if>>光头</option>
+						<option value="7"<if condition="$userparams.haircut eq 7">selected='selected'</if>>其他</option>
+					</select> 
+				</td>
+			</tr>
+			<!-- 发色、面型 -->
+			<tr>
+				<td class="lblock">发 色 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="haircolor" id="haircolor">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$userparams.haircolor eq 1">selected='selected'</if>>黑色</option>
+						<option value="2"<if condition="$userparams.haircolor eq 2">selected='selected'</if>>金色</option>
+						<option value="3"<if condition="$userparams.haircolor eq 3">selected='selected'</if>>褐色</option>
+						<option value="4"<if condition="$userparams.haircolor eq 4">selected='selected'</if>>栗色</option>
+						<option value="5"<if condition="$userparams.haircolor eq 5">selected='selected'</if>>灰色</option>
+						<option value="6"<if condition="$userparams.haircolor eq 6">selected='selected'</if>>红色</option>
+						<option value="7"<if condition="$userparams.haircolor eq 7">selected='selected'</if>>白色</option>
+						<option value="8"<if condition="$userparams.haircolor eq 8">selected='selected'</if>>挑染</option>
+						<option value="9"<if condition="$userparams.haircolor eq 9">selected='selected'</if>>光头</option>
+						<option value="10"<if condition="$userparams.haircolor eq 10">selected='selected'</if>>其它</option>
+					</select>
+				</td>
+				<td class="lblock">脸 型 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="face" id="facestyle">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$userparams.face eq 1">selected='selected'</if>>圆脸型</option>
+						<option value="2"<if condition="$userparams.face eq 2">selected='selected'</if>>方脸型</option>
+						<option value="3"<if condition="$userparams.face eq 3">selected='selected'</if>>长脸型</option>
+						<option value="4"<if condition="$userparams.face eq 4">selected='selected'</if>>瓜子脸型</option>
+						<option value="5"<if condition="$userparams.face eq 5">selected='selected'</if>>鸭蛋脸型</option>
+						<option value="6"<if condition="$userparams.face eq 6">selected='selected'</if>>国字脸型</option>
+						<option value="7"<if condition="$userparams.face eq 7">selected='selected'</if>>三角脸型</option>
+						<option value="8"<if condition="$userparams.face eq 8">selected='selected'</if>>菱形脸型</option>
+					</select>
+				</td>
+			</tr>
+			<!-- 体型 -->
+			<tr>
+				<td class="lblock">体 型 <span class="f_red"></span></td>
+				<td class="rblock" colspan="3">
+					<select name="size" id="bodystyle">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$userparams.size eq 1">selected='selected'</if>>瘦</option>
+						<option value="2"<if condition="$userparams.size eq 2">selected='selected'</if>>较瘦</option>
+						<option value="3"<if condition="$userparams.size eq 3">selected='selected'</if>>匀称</option>
+						<option value="4"<if condition="$userparams.size eq 4">selected='selected'</if>>苗条</option>
+						<option value="5"<if condition="$userparams.size eq 5">selected='selected'</if>>高挑</option>
+						<option value="6"<if condition="$userparams.size eq 6">selected='selected'</if>>丰满</option>
+						<option value="7"<if condition="$userparams.size eq 7">selected='selected'</if>>健壮</option>
+						<option value="8"<if condition="$userparams.size eq 8">selected='selected'</if>>魁梧</option>
+						<option value="9"<if condition="$userparams.size eq 9">selected='selected'</if>>胖</option>
+						<option value="10"<if condition="$userparams.size eq 10">selected='selected'</if>>较胖</option>
+					</select> 
+				</td>
+			</tr>
+			<!-- 提交按钮  name="btn_save"-->
+			<tr>
+				<td class="lblock" height="50px"></td>
+				<td class="rblock" colspan="3">				
+					<input value="提交保存" class="button-red" type="submit">
+				</td>
+			</tr>
+		</tbody>
+		</table>
+		</form>
+		</div>
+		<div class="clear"></div>
+	</div>
+</block>

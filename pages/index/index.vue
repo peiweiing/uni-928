@@ -99,7 +99,7 @@
 		color: #FFFFFF;
 		display: flex;
 		justify-content: space-between;
-		background: linear-gradient(to right, #D096C3 0%,#ff9569 80%, #e92758 100%);
+		background: linear-gradient(to right, #D096C3 0%,#ff9569 50%, #D096C3 100%);
 	}
 	.uni-cs{
 		font-size: 30upx;

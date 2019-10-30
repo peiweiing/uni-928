@@ -1,0 +1,751 @@
+[ 2014-09-17T11:17:01+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000973s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001687s ]
+SQL: DESCRIBE yyw_district [ RunTime:0.004854s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.000609s ]
+
+[ 2014-09-17T11:17:10+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000742s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001194s ]
+SQL: DESCRIBE yyw_district [ RunTime:0.009233s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.000797s ]
+
+[ 2014-09-17T11:17:13+08:00 ] 127.0.0.1 /yyw/index.php/Home/Login/checkUser
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000652s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001157s ]
+NOTIC: [8] Undefined index: user F:\wamp\www\yyw\Yyw\Home\Controller\LoginController.class.php 第 205 行.
+
+[ 2014-09-17T11:23:53+08:00 ] 127.0.0.1 /yyw/index.php/Admin/User/index?_=1410924232757
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001188s ]
+SQL: DESCRIBE yyw_user [ RunTime:0.005795s ]
+SQL: DESCRIBE yyw_user [ RunTime:0.007985s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user` LIMIT 1   [ RunTime:0.001023s ]
+SQL: SELECT * FROM `yyw_user` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000695s ]
+SQL: DESCRIBE yyw_user_params [ RunTime:0.009249s ]
+SQL: SELECT `lovestatus`,`gender` FROM `yyw_user_params` WHERE ( userid=137 ) LIMIT 1   [ RunTime:0.000526s ]
+SQL: SELECT `lovestatus`,`gender` FROM `yyw_user_params` WHERE ( userid=136 ) LIMIT 1   [ RunTime:0.000354s ]
+SQL: SELECT `lovestatus`,`gender` FROM `yyw_user_params` WHERE ( userid=135 ) LIMIT 1   [ RunTime:0.000561s ]
+SQL: SELECT `lovestatus`,`gender` FROM `yyw_user_params` WHERE ( userid=134 ) LIMIT 1   [ RunTime:0.000354s ]
+SQL: SELECT `lovestatus`,`gender` FROM `yyw_user_params` WHERE ( userid=133 ) LIMIT 1   [ RunTime:0.000266s ]
+SQL: SELECT `lovestatus`,`gender` FROM `yyw_user_params` WHERE ( userid=132 ) LIMIT 1   [ RunTime:0.000272s ]
+SQL: SELECT `lovestatus`,`gender` FROM `yyw_user_params` WHERE ( userid=131 ) LIMIT 1   [ RunTime:0.000294s ]
+SQL: SELECT `lovestatus`,`gender` FROM `yyw_user_params` WHERE ( userid=130 ) LIMIT 1   [ RunTime:0.000262s ]
+SQL: SELECT `lovestatus`,`gender` FROM `yyw_user_params` WHERE ( userid=129 ) LIMIT 1   [ RunTime:0.000264s ]
+SQL: SELECT `lovestatus`,`gender` FROM `yyw_user_params` WHERE ( userid=128 ) LIMIT 1   [ RunTime:0.000261s ]
+NOTIC: [8] Undefined variable: search F:\wamp\www\yyw\Yyw\Admin\Controller\CommonController.class.php 第 240 行.
+NOTIC: [8] Undefined index: values F:\wamp\www\yyw\Yyw\Admin\Controller\CommonController.class.php 第 241 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000196s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000429s ]
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1ca5f9931b4c0a93d8aeb4ddfc0114f7.php 第 5 行.
+NOTIC: [8] Undefined index: _sort F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1ca5f9931b4c0a93d8aeb4ddfc0114f7.php 第 6 行.
+NOTIC: [8] Undefined index: username F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1ca5f9931b4c0a93d8aeb4ddfc0114f7.php 第 15 行.
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1ca5f9931b4c0a93d8aeb4ddfc0114f7.php 第 39 行.
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1ca5f9931b4c0a93d8aeb4ddfc0114f7.php 第 40 行.
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1ca5f9931b4c0a93d8aeb4ddfc0114f7.php 第 46 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1ca5f9931b4c0a93d8aeb4ddfc0114f7.php 第 67 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.042222s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042402s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000494s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000587s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000729s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000825s ]
+
+[ 2014-09-17T11:23:54+08:00 ] 127.0.0.1 /yyw/index.php/Admin/User/add?_=1410924234792
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000848s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001538s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000217s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000369s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054863s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055312s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001203s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001598s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002231s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002630s ]
+
+[ 2014-09-17T11:23:59+08:00 ] 127.0.0.1 /yyw/index.php/Admin/UserParams/index?_=1410924239157
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+NOTIC: [2048] Declaration of Admin\Controller\UserParamsController::show() should be compatible with that of Think\Controller::show() F:\wamp\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 5 行.
+SQL: DESCRIBE yyw_user_params [ RunTime:0.009114s ]
+SQL: DESCRIBE yyw_user_params [ RunTime:0.011454s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_params` LIMIT 1   [ RunTime:0.000475s ]
+SQL: SELECT * FROM `yyw_user_params` ORDER BY id desc LIMIT 0,10   [ RunTime:0.002603s ]
+SQL: DESCRIBE yyw_user [ RunTime:0.006413s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=137 ) LIMIT 1   [ RunTime:0.000382s ]
+SQL: DESCRIBE yyw_district [ RunTime:0.006559s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000856s ]
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 21 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 23 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 24 行.
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=136 ) LIMIT 1   [ RunTime:0.000621s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.000610s ]
+NOTIC: [8] Undefined index: 0 F:\wamp\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 23 行.
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=135 ) LIMIT 1   [ RunTime:0.000502s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=17 ) LIMIT 1   [ RunTime:0.000392s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=134 ) LIMIT 1   [ RunTime:0.000303s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.000273s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=133 ) LIMIT 1   [ RunTime:0.000322s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.000241s ]
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 21 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 23 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 24 行.
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=132 ) LIMIT 1   [ RunTime:0.000254s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000297s ]
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 21 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 23 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 24 行.
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=130 ) LIMIT 1   [ RunTime:0.000277s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000237s ]
+NOTIC: [8] Undefined index: 0 F:\wamp\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 23 行.
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=129 ) LIMIT 1   [ RunTime:0.000280s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000284s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=128 ) LIMIT 1   [ RunTime:0.000354s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000935s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=127 ) LIMIT 1   [ RunTime:0.000505s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000420s ]
+NOTIC: [8] Undefined index: 0 F:\wamp\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 23 行.
+NOTIC: [8] Undefined variable: search F:\wamp\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 133 行.
+NOTIC: [8] Undefined index: values F:\wamp\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 134 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000172s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000392s ]
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\a111bb6ae10ad1fa6ab40326651c3be9.php 第 4 行.
+NOTIC: [8] Undefined index: _sort F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\a111bb6ae10ad1fa6ab40326651c3be9.php 第 5 行.
+NOTIC: [8] Undefined index: gender F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\a111bb6ae10ad1fa6ab40326651c3be9.php 第 14 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035250s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000606s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000761s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000806s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000957s ]
+
+[ 2014-09-17T11:24:00+08:00 ] 127.0.0.1 /yyw/index.php/Admin/Profile/index?_=1410924240789
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001147s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002014s ]
+SQL: DESCRIBE yyw_profile [ RunTime:0.009728s ]
+SQL: DESCRIBE yyw_profile [ RunTime:0.006332s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_profile` LIMIT 1   [ RunTime:0.000383s ]
+SQL: SELECT * FROM `yyw_profile` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000837s ]
+SQL: DESCRIBE yyw_user [ RunTime:0.009997s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=135 ) LIMIT 1   [ RunTime:0.000767s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=73 ) LIMIT 1   [ RunTime:0.000753s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=72 ) LIMIT 1   [ RunTime:0.000929s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=71 ) LIMIT 1   [ RunTime:0.000770s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id= ) LIMIT 1   [ RunTime:0.000330s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `username` FROM `yyw_user` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined offset: 4 F:\wamp\www\yyw\Yyw\Admin\Controller\ProfileController.class.php 第 25 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\ProfileController.class.php 第 25 行.
+NOTIC: [8] Undefined variable: search F:\wamp\www\yyw\Yyw\Admin\Controller\ProfileController.class.php 第 105 行.
+NOTIC: [8] Undefined index: values F:\wamp\www\yyw\Yyw\Admin\Controller\ProfileController.class.php 第 106 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000179s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000403s ]
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\12b0efe3e3a48931643777a3638b10bc.php 第 4 行.
+NOTIC: [8] Undefined index: _sort F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\12b0efe3e3a48931643777a3638b10bc.php 第 5 行.
+NOTIC: [8] Undefined index: title F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\12b0efe3e3a48931643777a3638b10bc.php 第 14 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032561s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032817s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000381s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000469s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000574s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000675s ]
+
+[ 2014-09-17T11:24:03+08:00 ] 127.0.0.1 /yyw/index.php/Admin/Choose/index?_=1410924243028
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000965s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001654s ]
+SQL: DESCRIBE yyw_choose [ RunTime:0.005375s ]
+SQL: DESCRIBE yyw_choose [ RunTime:0.008696s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_choose` LIMIT 1   [ RunTime:0.000529s ]
+SQL: SELECT * FROM `yyw_choose` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000956s ]
+SQL: DESCRIBE yyw_user [ RunTime:0.007056s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=135 ) LIMIT 1   [ RunTime:0.000488s ]
+SQL: DESCRIBE yyw_district [ RunTime:0.005451s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=29 ) LIMIT 1   [ RunTime:0.000314s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=463 ) LIMIT 1   [ RunTime:0.000354s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=129 ) LIMIT 1   [ RunTime:0.000322s ]
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 20 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 21 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 22 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 23 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 24 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 25 行.
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000440s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=38 ) LIMIT 1   [ RunTime:0.000414s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=128 ) LIMIT 1   [ RunTime:0.000694s ]
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 13 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 20 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 21 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 22 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 23 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 24 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 25 行.
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id= ) LIMIT 1   [ RunTime:0.001031s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `name` FROM `yyw_district` WHERE ( id= ) LIMIT 1  
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id= ) LIMIT 1   [ RunTime:0.000369s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `name` FROM `yyw_district` WHERE ( id= ) LIMIT 1  
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=71 ) LIMIT 1   [ RunTime:0.000422s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=5 ) LIMIT 1   [ RunTime:0.000379s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=97 ) LIMIT 1   [ RunTime:0.000315s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=72 ) LIMIT 1   [ RunTime:0.000216s ]
+NOTIC: [8] Undefined offset: 1 F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 21 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 21 行.
+NOTIC: [8] Undefined offset: 1 F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 23 行.
+NOTIC: [8] Undefined index:  F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 23 行.
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.000286s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=68 ) LIMIT 1   [ RunTime:0.000198s ]
+NOTIC: [8] Undefined variable: search F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 106 行.
+NOTIC: [8] Undefined index: values F:\wamp\www\yyw\Yyw\Admin\Controller\ChooseController.class.php 第 107 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000169s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000373s ]
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\e0574aefdf78185b3f88ea190a71e3db.php 第 4 行.
+NOTIC: [8] Undefined index: _sort F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\e0574aefdf78185b3f88ea190a71e3db.php 第 5 行.
+NOTIC: [8] Undefined index: title F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\e0574aefdf78185b3f88ea190a71e3db.php 第 14 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.029660s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.029848s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000512s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000607s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000713s ]
+
+[ 2014-09-17T11:24:08+08:00 ] 127.0.0.1 /yyw/index.php/Admin/GiftRecord/index?_=1410924248252
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000838s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001636s ]
+SQL: DESCRIBE yyw_gift_record [ RunTime:0.005614s ]
+SQL: DESCRIBE yyw_gift_record [ RunTime:0.004836s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_gift_record` LIMIT 1   [ RunTime:0.000302s ]
+SQL: SELECT * FROM `yyw_gift_record` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000464s ]
+NOTIC: [8] Undefined variable: search F:\wamp\www\yyw\Yyw\Admin\Controller\GiftRecordController.class.php 第 87 行.
+NOTIC: [8] Undefined index: values F:\wamp\www\yyw\Yyw\Admin\Controller\GiftRecordController.class.php 第 88 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000147s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000312s ]
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\a0ba760484da3ffaeafefbc1f9a9d0a3.php 第 4 行.
+NOTIC: [8] Undefined index: _sort F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\a0ba760484da3ffaeafefbc1f9a9d0a3.php 第 5 行.
+NOTIC: [8] Undefined index: title F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\a0ba760484da3ffaeafefbc1f9a9d0a3.php 第 14 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043738s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.043846s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000288s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000380s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000572s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000666s ]
+
+[ 2014-09-17T11:24:10+08:00 ] 127.0.0.1 /yyw/index.php/Admin/SystemMessage/index?_=1410924250437
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002191s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003210s ]
+SQL: DESCRIBE yyw_system_message [ RunTime:0.008541s ]
+SQL: DESCRIBE yyw_system_message [ RunTime:0.007078s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_system_message` LIMIT 1   [ RunTime:0.001549s ]
+SQL: SELECT * FROM `yyw_system_message` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000916s ]
+SQL: DESCRIBE yyw_user [ RunTime:0.006575s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( `id` = 130 ) LIMIT 1   [ RunTime:0.000820s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( `id` = 129 ) LIMIT 1   [ RunTime:0.000375s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( `id` = 128 ) LIMIT 1   [ RunTime:0.000429s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( `id` = 127 ) LIMIT 1   [ RunTime:0.000442s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( `id` = 125 ) LIMIT 1   [ RunTime:0.000353s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( `id` = 130 ) LIMIT 1   [ RunTime:0.000386s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( `id` = 129 ) LIMIT 1   [ RunTime:0.000475s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( `id` = 128 ) LIMIT 1   [ RunTime:0.000255s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( `id` = 127 ) LIMIT 1   [ RunTime:0.000260s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( `id` = 125 ) LIMIT 1   [ RunTime:0.000595s ]
+NOTIC: [8] Undefined variable: search F:\wamp\www\yyw\Yyw\Admin\Controller\CommonController.class.php 第 240 行.
+NOTIC: [8] Undefined index: values F:\wamp\www\yyw\Yyw\Admin\Controller\CommonController.class.php 第 241 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000100s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000222s ]
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\2d98356661f4025e9da7065c5fbcdd54.php 第 4 行.
+NOTIC: [8] Undefined index: _sort F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\2d98356661f4025e9da7065c5fbcdd54.php 第 5 行.
+NOTIC: [8] Undefined index: keyword F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\2d98356661f4025e9da7065c5fbcdd54.php 第 14 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.056543s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.056667s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000645s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000733s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000818s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000914s ]
+
+[ 2014-09-17T11:24:11+08:00 ] 127.0.0.1 /yyw/index.php/Admin/SystemMessage/add?_=1410924251403
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001054s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001716s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000125s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000263s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011613s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011759s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000640s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000730s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000955s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001062s ]
+
+[ 2014-09-17T11:24:15+08:00 ] 127.0.0.1 /yyw/index.php/Admin/Notice/index?_=1410924255479
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000891s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001449s ]
+SQL: DESCRIBE yyw_notice [ RunTime:0.009394s ]
+SQL: DESCRIBE yyw_notice [ RunTime:0.008059s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_notice` LIMIT 1   [ RunTime:0.000449s ]
+SQL: SELECT * FROM `yyw_notice` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000539s ]
+SQL: DESCRIBE yyw_notice_category [ RunTime:0.007931s ]
+SQL: SELECT `typename` FROM `yyw_notice_category` WHERE ( typeid=1 ) LIMIT 1   [ RunTime:0.000361s ]
+SQL: SELECT `typename` FROM `yyw_notice_category` WHERE ( typeid=1 ) LIMIT 1   [ RunTime:0.000433s ]
+SQL: SELECT `typename` FROM `yyw_notice_category` WHERE ( typeid=1 ) LIMIT 1   [ RunTime:0.000304s ]
+SQL: SELECT `typename` FROM `yyw_notice_category` WHERE ( typeid=3 ) LIMIT 1   [ RunTime:0.000435s ]
+SQL: SELECT `typename` FROM `yyw_notice_category` WHERE ( typeid=3 ) LIMIT 1   [ RunTime:0.000343s ]
+SQL: SELECT `typename` FROM `yyw_notice_category` WHERE ( typeid=2 ) LIMIT 1   [ RunTime:0.000256s ]
+SQL: SELECT `typename` FROM `yyw_notice_category` WHERE ( typeid=1 ) LIMIT 1   [ RunTime:0.000235s ]
+SQL: SELECT `typename` FROM `yyw_notice_category` WHERE ( typeid=2 ) LIMIT 1   [ RunTime:0.000215s ]
+SQL: SELECT `typename` FROM `yyw_notice_category` WHERE ( typeid=2 ) LIMIT 1   [ RunTime:0.000202s ]
+SQL: SELECT `typename` FROM `yyw_notice_category` WHERE ( typeid=1 ) LIMIT 1   [ RunTime:0.000266s ]
+NOTIC: [8] Undefined variable: search F:\wamp\www\yyw\Yyw\Admin\Controller\CommonController.class.php 第 240 行.
+NOTIC: [8] Undefined index: values F:\wamp\www\yyw\Yyw\Admin\Controller\CommonController.class.php 第 241 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000171s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000411s ]
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\79517be42a63701872f5a4258427d337.php 第 4 行.
+NOTIC: [8] Undefined index: _sort F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\79517be42a63701872f5a4258427d337.php 第 5 行.
+NOTIC: [8] Undefined index: keyword F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\79517be42a63701872f5a4258427d337.php 第 14 行.
+NOTIC: [8] Undefined index: classid F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\79517be42a63701872f5a4258427d337.php 第 15 行.
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\79517be42a63701872f5a4258427d337.php 第 40 行.
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\79517be42a63701872f5a4258427d337.php 第 45 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022151s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022329s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001243s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001440s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001572s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001761s ]
+
+[ 2014-09-17T11:24:16+08:00 ] 127.0.0.1 /yyw/index.php/Admin/Notice/add?_=1410924256428
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001710s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002875s ]
+SQL: DESCRIBE yyw_notice_category [ RunTime:0.005924s ]
+SQL: SELECT * FROM `yyw_notice_category`  [ RunTime:0.001117s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000098s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000243s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046943s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047181s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002247s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002441s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001777s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001992s ]
+
+[ 2014-09-17T11:24:19+08:00 ] 127.0.0.1 /yyw/index.php/Admin/NoticeCategory/index?_=1410924258878
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001711s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002363s ]
+SQL: DESCRIBE yyw_notice_category [ RunTime:0.006868s ]
+SQL: DESCRIBE yyw_notice_category [ RunTime:0.007859s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_notice_category` LIMIT 1   [ RunTime:0.000376s ]
+SQL: SELECT * FROM `yyw_notice_category` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000381s ]
+NOTIC: [8] Undefined variable: search F:\wamp\www\yyw\Yyw\Admin\Controller\CommonController.class.php 第 240 行.
+NOTIC: [8] Undefined index: values F:\wamp\www\yyw\Yyw\Admin\Controller\CommonController.class.php 第 241 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000161s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000354s ]
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\faf619e3aa40b89a9c5aa544ee819198.php 第 4 行.
+NOTIC: [8] Undefined index: _sort F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\faf619e3aa40b89a9c5aa544ee819198.php 第 5 行.
+NOTIC: [8] Undefined index: typename F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\faf619e3aa40b89a9c5aa544ee819198.php 第 14 行.
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\faf619e3aa40b89a9c5aa544ee819198.php 第 40 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.089709s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.089835s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000836s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000961s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001404s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001627s ]
+
+[ 2014-09-17T11:24:22+08:00 ] 127.0.0.1 /yyw/index.php/Admin/Advertising/index?_=1410924261956
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000984s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001587s ]
+SQL: DESCRIBE yyw_advertising [ RunTime:0.008937s ]
+SQL: DESCRIBE yyw_advertising [ RunTime:0.005966s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_advertising` LIMIT 1   [ RunTime:0.000728s ]
+SQL: SELECT `id`,`title`,`uploadfiles`,`addtime`,`link` FROM `yyw_advertising` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000628s ]
+NOTIC: [8] Undefined variable: search F:\wamp\www\yyw\Yyw\Admin\Controller\AdvertisingController.class.php 第 120 行.
+NOTIC: [8] Undefined index: values F:\wamp\www\yyw\Yyw\Admin\Controller\AdvertisingController.class.php 第 121 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000178s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000403s ]
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1810920e015ef5f02f19a5d8a48de159.php 第 4 行.
+NOTIC: [8] Undefined index: _sort F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1810920e015ef5f02f19a5d8a48de159.php 第 5 行.
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1810920e015ef5f02f19a5d8a48de159.php 第 28 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.044104s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044237s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000651s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000755s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000873s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000989s ]
+
+[ 2014-09-17T11:24:28+08:00 ] 127.0.0.1 /yyw/index.php/Admin/Hibox/index?_=1410924268344
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000965s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001655s ]
+SQL: DESCRIBE yyw_hibox [ RunTime:0.006567s ]
+SQL: DESCRIBE yyw_hibox [ RunTime:0.008932s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` LIMIT 1   [ RunTime:0.000477s ]
+SQL: SELECT * FROM `yyw_hibox` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000459s ]
+SQL: DESCRIBE yyw_greet [ RunTime:0.007933s ]
+SQL: SELECT `greeting` FROM `yyw_greet` WHERE ( id=40 ) LIMIT 1   [ RunTime:0.000658s ]
+SQL: DESCRIBE yyw_user [ RunTime:0.006772s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=129 ) LIMIT 1   [ RunTime:0.000409s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=126 ) LIMIT 1   [ RunTime:0.000235s ]
+SQL: SELECT `greeting` FROM `yyw_greet` WHERE ( id=49 ) LIMIT 1   [ RunTime:0.000662s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=128 ) LIMIT 1   [ RunTime:0.000535s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=130 ) LIMIT 1   [ RunTime:0.000384s ]
+SQL: SELECT `greeting` FROM `yyw_greet` WHERE ( id=35 ) LIMIT 1   [ RunTime:0.000474s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=130 ) LIMIT 1   [ RunTime:0.000638s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=128 ) LIMIT 1   [ RunTime:0.000485s ]
+SQL: SELECT `greeting` FROM `yyw_greet` WHERE ( id=22 ) LIMIT 1   [ RunTime:0.000747s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=127 ) LIMIT 1   [ RunTime:0.000425s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=129 ) LIMIT 1   [ RunTime:0.000291s ]
+SQL: SELECT `greeting` FROM `yyw_greet` WHERE ( id=28 ) LIMIT 1   [ RunTime:0.000331s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=128 ) LIMIT 1   [ RunTime:0.000311s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=129 ) LIMIT 1   [ RunTime:0.000347s ]
+SQL: SELECT `greeting` FROM `yyw_greet` WHERE ( id=17 ) LIMIT 1   [ RunTime:0.000314s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=128 ) LIMIT 1   [ RunTime:0.000258s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=92 ) LIMIT 1   [ RunTime:0.000226s ]
+SQL: SELECT `greeting` FROM `yyw_greet` WHERE ( id=52 ) LIMIT 1   [ RunTime:0.000630s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=129 ) LIMIT 1   [ RunTime:0.000476s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=128 ) LIMIT 1   [ RunTime:0.000404s ]
+SQL: SELECT `greeting` FROM `yyw_greet` WHERE ( id=22 ) LIMIT 1   [ RunTime:0.000337s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=128 ) LIMIT 1   [ RunTime:0.000725s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=127 ) LIMIT 1   [ RunTime:0.000707s ]
+SQL: SELECT `greeting` FROM `yyw_greet` WHERE ( id=49 ) LIMIT 1   [ RunTime:0.000351s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=128 ) LIMIT 1   [ RunTime:0.000255s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=113 ) LIMIT 1   [ RunTime:0.000383s ]
+SQL: SELECT `greeting` FROM `yyw_greet` WHERE ( id=114 ) LIMIT 1   [ RunTime:0.000408s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=126 ) LIMIT 1   [ RunTime:0.000330s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=90 ) LIMIT 1   [ RunTime:0.000301s ]
+NOTIC: [8] Undefined variable: search F:\wamp\www\yyw\Yyw\Admin\Controller\CommonController.class.php 第 240 行.
+NOTIC: [8] Undefined index: values F:\wamp\www\yyw\Yyw\Admin\Controller\CommonController.class.php 第 241 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000119s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000252s ]
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 4 行.
+NOTIC: [8] Undefined index: _sort F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 5 行.
+NOTIC: [8] Undefined index: status F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 17 行.
+NOTIC: [8] Undefined index: status F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 18 行.
+NOTIC: [8] Undefined index: starttime F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 22 行.
+NOTIC: [8] Undefined index: endtime F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 24 行.
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 53 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\0ac96856185a4564744ef3fb8951b49c.php 第 66 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047172s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047338s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000729s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000883s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001081s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001241s ]
+
+[ 2014-09-17T11:24:30+08:00 ] 127.0.0.1 /yyw/index.php/Admin/Greet/index?_=1410924269997
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000591s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001063s ]
+NOTIC: [8] Undefined index: type F:\wamp\www\yyw\Yyw\Admin\Controller\GreetController.class.php 第 105 行.
+NOTIC: [8] Undefined index: type F:\wamp\www\yyw\Yyw\Admin\Controller\GreetController.class.php 第 107 行.
+NOTIC: [8] Undefined index: type F:\wamp\www\yyw\Yyw\Admin\Controller\GreetController.class.php 第 112 行.
+NOTIC: [8] Undefined index: type F:\wamp\www\yyw\Yyw\Admin\Controller\GreetController.class.php 第 117 行.
+NOTIC: [8] Undefined variable: map F:\wamp\www\yyw\Yyw\Admin\Controller\GreetController.class.php 第 122 行.
+SQL: DESCRIBE yyw_greet [ RunTime:0.009942s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_greet` LIMIT 1   [ RunTime:0.000738s ]
+SQL: SELECT * FROM `yyw_greet` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000596s ]
+NOTIC: [2] Invalid argument supplied for foreach() F:\wamp\www\yyw\Yyw\Admin\Controller\CommonController.class.php 第 217 行.
+NOTIC: [8] Undefined variable: search F:\wamp\www\yyw\Yyw\Admin\Controller\CommonController.class.php 第 240 行.
+NOTIC: [8] Undefined index: values F:\wamp\www\yyw\Yyw\Admin\Controller\CommonController.class.php 第 241 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000112s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000249s ]
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 4 行.
+NOTIC: [8] Undefined index: _sort F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 5 行.
+NOTIC: [8] Undefined index: type F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 17 行.
+NOTIC: [8] Undefined index: type F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 18 行.
+NOTIC: [8] Undefined index: type F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 19 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\1feaf6431f8fa32de22d4bfe8da8dfbd.php 第 54 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.046899s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047060s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000922s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001071s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000994s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001160s ]
+
+[ 2014-09-17T11:24:33+08:00 ] 127.0.0.1 /yyw/index.php/Admin/Diary/index?_=1410924273087
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001234s ]
+SQL: DESCRIBE yyw_diary [ RunTime:0.009295s ]
+SQL: DESCRIBE yyw_diary [ RunTime:0.006455s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_diary` LIMIT 1   [ RunTime:0.000420s ]
+SQL: SELECT `id`,`userid`,`catid`,`title`,`addtime`,`status`,`power`,`views` FROM `yyw_diary` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000422s ]
+SQL: DESCRIBE yyw_user [ RunTime:0.010466s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=135 ) LIMIT 1   [ RunTime:0.000632s ]
+SQL: DESCRIBE yyw_diary_category [ RunTime:0.008732s ]
+SQL: SELECT `catname` FROM `yyw_diary_category` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000448s ]
+SQL: DESCRIBE yyw_diary_comment [ RunTime:0.007013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_diary_comment` WHERE ( diaryid=103 ) LIMIT 1   [ RunTime:0.000590s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=129 ) LIMIT 1   [ RunTime:0.001316s ]
+SQL: SELECT `catname` FROM `yyw_diary_category` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000479s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_diary_comment` WHERE ( diaryid=102 ) LIMIT 1   [ RunTime:0.000487s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=130 ) LIMIT 1   [ RunTime:0.000449s ]
+SQL: SELECT `catname` FROM `yyw_diary_category` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000398s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_diary_comment` WHERE ( diaryid=101 ) LIMIT 1   [ RunTime:0.000537s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=128 ) LIMIT 1   [ RunTime:0.000549s ]
+SQL: SELECT `catname` FROM `yyw_diary_category` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.000614s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_diary_comment` WHERE ( diaryid=100 ) LIMIT 1   [ RunTime:0.001126s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=127 ) LIMIT 1   [ RunTime:0.000388s ]
+SQL: SELECT `catname` FROM `yyw_diary_category` WHERE ( id=5 ) LIMIT 1   [ RunTime:0.000307s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_diary_comment` WHERE ( diaryid=99 ) LIMIT 1   [ RunTime:0.000322s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=129 ) LIMIT 1   [ RunTime:0.000310s ]
+SQL: SELECT `catname` FROM `yyw_diary_category` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.000286s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_diary_comment` WHERE ( diaryid=98 ) LIMIT 1   [ RunTime:0.000339s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=90 ) LIMIT 1   [ RunTime:0.000371s ]
+SQL: SELECT `catname` FROM `yyw_diary_category` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000471s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_diary_comment` WHERE ( diaryid=96 ) LIMIT 1   [ RunTime:0.000392s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=90 ) LIMIT 1   [ RunTime:0.000388s ]
+SQL: SELECT `catname` FROM `yyw_diary_category` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000247s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_diary_comment` WHERE ( diaryid=95 ) LIMIT 1   [ RunTime:0.000314s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=90 ) LIMIT 1   [ RunTime:0.000225s ]
+SQL: SELECT `catname` FROM `yyw_diary_category` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000215s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_diary_comment` WHERE ( diaryid=94 ) LIMIT 1   [ RunTime:0.000250s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=90 ) LIMIT 1   [ RunTime:0.000291s ]
+SQL: SELECT `catname` FROM `yyw_diary_category` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000214s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_diary_comment` WHERE ( diaryid=93 ) LIMIT 1   [ RunTime:0.000222s ]
+NOTIC: [8] Undefined variable: search F:\wamp\www\yyw\Yyw\Admin\Controller\DiaryController.class.php 第 125 行.
+NOTIC: [8] Undefined index: values F:\wamp\www\yyw\Yyw\Admin\Controller\DiaryController.class.php 第 126 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000277s ]
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 4 行.
+NOTIC: [8] Undefined index: _sort F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 5 行.
+NOTIC: [8] Undefined index: title F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 14 行.
+NOTIC: [8] Undefined index: status F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 17 行.
+NOTIC: [8] Undefined index: status F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 18 行.
+NOTIC: [8] Undefined index: catid F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 22 行.
+NOTIC: [8] Undefined index: catid F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 23 行.
+NOTIC: [8] Undefined index: catid F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 24 行.
+NOTIC: [8] Undefined index: catid F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 25 行.
+NOTIC: [8] Undefined index: catid F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 26 行.
+NOTIC: [8] Undefined index: catid F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 27 行.
+NOTIC: [8] Undefined index: catid F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 28 行.
+NOTIC: [8] Undefined index: starttime F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 32 行.
+NOTIC: [8] Undefined index: endtime F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 34 行.
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 62 行.
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 64 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+NOTIC: [8] Undefined variable: vo F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\7fb485cf125da56619d637ec0a52e5d3.php 第 84 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.057403s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.057520s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000653s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000755s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000688s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000785s ]
+
+[ 2014-09-17T11:24:35+08:00 ] 127.0.0.1 /yyw/index.php/Admin/Wbreview/index?_=1410924275698
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000980s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001882s ]
+SQL: DESCRIBE yyw_wbreview [ RunTime:0.010167s ]
+SQL: DESCRIBE yyw_wbreview [ RunTime:0.008013s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_wbreview` LIMIT 1   [ RunTime:0.000621s ]
+SQL: SELECT `id`,`uid`,`text`,`time` FROM `yyw_wbreview` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000596s ]
+SQL: DESCRIBE yyw_user [ RunTime:0.009183s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=127 ) LIMIT 1   [ RunTime:0.000536s ]
+SQL: DESCRIBE yyw_phwb [ RunTime:0.008233s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_phwb` WHERE ( wid=269 ) LIMIT 1   [ RunTime:0.000389s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=130 ) LIMIT 1   [ RunTime:0.000316s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_phwb` WHERE ( wid=268 ) LIMIT 1   [ RunTime:0.000298s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=130 ) LIMIT 1   [ RunTime:0.000286s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_phwb` WHERE ( wid=267 ) LIMIT 1   [ RunTime:0.000434s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=128 ) LIMIT 1   [ RunTime:0.000359s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_phwb` WHERE ( wid=266 ) LIMIT 1   [ RunTime:0.000349s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=129 ) LIMIT 1   [ RunTime:0.000350s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_phwb` WHERE ( wid=265 ) LIMIT 1   [ RunTime:0.000348s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=127 ) LIMIT 1   [ RunTime:0.000256s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_phwb` WHERE ( wid=264 ) LIMIT 1   [ RunTime:0.000260s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=128 ) LIMIT 1   [ RunTime:0.000225s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_phwb` WHERE ( wid=263 ) LIMIT 1   [ RunTime:0.000242s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=129 ) LIMIT 1   [ RunTime:0.000225s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_phwb` WHERE ( wid=262 ) LIMIT 1   [ RunTime:0.000292s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=127 ) LIMIT 1   [ RunTime:0.000289s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_phwb` WHERE ( wid=261 ) LIMIT 1   [ RunTime:0.000388s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=125 ) LIMIT 1   [ RunTime:0.001188s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_phwb` WHERE ( wid=260 ) LIMIT 1   [ RunTime:0.000589s ]
+NOTIC: [8] Undefined variable: search F:\wamp\www\yyw\Yyw\Admin\Controller\WbreviewController.class.php 第 89 行.
+NOTIC: [8] Undefined index: values F:\wamp\www\yyw\Yyw\Admin\Controller\WbreviewController.class.php 第 90 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000160s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000359s ]
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\6e50c0aad8c33afa01b7305ae53a5e13.php 第 4 行.
+NOTIC: [8] Undefined index: _sort F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\6e50c0aad8c33afa01b7305ae53a5e13.php 第 5 行.
+NOTIC: [8] Undefined index: id F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\6e50c0aad8c33afa01b7305ae53a5e13.php 第 14 行.
+NOTIC: [8] Undefined index: _order F:\wamp\www\yyw\Yyw\Runtime\Cache\Admin\6e50c0aad8c33afa01b7305ae53a5e13.php 第 40 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020285s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020491s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000562s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000716s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001525s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001941s ]
+
+[ 2014-09-17T11:26:29+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000599s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001086s ]
+SQL: DESCRIBE yyw_district [ RunTime:0.006428s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.000608s ]
+
+[ 2014-09-17T11:26:42+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002083s ]
+SQL: DESCRIBE yyw_district [ RunTime:0.009334s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.000691s ]
+

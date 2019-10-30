@@ -1,0 +1,49 @@
+
+	<script type="text/javascript" src="__PUBLIC__/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">
+	  $(function(){
+		//发送一个ajax请求加载一级城市信息
+		$.ajax({
+			url:'__URL__/loaddist',
+			type:'get',
+			dataType:'json',
+			success:function(data){
+				$info = "<option>-请选择-</option>";
+				for(var i=0;i<data.length;i++){
+					$info += "<option value='"+data[i].id+"'>"+data[i].name+"</option>";
+				}
+				$("#city").html($info);
+			},
+		});
+		
+		//做级联选择事件操作
+		$("select").live("change",function(){
+			var sel = $(this);//获取事件源节点对象
+			var id = sel.val();//获取下拉框值
+			if(id>0){
+				$.ajax({
+					url:'__URL__/loaddist',
+					type:'get',
+					data:{upid:id},
+					dataType:'json',
+					success:function(data){
+					
+						if(data==null) return;
+						$info = "<select><option>-请选择-</option>";
+						for(var i=0;i<data.length;i++){
+							$info += "<option value='"+data[i].id+"'>"+data[i].name+"</option>";
+						}
+						$info +="</select>";
+						sel.after($info);
+						
+						
+					},
+				});
+			}
+		});
+	  });
+	</script>
+	<td class="rblock">
+		<select id="city" name="sheng">
+		</select>
+	</td>

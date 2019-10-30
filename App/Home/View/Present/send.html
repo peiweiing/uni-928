@@ -1,0 +1,63 @@
+<extend name="Public/member" />
+<block name="mainright">
+<link rel="stylesheet" href="__PUBLIC__/css/page.css">
+	<div class="main_right">
+    <div class="div_"> 个人中心 &gt;&gt; 我的礼物</div>
+    <!--TAB BEGIN-->
+    <div class="tab_list">
+		<div class="tab_nv">
+			<ul>
+			  <li class="tab_item"><a href="__URL__/index">收到的礼物</a></li>
+			  <li class="tab_item current"><a href="#">送出的礼物</a></li>
+			</ul>
+		</div>
+    </div>
+	<!--TAB END-->
+	<!--送出的礼物-->
+    <div class="div_smallnav_content_hover" id="nav_lv_detail">
+	  	<table class="user-table table-margin lh35" border="0" cellpadding="0" cellspacing="0" width="98%">
+	    <tbody>
+			<tr>
+			<td align="center" id="tishi" style="display:none">对不起，你还没送出任何礼物。</td>
+			</tr>	
+			<script type="text/javascript">
+				var regif = <?php echo $gifts ?>;
+				var tishi = document.getElementById("tishi");
+				if(regif == 0){				
+					tishi.style.display="block";
+				}
+			</script>			
+			<ul>
+			<volist name="reinfo" id="pre">
+				<li>
+					<img src="__PUBLIC__/presentimg/{$pre.toimg}" height="120" width="120">
+					<div>{$pre.togiftname}</div>
+					<div class="cc">{$pre.sedtime|date="Y-m-d",###}<br/><a class="cc" href="javascript:if(confirm('确认删除吗?'))window.location='__URL__/del/id/{$pre.giftid}'">删除</a></div>
+
+					接收人：<a href="__MODULE__/HomePage/index/id/{$pre.touserid}">{$pre.tousername}</a><br>																				
+					(<if condition="$pre.tosex eq 1">男<else/>女</if>&nbsp;{$pre.toage}岁&nbsp;
+					<if condition="$pre.tostatus eq 1">单身
+						<elseif condition="$pre.tostatus eq 2"/>已婚
+						<elseif condition="$pre.tostatus eq 3"/>离异
+						<elseif condition="$pre.tostatus eq 4"/>丧偶
+					</if>	&nbsp;{$pre.fromcity})
+				</li>
+			</volist>
+			</ul>	
+			<div class="badoo">{$pageinfo}</div>
+		</tbody>
+		</table>
+	</div>
+	</div>
+	<div class="clear"> </div>
+	<!--//main_right End-->
+
+	<div style="overflow: hidden; display: block; height: 1.15755px; padding-top: 0px; margin-top: 0.221902px; padding-bottom: 0px; margin-bottom: 0px;" class="right_kj">
+    <ul>
+		<li><a href="__URL__/index">收到的礼物</a></li>
+		<li><a href="#">送出的礼物</a></li>
+	</ul>
+	</div>
+	<div style="margin:30px;"></div>
+</div>
+</block>

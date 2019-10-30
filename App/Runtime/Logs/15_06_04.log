@@ -1,0 +1,11 @@
+[ 2015-06-04T09:12:18+08:00 ] 127.0.0.1 /yyw/
+ERR: Accès refusé pour l'utilisateur: 'root'@'@localhost' (mot de passe: OUI)
+
+[ 2015-06-04T09:12:49+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead F:\wamp\www\yyw\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php ç¬¬ 52 è¡Œ.
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+

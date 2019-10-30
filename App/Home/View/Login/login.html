@@ -1,0 +1,89 @@
+<extend name="Public/base" />
+<block name="maincontent">
+  <div class="ce reg">
+    <div class="left">
+        <!-- 会员您登陆 -->
+<div class="loginbox">
+        <div class="log_box">
+            <form method="post" action="__MODULE__/Login/login" name="login_form" id="login_loginForm">
+                <div class="form_li  desc">
+                    登录网站
+                </div>
+                <div class="formtip">
+                  <p id="login_error_msg" class="color5"></p>
+                </div>
+                <!-- 账号 -->
+                <div class="form_li pas">
+                  <label class="lo_la">账　号：</label>
+                  <input name="username" id="login_loginName" value="用户名/邮箱" class="w1" type="text">
+                </div>
+                <!-- 密码 -->
+                <div class="form_li pas">
+                      <label class="lo_la">密　码：</label>
+                      <input name="password" id="login_passWord" class="w1" type="password">
+                </div>
+                <div class="form_li">
+                    <!-- 登陆按钮 -->
+                    <a class="btn_a1" href="javascript:void(0);">
+                    <!-- <button class="login_register" onclick="return checklogin();">登  录</button> -->
+                    <input type="submit" value="" style="width:81px;height:34px;background:url(__PUBLIC__/images/login.png) no-repeat" />
+                    </a>
+                    <!-- 忘记密码 -->
+                    <a href="#">忘记密码</a>
+              
+                </div>                
+                
+            </form>
+            <script type="text/javascript">
+                 verifyLogin('login_loginForm', 'login_loginName', 'login_passWord');
+            </script>
+        </div>
+        <div class="cooperation">
+          <p class="login_list clearfix color3"> <span class="li_d">·</span>没有账号？ <a class="no_ico" href="__MODULE__/Login/register">立即注册</a><br>
+		    
+            <span class="li_d" style="display:none;">·用合作网站账号登录</span>
+			
+									<a href="#"><img src="__PUBLIC__/images/qq.gif">&nbsp;&nbsp;QQ登录</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<a href="#"><img src="__PUBLIC__/images/sina.gif">&nbsp;&nbsp;新浪微博登录</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					  
+		  </p>
+        </div>
+</div>
+    </div>
+    <div class="right"> 
+	  <a class="login" href="__MODULE__/Login/register">没有账号？点击注册&gt;&gt;</a>
+	        <ul class="list">
+        <li class="first"> 
+		  <span class="ico ico-pro"></span>
+          <div class="info">
+            <h4>高素质、诚信的交友会员</h4>
+            <p>面向渴望爱情婚姻的单身人士</p>
+            <p>需提交详细资料和身份证件</p>
+            <p>专业的人工审核跟进</p>
+          </div>
+        </li>
+        <li> 
+		  <span class="ico ico-date"></span>
+          <div class="info">
+            <h4>以“约会”为主导交友模式</h4>
+            <p>自主定制约会，挑选约会对象</p>
+            <p>通过约会观察</p>
+            <p>直接快速判断是否适合交往</p>
+          </div>
+        </li>
+        <li> 
+		  <span class="ico ico-secu"></span>
+          <div class="info">
+            <h4>安全的交友平台</h4>
+            <p>涉及隐私的资料都被保密</p>
+            <p>约会双方必须验证联系方式</p>
+            <p>成功后由网站代为交换</p>
+          </div>
+        </li>
+        <div style="clear:both;"></div>
+      </ul>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  <div style="clear:both;"></div>
+</block>

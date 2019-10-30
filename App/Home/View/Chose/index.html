@@ -1,0 +1,173 @@
+<extend name="Public/member" />
+<block name="mainright">
+	  <div class="main_right">
+    <div class="div_">个人中心 &gt;&gt; 设置择友条件</div>
+	<div class="nav-tips">设定您的择友要求，配对更对符合你心意的会员。</div>
+    <!--TAB BEGIN-->
+    <div class="tab_list">
+	  <div class="tab_nv">
+	    <ul>
+		  <li class="tab_item current"><a href="__URL__/index">择友条件</a></li>
+		  <li class="tab_item"><a href="http://www.yyw1314.com/usercp.php?c=match">缘分速配</a></li>
+	    </ul>
+	  </div>
+    </div>
+	<!--TAB END-->
+	<div class="div_smallnav_content_hover basicdata">
+	   
+	  <!--基本资料 Begin-->
+	  <form name="myform" id="myform" action="__URL__/setup" method="post">
+	  <input name="a" value="savecond" type="hidden">
+	  <table class="user-table table-margin lh35" cellpadding="0" cellspacing="0" border="0" width="98%">
+		  <tbody><tr>
+			<td colspan="4" style="padding-bottom:10px;"><div class="item_title" style="width:100%"><p>择友条件</p><span class="shadow"></span></div></td>
+		  </tr>
+
+		  <tr>
+			<td class="lblock" width="20%">性 别 </td>
+			<td class="rblock">
+			<input name="gender" id="gender" value="0" type="radio">不限，
+			<input name="gender" id="gender" value="1" type="radio">男会员，
+			<input name="gender" id="gender" value="2" checked="checked" type="radio">女会员
+			</td>
+		  </tr>
+		  <tr>
+			<td class="lblock">年 龄 </td>
+			<td class="rblock">
+				<select name="startage" id="startage">
+					<option value="" selected="selected">不限</option>
+					<for start="18" end="61">
+					<option value="{$i}">{$i}</option>
+					</for>
+				</select> 到 
+				<select name="endage" id="endage">
+					<option value="" selected="selected">不限</option>
+					<for start="18" end="61">
+					<option value="{$i}">{$i}</option>
+					</for>
+				</select> 岁
+			</td>
+		  </tr>
+		  <tr>
+			<td class="lblock">身 高 </td>
+			<td class="rblock">
+				<select name="startheight" id="startheight">
+					<option value="" selected="selected">不限</option>
+					<for start="130" end="201">
+					<option value="{$i}">{$i}</option>		
+					</for>
+				</select> 到 
+				<select name="endheight" id="endheight">
+					<option value="" selected="selected">不限</option>
+					<for start="130" end="201">
+					<option value="{$i}">{$i}</option>
+					</for>
+			</select> 厘米</td>
+		  </tr>
+		  <tr>
+			<td class="lblock">婚 史 </td>
+			<td class="rblock"><table cellpadding="0" cellspacing="0" align="left" border="0" width="98%">  <tbody><tr> <td class="hback" width="20%"> <input name="marry[]" id="marry[]" onclick="check_maxnum('marrystatus', this, 5)" value="1" type="checkbox"> 单身 </td> <td class="hback" width="20%"> <input name="marry[]" id="marry[]" onclick="check_maxnum('marrystatus', this, 5)" value="2" type="checkbox"> 已婚 </td> <td class="hback" width="20%"> <input name="marry[]" id="marry[]" onclick="check_maxnum('marrystatus', this, 5)" value="3" type="checkbox"> 离异 </td> <td class="hback" width="20%"> <input name="marry[]" id="marry[]" onclick="check_maxnum('marrystatus', this, 5)" value="4" type="checkbox"> 丧偶 </td>  </tr></tbody></table></td>
+		  </tr>
+		  <tr>
+			<td class="lblock">交友类别</td>
+			<td class="rblock"><table cellpadding="0" cellspacing="0" align="left" border="0" width="98%">  <tbody><tr> <td class="hback" width="20%"> <input name="lovesort[]" id="lovesort[]" value="1" type="checkbox"> 朋友 </td> <td class="hback" width="20%"> <input name="lovesort[]" id="lovesort[]" value="2" type="checkbox"> 知己 </td> <td class="hback" width="20%"> <input name="lovesort[]" id="lovesort[]" value="3" type="checkbox"> 恋爱 </td> <td class="hback" width="20%"> <input name="lovesort[]" id="lovesort[]" value="4" type="checkbox"> 结婚 </td>  </tr></tbody></table></td>
+		  </tr>
+		  <tr>
+			<td class="lblock">学 历 </td>
+			<td class="rblock">
+			<select name="startedu" id="startedu"><option selected="selected" value="">不限</option><option value="1">中专以下学历</option><option value="2">中专</option><option value="3">大专</option><option value="4">本科</option><option value="5">硕士</option><option value="6">博士</option><option value="7">博士后</option></select> 到 
+			<select name="endedu" id="endedu"><option selected="selected" value="">不限</option><option value="1">中专以下学历</option><option value="2">中专</option><option value="3">大专</option><option value="4">本科</option><option value="5">硕士</option><option value="6">博士</option><option value="7">博士后</option></select>
+			</td>
+		  </tr>
+		  <!-- 所在地区 -->
+		  <tr>
+			<td class="lblock">所在地区</td>
+			<td class="rblock">
+
+			<select name="area" id="province_1"></select>
+			</td>
+		  </tr>
+		  <tr>
+			<td class="lblock">诚信星级 </td>
+			<td class="rblock">
+			<select name="star" id="star"><option value="">=不限=</option><option value="1">1</option><option selected="selected" value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option></select>&nbsp;&nbsp;星&nbsp;&nbsp;
+			<select name="starup" id="starup">
+			<option value=""></option>
+			<option selected="selected" value="1">以上</option>
+			<option value="2">以下</option>
+			</select>
+			</td>
+		  </tr>
+		  <tr>
+			<td class="lblock">有无形象照 </td>
+			<td class="rblock">
+			<input checked="checked" name="avatar" id="avatar" value="1" type="radio">有形象照，
+			<input name="avatar" id="avatar" value="0" type="radio">不限
+			</td>
+		  </tr>
+
+		  <!-- 提交按钮 -->
+		  <tr>
+			<td class="lblock" height="50px"></td>
+			<td class="rblock" colspan="3">				
+			<input name="btn_save" value="提交保存" class="button-red" type="submit">
+			</td>
+		  </tr>
+	  </tbody></table>
+	  </form>
+	  <!--基本资料 End-->
+	  
+
+	</div>
+	<div class="clear"></div>
+	<!--//div_smallnav_content_hover End-->
+	</div>
+	<div class="clear"></div>
+	<script type="text/javascript">
+	$(function(){
+		
+	});
+	function chengshi($province){
+		//发送一个ajax请求加载一级城市信息
+		$.ajax({
+			url:'__URL__/loaddist',
+			type:'get',
+			dataType:'json',
+			success:function(data){
+				$info = "<option>-不限-</option>";
+				for(var i=0;i<data.length;i++){
+					$info += "<option value='"+data[i].id+"'>"+data[i].name+"</option>";
+				}
+				$($province).html($info);
+			},
+		});
+		
+		//做级联选择事件操作
+		$($province).change(function(){
+			var sel = $(this);//获取事件源节点对象
+			var id = sel.val();//获取下拉框值
+			sel.nextAll().remove();
+			if(id>0){
+				$.ajax({
+					url:'__URL__/loaddist',
+					type:'get',
+					data:{upid:id},
+					dataType:'json',
+					success:function(data){
+					
+						if(data==null) return;
+						$info = "<select name='cityid' id='cityid'><option>-不限-</option>";
+						for(var i=0;i<data.length;i++){
+							$info += "<option value='"+data[i].id+"'>"+data[i].name+"</option>";
+						}
+						$info +="</select>";
+						sel.after($info);							
+					},
+				});
+			}
+		});
+	}
+	chengshi("#province_1");
+	chengshi("#province_2");
+	</script>
+</block>

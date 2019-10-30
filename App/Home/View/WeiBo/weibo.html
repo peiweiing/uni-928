@@ -1,0 +1,160 @@
+<extend name="Public/base"/>
+<block name='maincontent'>
+<div class="search_max w960 online_page">
+<include file="Public:search"/>
+ <div class="container app_mood" id="ICFeedsContainer">
+      <div class="main_wrap bg3">
+        <div class="indexw bg bor3">
+
+		  <div class="wbad"><a><img src="__PUBLIC__/images/e2fe46fd416767ae.jpg" title="" border="0" height="106" width""700"></a></div>
+
+		  <div class="fbk">
+		    <img src="__PUBLIC__/images/send.png" style="margin-left:52px;">
+			<form action='' method='post' name='form' onsubmit='return doSubmit();'>
+			<div class="tex"><textarea id="content"  onkeyup="textCounter();" name="content"></textarea></div>
+			<div class="texb">
+			  只能输入<span class="zs" id="counter">140</span>个字 
+			  <input type='submit' id="btn_roll" value='' style="width:90px;height:28px;border:0; background:url(__PUBLIC__/images/gbweibo.gif) no-repeat left top"/>
+			</div>
+          </div> 
+				
+		  <div class="redian">
+		    <div class="re1"><img src="__PUBLIC__/images/lb.png">  当前热点：</div>
+			<div class="re2"> </div>
+		  </div>
+
+          <div class="lian">
+		 <div class="lian1">
+              <div class="thi"><img src="__PUBLIC__/Uploads/pic/user_edit.png">推荐会员</div>
+		
+			  <volist name='recuser' id='user'>
+				   <div class="lhead" style="height:106px">
+				  <a href="__MODULE__/HomePage/index/id/{$user.userid}" title="{$user.user.username}">
+				  <img src="__PUBLIC__/Uploads/pic/{$user.user.avatar}" border="0" height="86" width="70">
+				  </a><br>
+				  <img src="__PUBLIC__/Uploads/pic/87197a0d51022068.gif" class="" border="0">
+				  <a href="__MODULE__/HomePage/index/id/{$user.userid}">{$user.user.username}</a>
+			  </div>
+			  </volist>
+
+              <div class="thi"><img src="__PUBLIC__/Uploads/pic/crown.png">猜你喜欢</div>
+			  <volist name='gueuser' id='vo'>
+			  <div class="lhead">
+				<a href="__MODULE__/HomePage/index/id/{$vo.userid}" title="{$vo.user.username}">
+				<img src="__PUBLIC__/Uploads/pic/{$vo.user.avatar}" border="0" height="86" width="70">
+				</a><br>
+                <img src="__PUBLIC__/Uploads/pic/f2fde8e7d8aa2a10.gif" class="" border="0"> 
+				<font color="#999999"><a href="__MODULE__/HomePage/index/id/{$user.userid}">{$vo.user.username}</a></font>
+			  </div>
+			   </volist>  
+		 </div>
+            <div class="lian2">
+			  <div class="thi">
+              <div class="thil"><img src="__PUBLIC__/images/user_comment.png">大家正在说</div>
+			  <div class="thir"><a href="http://www.yyw1314.com/index.php?c=weibo&amp;a=list">更多&gt;&gt;</a></div>
+			  <div class="c"></div>
+			  </div>
+
+              <div class="zheng">
+			    <ul style="top: 45.9205px;" id="scroll_List">
+				<volist name='list' id='vo'>
+				<li style="opacity: 1;">
+                <div class="meitiao"> <a href="__MODULE__/控制器/index/id/{$vo.uid}" class="mhead"><img src="__PUBLIC__/Uploads/pic/{$vo.avatar}" border="0" height="69" width="60"></a>
+                  <div class="mnei">
+				     <a href="__MODULE__/MyWb/index/id/{$vo.uid}" id='yonghu'>{$vo.username}</a>：
+					 {$vo.text}
+					 <br>
+                    <span class="vbsj">{$vo.time}&nbsp;&nbsp;&nbsp;<a href="__MODULE__/WbPerson/index/id/{$vo.id}">查看&gt;&gt;</a></span> </div>
+                  <div class="c"></div>
+                </div>
+				</li>
+				</volist>
+				
+				</ul>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar author_display lite_hide">
+
+        <!--二级导航 开始-->
+        <div class="sub_menu bbor3">
+          <ul>
+            <li class="nav_home current"> <a href="__MODULE__/WbSquare/index"><i></i>微播广场</a> </li>
+			  <li class="nav_hot"> <a href="__MODULE__/MyWb/index/id/{$Think.session.user.id}"><i></i>我的微博</a> </li>
+			          </ul>
+        </div>
+
+
+        <div class="or3">
+          <div class="hhti">最新日记</div>
+          <ul>
+		  <volist name='newdiary' id='vo'>
+			<li class="nav_my"> <a href="__MODULE__/DiaryShow/single/id/{$vo.id}" class="c_tx" target="_blank" title="{$vo['title']}"> ◈ {$vo['title']}</a> </li>
+		  </volist>
+		 </ul>
+        </div>
+
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  <div style="clear:both;"></div>
+	<script type='text/javascript'>
+		function doSubmit(){
+			if(0<$('#content').val().length && $('#content').val().length < 140){
+				$('.xxoo').empty();
+				$.ajax({
+					url:'__MODULE__/WeiBo/insert',
+					type:'post',
+					dataType:'json',
+					data:{content:$('#content').val()},
+					success:function(info){
+						if(info['error'] == false){
+							$('.texb').before("<div>{info['data']}</div>");
+						}else{
+								var dataa = "";
+								dataa += "<li style='opacity: 1;'>";
+									dataa +="<div class='meitiao'>";
+										dataa +="<a href=\"__MODULE__/MyWb/index/id/"+info['data']['uid']+"\" class=\"mhead\">";
+										dataa +="<img src=\"__PUBLIC__/Uploads/pic/"+info['data']['avatar']+"\" border=\"0\" height=\"69\" width=\"60\"></a>";
+										dataa +="<div class=\"mnei\">";
+										 dataa +="<a href=\"__MODULE__/MyWb/index/id/"+info['data']['uid']+"\" id='yonghu'>"+info['data']['username']+"</a>：";
+										dataa += info['data']['text']+"<br>";
+										dataa +="<span class=\"vbsj\">"+info['data']['time']+
+										"&nbsp;&nbsp;&nbsp;<a href=\"__MODULE__/WbPerson/index/id/"+info['data']['id']+"\">查看&gt;&gt;</a></span> </div>";
+									dataa +="<div class=\"c\"></div></div></li>";
+									$('#scroll_List').prepend(dataa);
+									$('#scroll_List li:last-child').empty();
+									$('#content').val('');
+						}
+					}
+				});
+			}else{
+				$('.xxoo').remove();
+				$('.texb').prepend("<strong><span style=\"color:red;size:25px\" class='xxoo'>内容不能为空</span></strong>");
+			}
+			return false;
+		}
+		
+		
+		$(function(){
+			setInterval(function(){
+				$('#scroll_List li:last-child').fadeOut(1900,function(){
+					$(this).prependTo('#scroll_List');
+					$(this).fadeIn(1900);
+				});
+			},1900);
+		});
+		
+		function textCounter(){
+			
+			var hanzi = document.getElementById('content').value.length;
+			var num = parseFloat(140)-parseFloat(hanzi);
+			$('#counter').html(num);
+		}
+	</script>
+  </block>
+

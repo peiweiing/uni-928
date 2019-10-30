@@ -1,0 +1,75 @@
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/listuser/callbackType/closeCurrent" enctype="multipart/form-data"  class="pageForm required-validate" 
+		onsubmit="return iframeCallback(this, dialogAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type="hidden" name="id" value="{$find['id']}"/>
+		<div class="pageFormContent" layoutH="60">
+			<dl style="height:50px;">
+				<dt>头像：</dt>
+				<dd><img src="__PUBLIC__/Uploads/pic/{$find['avatar']}" width="50" height="50" /></dd>
+			</dl>
+			<dl>
+				<dt>修改形象照：</dt>
+				<dd>
+					<input type="file" name="pic" />
+				</dd>
+			</dl>			
+			<dl>
+				<dt>E-Mail：</dt>
+				<dd><input type="text"  style="width:100%" name="email" value="{$find.email}"/></dd>
+			</dl>
+			<dl>
+				<dt>用户状态：</dt>
+				<dd>
+					<select name="status">
+						<option value="1"<if condition="$find['status'] eq 1">selected</if>>启用</option>
+						<option value="2"<if condition="$find['status'] eq 2">selected</if>>禁用</option>
+					</select>
+				</dd>
+			</dl>
+			<dl>
+				<dt>征友状态：</dt>
+				<dd>
+					<select name="lovestatus">
+						<option value="">=请选择=</option>
+						<option value="1"<if condition="$find['lovestatus'] eq 1">selected</if>>征友进行时</option>
+						<option value="0"<if condition="$find['lovestatus'] eq 0">selected</if>>关闭征友</option>
+					</select>
+				</dd>
+			</dl>
+			
+			<dl>
+				<dt>积分：</dt>
+				<dd>
+					<input type="text" name="points" value="{$find['points']}" readonly size="10" />
+					<input type="radio" name="active" value="increase"  checked />增加
+					<input type="radio" name="active" value="reduce" />减少
+					&nbsp;&nbsp;&nbsp;
+					<input type="text" style="width:100%;" name="updatePoints" size="6"/>
+				</dd>
+			</dl>
+			
+			
+			<!--<th width="">ID</th>
+				<th width="">昵称/用户名</th>
+				<th width="">E-Mail</th>
+				<th width="">积分</th>
+				<th width="">头像</th>
+				<th width="">状态</th>
+                <th width="">征友状态</th>
+				<th width="">登陆次数</th>
+				<th width="">登陆时间</th>
+				<th width="">注册时间</th>
+				<th width="">操作</th>
+				-->
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+	
+</div>
+

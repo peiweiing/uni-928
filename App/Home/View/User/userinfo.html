@@ -1,0 +1,96 @@
+<extend name="Public/member" />
+
+<block name="mainright">
+
+  <div class="main_right">
+    <div class="div_"> 个人中心 &gt;&gt; 帐号信息</div>
+    <!--TAB BEGIN-->
+    <div class="tab_list">
+	  <div class="tab_nv">
+	    <ul>
+		  <li class="tab_item current"><a href="__MODULE__/User/view/act/userInfo">我的帐号</a></li>
+		  <li class="tab_item"><a href="__MODULE__/User/view/act/editPass">修改密码</a></li>
+		  <li class="tab_item"><a href="__MODULE__/User/view/act/receiveEmail">邮件接收</a></li>
+		  <li class="tab_item"><a href="__MODULE__/User/view/act/loveStatus">设置状态</a></li>
+	    </ul>
+	  </div>
+    </div>
+	<!--TAB END-->
+
+	<div class="div_smallnav_content_hover">
+	   
+      <table class="user-table table-margin lh35" cellpadding="0" cellspacing="0" border="0" width="98%">
+		  <tbody><tr>
+			<td colspan="2" style="padding-bottom:10px;"><div class="item_title" style="width:100%"><p>我的帐号</p><span class="shadow"></span></div></td>
+		  </tr>
+		  <!-- 会员ID -->
+		  <tr>
+			<td class="lblock" width="15%">交友ID：</td>
+			<td class="rblock" width="85%">{$find['id']}</td>
+		  </tr>
+		  <!-- 会员名称 -->
+		  <tr>
+			<td class="lblock">登录账号：</td>
+			<td class="rblock">{$find['username']}</td>
+		  </tr>
+		  <!-- Email -->
+		  <tr>
+			<td class="lblock">登录邮箱：</td>
+			<td class="rblock">{$find['email']}</td>
+		  </tr>
+		  <!-- 交友状态 -->
+		  <tr>
+			<td class="lblock">交友状态：</td>
+			<td class="rblock">
+                        <if condition="$item eq 1">
+						<font color="green">
+                        <else />
+                        <font color="red">
+                        </if>
+                        {$loveSta[$find['lovestatus']]}</font>
+						&nbsp;&nbsp;&nbsp;
+			<input class="button-red" value="修改状态" onclick="javascript:window.location.href='__MODULE__/User/loveStatus';" type="button">
+			</td>
+		  </tr>
+		  <!-- 会员组 -->
+		  <tr>
+			<td class="lblock">会员组： </td>
+			<td class="rblock"><img src="__PUBLIC__/images/f2fde8e7d8aa2a10.gif" class="" border="0"> <b><if condition="$userother1.jurisdiction eq 1">VIP会员<else />普通会员</if></b>&nbsp;&nbsp;&nbsp;			&nbsp;&nbsp;&nbsp;
+			
+			<a class="btn_c1" href="{:U('User/vip')}"><span><font color="blue"><b><if condition="$userother1.jurisdiction neq 1">升级VIP会员服务</if></b></font></span></a></td>
+		  </tr>
+		  <!-- 剩余积分 -->
+		  <tr>
+			<td class="lblock">积 分：</td>
+			<td class="rblock"><font color="blue"><b>{$find['points']}</b></font> </td>
+		  </tr>
+		
+		  <!-- 注册时间 -->
+		  <tr>
+			<td class="lblock">注册时间 </td>
+			<td class="rblock">{$find['regtime']|date="Y-m-d H:i:s",###}</td>
+		  </tr>
+		  <!-- 登录次数 -->
+		  <tr>
+			<td class="lblock">登录次数 </td>
+			<td class="rblock">{$find['loginviews']}次</td>
+		  </tr>
+		  <!-- 登录时间 -->
+		  <tr>
+			<td class="lblock">登录时间 </td>
+			<td class="rblock">{$find['logintime']|date="Y-m-d H:i:s",###}</td>
+		  </tr>
+      </tbody></table>
+	  
+	  
+	  
+	  
+
+    </div>
+	<!--//div_smallnav_content_hover End-->
+
+  </div>
+  <div class="clear"> </div>
+  <!--//main_right End-->
+
+</block>

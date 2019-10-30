@@ -1,0 +1,65 @@
+<extend name="Public/member"/>
+<block name="mainright">
+<div class="main_right">
+	<div class="div_"> 个人中心 &gt;&gt; 我的日记</div>
+	<!--TAB BEGIN-->
+	<div class="tab_list">
+		<div class="tab_nv">
+			<ul>
+				<li class="tab_item"><a href="__URL__/index">我的日记</a></li>
+				<li class="tab_item"><a href="__URL__/add">发表日记</a></li>
+				<li class="tab_item current">编辑日记</li>
+			</ul>
+		</div>
+	</div>
+	<!--TAB END-->
+
+	<div class="div_smallnav_content_hover">
+	<iframe name="diaryform" src="" frameborder="0" style="display:none"></iframe>
+	<form name="myform" id="myform" target="diaryform" action="__URL__/update" method="post">
+		<input type="hidden" name="id" id="" value="{$info.id}">
+		<div style="background:#FEFCE7; padding:5px;margin-top:10px;margin-bottom:10px;"> 
+		日记分类：
+		<select name="catid" id="catid">
+			<volist name="cat" id="cat" key='k'>
+				<option value="{$cat.id}" <if condition="$info.catid eq $k">selected="selected"</if> >{$cat.catname}</option>
+			</volist>
+		</select>
+		&nbsp;&nbsp;&nbsp;
+		阅读权限：
+		<select name="power" id="power">
+			<volist name="power" id="power">
+			<option value="{$key}" <if condition="$info.power eq $key">selected="selected"</if> >{$power}</option>
+			</volist>
+		</select>
+		&nbsp;&nbsp;&nbsp;
+		天气：
+		<select name="weather" id="weather">
+			<volist name="weather" id="weather">
+			<option value="{$key}" <if condition="$info.weather eq $key">selected="selected"</if> >{$weather}</option>
+			</volist>
+		</select>
+		&nbsp;&nbsp;&nbsp;
+		心情：
+		<select name="feel" id="feel">
+			<volist name="feel" id="feel">
+			<option value="{$key}" <if condition="$info.feel eq $key">selected="selected"</if> >{$feel}</option>
+			</volist>
+		</select>
+		<if condition="$info.updatetime neq NULL"><p>最后修改时间：{$info.updatetime|date="Y-m-d H:i:s",###}</p></if>
+		</div>
+		<div style="text-align:center;">
+			<input type="text" name="title" id="title" value="{$info.title|default='请在这里输入日记标题'}" style="width:95%;font-size:24px; background-color:#fefce7; border:0px; margin-top:30px; text-align:center;font-family: 微软雅黑; box-shadow: 0px 0px 0px #F0F0F0;">
+			<div style="margin:20px 10px 10px 10px; padding-top:20px; border-top:1px dashed Gray;">
+				<textarea  class="xheditor {tools:'simple'}" rows="1" tabindex="1" name="content" id="content" style="width:100%; height:500px;">{$info.content|default='请在这里写日记...'}</textarea>
+			</div>
+		</div>
+		<div style="margin-top:10px;">
+			<input type="submit" value="提交" name="btn_save" id="btn_save" class="button-red">&nbsp;&nbsp;
+			<input type="button" name="btn_return" id="btn_return" value="返回列表" class="button-coff" onclick="javascript:location.href='__URL__/index'">
+		</div>
+		<div class="clear"></div>
+	</form>
+	</div>
+</div>
+</block>

@@ -1,0 +1,91 @@
+<extend name="Public/base" />
+<block name='maincontent'>
+<div class="search_max w960 online_page">
+<include file="Public:search"/>
+
+
+	<div class="online_list">
+        <div class="left ri_list">
+            <img src='__PUBLIC__/images/path_info.jpg' />
+          
+            <div class="listtype">
+                <a href="__MODULE__/Notice/lists/typeid" <if condition='$iTag eq null'> class="listnow" </if> >全部文章</a> 
+                
+				<volist name="list" id="vo">
+					<a href="__MODULE__/Notice/lists/typeid/{$vo['typeid']}" <if condition='$iTag eq $vo["typeid"]'> class="listnow" </if> >{$vo['typename']}</a>&nbsp;
+				</volist>
+            </div>
+            <div class="content">
+                <ul>
+                    <volist name="data" id="vo">
+                        <li>
+                            <a href="__MODULE__/Notice/detail/id/{$vo['id']}" class="tit" target="_self" title="{$vo['title']}"> ▪ {$vo['title']} </a>
+                            <span>{$vo['addtime']|date="m-d H:i:s",###}</span>
+                            
+                        </li>
+                    </volist>
+                    
+                </ul>
+            </div>
+			<div id="showPage" style="text-align:center;height:30px;line-height:30px;">
+				{$showPage}
+			</div>
+            <script type="text/javascript">
+				var aDis = $("#showPage a");
+				aDis.css({
+					background:'#e35480',
+					padding:'5px 3px',
+					margin:'0px 2px',
+					fontWeight:'bold',
+					color:'#faeff3',
+				});
+				$.each(aDis, function(i){
+					if($(this).attr('class') == 'prev' || $(this).attr('class') == 'next'){
+						$(this).css({
+							background:'#e35480',
+							padding:'5px 5px',
+						});
+					}
+					if($(this).attr('class') == 'on'){
+						$(this).css({
+							background:'#faeff3',
+							color:'#e35480',
+							padding:'4px 3px',
+							
+						});
+					}
+				});
+			</script>
+        </div>
+	  
+    </div>
+	
+    <div class="onright"> 
+
+	  	  	  <div class="onrightad"><a><img src="__PUBLIC__/images/e3c71d7ebaa2745f.png" title="" border="0" height="102" width="220"></a></div>
+	  
+      <div class="divtitle">推荐会员</div>
+      <div class="onhead">
+	  <volist name="recuser" id='rec'>
+		<div class="odh">
+		  <a href="__MODULE__/HomePage/index/id/{$rec.userid}" target="_blank"><img src="__PUBLIC__/Uploads/pic/{$rec.user.avatar}" border="0" height="86" width="70"></a><br>
+          <img src="__PUBLIC__/images/{$rec.icon}"/>
+		  <a href="__MODULE__/HomePage/index/id/{$rec.userid}" target="_blank">{$rec.user.username}</a>
+		</div>
+	  </volist>        
+		<div style="clear:both;"></div>
+      </div>
+      <div class="divtitle" style="margin-top:5px;">最新日记</div>
+      <ul class="list_so">
+		<volist name="newdiary" id="new">
+	    		<li><a target="_blank" href="__MODULE__/DiaryShow/single/id/{$new.id}" title="{$new.title}">{$new.title}</a> </li>
+		</volist>
+        </ul>
+
+	  	  	  <div class="onrightad"><a><img src="__PUBLIC__/images/ec1db26e7d73e3e0.png" title="" border="0" height="102" width="220"></a></div>
+	  	  
+	  </div>
+    <div style="clear:both;"></div>
+  </div>
+  <div style="clear:both;"></div>
+</block>

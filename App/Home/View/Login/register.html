@@ -1,0 +1,330 @@
+<extend name="Public/base" />
+<block name="maincontent">
+<div class="ce reg">
+    <div class="left">
+<div class="reg_left_title">
+        <!-- <h1>30秒免费注册， 开启您的择友之旅~</h1> -->
+        <!-- 扣不下背景图片只有。。生生的放在这 -->
+        <img src="__PUBLIC__/images/title.png" width="270" height="45" />
+      </div>
+	  <form method="post" action="__URL__/insert" name="register_form" onsubmit="return checkSubmit()" id="register_form">
+        <div class="form_box">
+          <input value="" name="forward" type="hidden">
+          
+		  <div class="reg_tips_center">账号信息 带*号必填</div>
+          <div id="div_email" class="form_li">
+            <label><font color="red">*</font> 昵　　称：</label>
+            <input name="username" id="username" onblur="ajaxInfo('username')" class="w1" maxlength="16" type="text">  <span id="tip_username"></span>
+			<br><font color="#999999">长度3-16个字符，1个汉字=2个字符
+			<br>格式由26个字母，数字，汉字，下横线，中横线组成。</font>
+		  </div>
+          <div class="form_li">
+            <label><font color="red">*</font> 登录密码：</label>
+            <input name="password" id="password" onblur="checkPassWord()" class="w1" type="password"> <font id="tip_password" color="#999999">长度6-16个字符</font>
+          </div>
+          <div class="form_li">
+            <label><font color="red">*</font> 确认密码：</label>
+            <input name="confirmpassword" id="confirmpassword" onblur="checkConfirmPassWord()" class="w1" type="password" />
+            <font id="tip_confirpassword" color="#999999"> 输入以上密码</font>
+          </div>
+          <div class="form_li">
+            <label><font color="red">*</font> 常用邮箱：</label>
+            <input name="email" id="email" class="w1" onblur="ajaxInfo('email')" type="text"> <font color="red">*</font> <span id="tip_email"><font color="#999999"> 用于登陆，认证，找回密码和会员信件提醒</font></span>
+          </div>
+		    <div class="form_li">
+                <label><font color="red">*</font> 验&nbsp;证&nbsp;码&nbsp;：</label>
+                <input id="checkcodes" name="verify" class="w2" maxlength="8" type="text" />
+                <!-- __URL__/getCode -->
+                <img id="getCode" onclick="refeshCode()" src="__URL__/getCode" style="position:relative;top:12px;" />
+                 
+                <a href="javascript:void(0);" onclick="refeshCode()" id="refeshCode"> 换一张</a>
+                
+                
+                <!-- document.getElementById('code').src='__URL__/getCode' -->
+                <span id="tip_checkcodes"><font color="#999999">请输入验证码</font></span>
+                <!--<span id="tip_checkcode">{$verifyInfo}</span>-->
+            </div>
+			<script type="text/javascript">
+				
+				
+				
+			</script>
+    
+		  <div class="reg_tips_center">基本信息 带*号必填</div>
+          <div class="bitian">
+            <div id="div_gender" class="form_li">
+              <label><font color="red">*</font>  您的性别：</label>
+              <input name="gender" id="gender" value="1" checked="checked" type="radio">男， 
+              <input name="gender" id="gender" value="2" type="radio">女 
+              <span id="dgender" class="f_red"></span> 
+              <font color="#999999">(一旦选择不能修改)</font>
+            </div>
+            <div id="div_birthday" class="form_li">
+              <label><font color="red">*</font> 出生日期：</label>
+              <select name="ageyear" id="ageyear">
+                <option selected="selected" value="">请选择</option>
+                <option value="1996">1996</option><option value="1995">1995</option>
+                <option value="1994">1994</option><option value="1993">1993</option>
+                <option value="1992">1992</option><option value="1991">1991</option>
+                <option value="1990">1990</option><option value="1989">1989</option>
+                <option value="1988">1988</option><option value="1987">1987</option>
+                <option value="1986">1986</option><option value="1985">1985</option>
+                <option value="1984">1984</option><option value="1983">1983</option>
+                <option value="1982">1982</option><option value="1981">1981</option>
+                <option value="1980">1980</option><option value="1979">1979</option>
+                <option value="1978">1978</option><option value="1977">1977</option>
+                <option value="1976">1976</option><option value="1975">1975</option>
+                <option value="1974">1974</option><option value="1973">1973</option>
+                <option value="1972">1972</option><option value="1971">1971</option>
+                <option value="1970">1970</option><option value="1969">1969</option>
+                <option value="1968">1968</option><option value="1967">1967</option>
+                <option value="1966">1966</option><option value="1965">1965</option>
+                <option value="1964">1964</option><option value="1963">1963</option>
+                <option value="1962">1962</option><option value="1961">1961</option>
+                <option value="1960">1960</option><option value="1959">1959</option>
+                <option value="1958">1958</option><option value="1957">1957</option>
+                <option value="1956">1956</option><option value="1955">1955</option>
+                <option value="1954">1954</option>
+              </select>年
+			  <select name="agemonth" id="agemonth">
+                <option selected="selected" value="">请选择</option>
+                <option value="1">1</option><option value="2">2</option>
+                <option value="3">3</option><option value="4">4</option>
+                <option value="5">5</option><option value="6">6</option>
+                <option value="7">7</option><option value="8">8</option>
+                <option value="9">9</option><option value="10">10</option>
+                <option value="11">11</option><option value="12">12</option>
+              </select>月
+                <!--135781012 31 2 28 30 4 6 9 11--> 
+			  <select name="ageday" id="ageday">
+                <option selected="selected" value="">请选择</option>
+                <option value="1">1</option><option value="2">2</option>
+                <option value="3">3</option><option value="4">4</option>
+                <option value="5">5</option><option value="6">6</option>
+                <option value="7">7</option><option value="8">8</option>
+                <option value="9">9</option><option value="10">10</option>
+                <option value="11">11</option><option value="12">12</option>
+                <option value="13">13</option><option value="14">14</option>
+                <option value="15">15</option><option value="16">16</option>
+                <option value="17">17</option><option value="18">18</option>
+                <option value="19">19</option><option value="20">20</option>
+                <option value="21">21</option><option value="22">22</option>
+                <option value="23">23</option><option value="24">24</option>
+                <option value="25">25</option><option value="26">26</option>
+                <option value="27">27</option><option value="28">28</option>
+                <option value="29">29</option><option value="30">30</option>
+                <option value="31">31</option>
+              </select>日
+			  <font color="#999999">(一旦选择不能修改)</font>
+			</div>
+            <div id="div_marriage" class="form_li">
+              <label><font color="red">*</font>  婚姻状况：</label>
+              <select name="marrystatus" id="marrystatus">
+                <option selected="selected" value="">=请选择=</option>
+                <option value="1">未婚</option>
+                <option value="2">已婚</option>
+                <option value="3">离异</option>
+                <option value="4">丧偶</option></select>
+				<font color="#999999">(一旦选择不能修改)</font>
+            </div>
+            <div id="div_eduction" class="form_li">
+              <label><font color="red">*</font>  学　　历：</label>
+              <select name="education" id="education">
+                <option selected="selected" value="">=请选择=</option>
+                <option value="1">中专以下学历</option>
+                <option value="2">中专</option>
+                <option value="3">大专</option>
+                <option value="4">本科</option>
+                <option value="5">硕士</option>
+                <option value="6">博士</option>
+                <option value="7">博士后</option>
+              </select>
+              <font color="#999999">(一旦选择不能修改)</font>
+            </div>
+            <div id="div_height" class="form_li">
+              <label><font color="red">*</font>  身　　高：</label>
+              <select name="height" id="height">
+                  <option value="">=请选择=</option>
+                  <option value="130">130</option>
+                  <option value="131">131</option>
+                  <option value="132">132</option>
+                  <option value="133">133</option>
+                  <option value="134">134</option>
+                  <option value="135">135</option>
+                  <option value="136">136</option>
+                  <option value="137">137</option>
+                  <option value="138">138</option>
+                  <option value="139">139</option>
+                  <option value="140">140</option>
+                  <option value="141">141</option>
+                  <option value="142">142</option>
+                  <option value="143">143</option>
+                  <option value="144">144</option>
+                  <option value="145">145</option>
+                  <option value="146">146</option>
+                  <option value="147">147</option>
+                  <option value="148">148</option>
+                  <option value="149">149</option>
+                  <option value="150">150</option>
+                  <option value="151">151</option>
+                  <option value="152">152</option>
+                  <option value="153">153</option>
+                  <option value="154">154</option>
+                  <option value="155">155</option>
+                  <option value="156">156</option>
+                  <option value="157">157</option>
+                  <option value="158">158</option>
+                  <option value="159">159</option>
+                  <option value="160" selected="selected">160</option>
+                  <option value="161">161</option>
+                  <option value="162">162</option>
+                  <option value="163">163</option>
+                  <option value="164">164</option>
+                  <option value="165">165</option>
+                  <option value="166">166</option><option value="167">167</option><option value="168">168</option><option value="169">169</option><option value="170">170</option><option value="171">171</option><option value="172">172</option><option value="173">173</option><option value="174">174</option><option value="175">175</option><option value="176">176</option><option value="177">177</option><option value="178">178</option><option value="179">179</option><option value="180">180</option><option value="181">181</option><option value="182">182</option><option value="183">183</option><option value="184">184</option><option value="185">185</option><option value="186">186</option><option value="187">187</option><option value="188">188</option><option value="189">189</option><option value="190">190</option><option value="191">191</option><option value="192">192</option><option value="193">193</option><option value="194">194</option><option value="195">195</option><option value="196">196</option><option value="197">197</option><option value="198">198</option><option value="199">199</option><option value="200">200</option>
+              </select> CM <font color="#999999">(一旦选择不能修改)</font>
+            </div>
+            <div id="div_workCity" class="form_li form_city">
+              <label><font color="red">*</font>  所在地区：</label>
+              <select name="provinceid" id="provinceid">
+
+              </select>&nbsp;
+                
+          </div>
+            <script type="text/javascript">
+                $(function(){
+                    //加载注册城市街道信息
+                    var upid = 0;
+                    myAjax('__MODULE__/Login/addrAjax', 'get', 'json', upid, function(data){
+                        var $options = "<option>=请选择=</option>";
+                        $.each(data, function(i){
+                            $options += "<option value='"+data[i]['id']+"'>"+data[i]['name']+"</option>";    
+                        })
+                        $("#provinceid").append($options);        
+                    });
+
+                    $("#provinceid").change(function(){
+                        var sel = $(this);
+                        var id = sel.val();
+                        sel.nextAll().remove();
+                        if(id>0){
+                            //调用自定义ajax函数
+                            myAjax('__MODULE__/Login/addrAjax', 'get', 'json', {upid:id}, function(data){
+                                if(data == null) {
+                                    return;
+                                }
+                                var $options = "<select name='cityid' id='cityid'>";
+                                    $options += "<option>=请选择=</option>";
+                                $.each(data, function(i){
+                                    $options += "<option value='"+data[i]['id']+"'>"+data[i]['name']+"</option>";    
+                                })
+                                $options += "</select>";
+                                sel.after($options);
+                            });
+                        }   
+                    })
+                });
+            </script>
+									
+		    			
+			
+			
+          </div>
+
+          <div class="form_li">
+            <div class="serve_text">
+              <input onclick="checkAgree()" name="agree" id="agree" value="true" type="checkbox">
+              <label>
+                    <a href="http://www.yyw1314.com/index.php?c=about&amp;a=detail&amp;id=8" target="_blank">注册条款</a> 和 
+                    <a href="http://www.yyw1314.com/index.php?c=about&amp;a=detail&amp;id=7" target="_blank">隐私政策</a>               </label>
+                
+            </div>
+            <div class="tijiao"> 
+			  <a class="btn_a1" id="a_register_submit" style="pointer:hand;">
+              <!-- <button class="button_register" style="pointer:hand;" type="button" onclick="return checkreg();">免费注册</button> -->
+
+                <input type="submit" value="" style="width:113px;border:none;background:url(__PUBLIC__/images/register.png) no-repeat;" />
+              </a> 
+          </div>
+
+          
+          
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="right"> 
+	  <a class="login" href="__MODULE__/Login/index">已有帐号？ 点此登录&gt;&gt;</a>
+            <ul class="list">
+        <li class="first"> 
+		  <span class="ico ico-pro"></span>
+          <div class="info">
+            <h4>高素质、诚信的交友会员</h4>
+            <p>面向渴望爱情婚姻的单身人士</p>
+            <p>需提交详细资料和身份证件</p>
+            <p>专业的人工审核跟进</p>
+          </div>
+        </li>
+        <li> 
+		  <span class="ico ico-date"></span>
+          <div class="info">
+            <h4>以“约会”为主导交友模式</h4>
+            <p>自主定制约会，挑选约会对象</p>
+            <p>通过约会观察</p>
+            <p>直接快速判断是否适合交往</p>
+          </div>
+        </li>
+        <li> 
+		  <span class="ico ico-secu"></span>
+          <div class="info">
+            <h4>安全的交友平台</h4>
+            <p>涉及隐私的资料都被保密</p>
+            <p>约会双方必须验证联系方式</p>
+            <p>成功后由网站代为交换</p>
+          </div>
+        </li>
+        <div style="clear:both;"></div>
+        </ul>
+        <script type="text/javascript">
+
+            function ajaxInfo(item){
+                
+                if(item == "username"){
+                    var notice = '昵称';
+                    var verify = $("#"+item).val().match(/^([\u4E00-\uFA29]|[\uE7C7-\uE7F3]|[a-zA-Z0-9]){3,16}$/);
+					//var verify = $("#"+item).val().match(/^[\w-_]{3,16}$/);
+                }else{
+                    var notice = '邮箱';
+                    var verify = $("#"+item).val().match(/^[_.0-9a-z-]+@([0-9a-z][0-9a-z-]+.)+[a-z]{2,3}$/);
+                }
+                
+                if($("#"+item).val().length == 0){
+                    $("#tip_"+item).css('color', 'red').html(notice+"不能为空!");
+                    return false;
+                }else if(verify == null){
+                    $("#tip_"+item).css('color', 'red').html(notice+"格式不正确");
+                    return false;            
+                }
+                var result;
+                //调用自定义ajax函数
+                var data = 'inputName='+item+'&inputValue='+$("#"+item).val();
+                myAjax("__MODULE__/Login/unique", 'get', 'text', data, function(data){
+                    if(data != 0){
+                        $("#tip_"+item).css('color', 'green').html("该"+notice+"可以使用");
+                        result = true;
+                    }else{
+                        $("#tip_"+item).css('color', 'red').html("该"+notice+"已被注册");
+                        result = false;
+                    }
+                }, false);
+                return result;
+
+            }
+
+          
+        </script>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  <div style="clear:both;"></div>
+</block>

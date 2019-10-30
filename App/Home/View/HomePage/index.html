@@ -1,0 +1,682 @@
+<extend name="Public/base" />
+<block name='maincontent'>
+<link rel="stylesheet" href="__PUBLIC__/css/page.css">
+<style>
+	.menu-item{padding-left:20px;padding-top:5px;display:block;float:left;width:74px;height:25px; margin-right: 10px;margin-top:10px;
+	cursor: pointer;line-height:15px;border:1px solid #E1E1E1; background-color:#ffffff;clear:bath;}
+	.mod-gift{display:block;float:left;cursor: pointer;margin-left:28px;margin-top:5px;background-color:#ffffff;}
+	#layout { position:absolute;height:510px;width:730px;display:none; background:#fff;}
+	.alpha { filter: alpha(Opacity=50, FinishOpacity=50, Style=0, StartX=0, StartY=0, FinishX=100, FinishY=100｝
+</style>
+<div id="page-index" class="page">
+  <div class="ce member">
+	<include file="Public:search"/>		
+    <div class="left">
+      <div class="paper-article">
+        <div class="articlesec basicsec">
+          <div class="pcontent">
+            <div class="prwrap">
+				<div class="portrait portrait-195">
+				<if condition="$usertable.avatar neq null">
+					<img src="__PUBLIC__/Uploads/pic/{$usertable.avatar}" border="0" height="227" width="185">
+				<elseif condition="$userinfo.gender eq 1"/>	
+					<img src="__PUBLIC__/Uploads/pic/male.gif" border="0" height="227" width="185">
+				<else/>
+					<img src="__PUBLIC__/Uploads/pic/female.gif" border="0" height="227" width="185">	
+				</if>
+				</div>
+					
+				<div class="opwrap">
+				</div>
+            </div>
+
+        <div class="infowrap">
+        <div class="nickwrap">
+		<p class="nick"><if condition="$userinfo.gender eq 1"><img src=" __PUBLIC__/images/f2fde8e7d8aa2a10.gif" class="" border="0"><else/><img src=" __PUBLIC__/images/87197a0d51022068.gif" class="" border="0"></if>  {$usertable.username}  </p>  <p class="next"> 
+		<volist name="genders" id="xing">
+		<a href="__URL__/index/id/{$xing.userid}">
+		</volist>
+		下一个您可能感兴趣的人»</a></p>
+		</div>
+        <div class="imgarrwrap introwrap">
+		<div class="imgarr imgarr-n-u"></div>
+		<p class="intro">内心独白：{$monologue|default="这个家伙很懒，什么都没写！"}</p>
+		</div>
+            <div class="biwrap">
+                <ul class="infolist">
+					<li>性　　别：<span class="certiconph"><if condition="$userinfo.gender eq 1">男<elseif condition="$userinfo.gender eq 2"/>女<else/>未填写</if></span></li>
+					<li>婚姻状态：{$marrystatus|default="未填写"}<span class="certiconph"></span></li>
+					<li>年　　龄：{$userinfo.age|default="0"} 岁<span class="certiconph"></span></li>
+					<li>学　　历：{$education|default="未填写"}<span class="certiconph"></span></li>
+					<li>身　　高：{$userinfo.height|default="0"}CM</li>
+					<li>月薪收入：{$salary|default="未填写"}</li>                
+					<li>星　　座：
+					<if condition="$birthday eq 0">未填写
+					<else/>
+					<between  name="birthday" value="1.20,2.18">
+						水瓶座
+					</between >						
+					<between  name="birthday" value="2.19,3.20">
+						双鱼座
+					</between >
+					<between  name="birthday" value="3.21,4.19">
+						白羊座
+					</between >							
+					<between  name="birthday" value="4.20,5.20">
+						金牛座
+					</between >							
+					<between  name="birthday" value="5.21,6.21">
+						双子座
+					</between >							
+					<between  name="birthday" value="6.22,7.22">
+						巨蟹座
+					</between >							
+					<between  name="birthday" value="7.23,8.22">
+						狮子座
+					</between >					
+					<between  name="birthday" value="8.23,9.22">
+						处女座
+					</between >						
+					<between  name="birthday" value="9.23,10.23">
+						天枰座
+					</between >						
+					<between  name="birthday" value="10.24,11.22">
+						天蝎座
+					</between >						
+					<between  name="birthday" value="11.23,12.21">
+						射手座
+					</between >						
+					<between  name="birthday" value="12.22,1.19">
+						摩羯座
+					</between >	
+					</if>
+					</li>
+					<li>生　　肖：{$shuxing|default="未填写"}</li>
+					<li>所在地区：{$userinfo.hukou|default="未填写"} {$userinfo.huji}</li>
+					<li>籍　　贯：{$sheng}省 {$shi}</li>
+					<div style="clear:both;"></div>
+                </ul>
+            </div>
+			<div style="clear:both;"></div>
+            <div class="mbtnwrap">
+                <div class="center_buttons"> 
+					<a href="javascript:void(0);" onclick="showBox('greet',{$id})" > <img src=" __PUBLIC__/images/a2.gif"></a> 
+					<a href="javascript:void(0);" onclick="showBox('message',{$id})"> <img src=" __PUBLIC__/images/a1.gif"></a> 
+					<a href="javascript:void(0);" > <img onclick="toClick({$id})" class="dianji" src=" __PUBLIC__/images/a4.gif"></a> 
+					<a href="javascript:void(0);" > <img src="__PUBLIC__/images/a5.gif" onclick='return doClick();'></a> 
+                </div>
+            </div>
+        </div>
+		</div>
+		</div>
+
+		<script type="text/javascript">
+			//关注操作
+			function doClick(){
+				$.ajax({
+					url:'__MODULE__/Attention/insert',
+					type:'post',
+					dataType:'json',
+					data:{ id:{$id} },
+					success:function(info){
+						if(info['error'] == true){
+							alert(info['data']);
+						}else{
+							alert(info['data']);
+						}
+					}
+				});
+				return false;
+			}
+				
+			var logid = <?php echo $lookid ;?>;
+			var toid = <?php echo $toid ;?>;
+
+			$(function(){
+				$(".dianji").click(function(){
+					//判断是不是登陆者自己送自己礼物
+					if(logid == toid){
+						alert("对不起！不能给自己送礼物！");
+						return;
+					}else{
+						//将隐藏编辑层显示
+						$("#heiceng").css("display","block");
+						$("#layout").css("display","block");	
+					}			
+				});	
+				$("#doClose").click(function(){
+					$("#heiceng").css("display","none");
+					$("#layout").css("display","none");
+				});
+			});
+			//关闭礼物框
+			var heiceng = document.getElementById("heiceng");
+			var layout = document.getElementById("layout");
+			function doClose(){
+				heiceng.style.display = "none";
+				layout.style.display = "none";
+			}
+
+		</script>
+				
+		<!-- 联系方式 -->
+		<div class="articlesec detailsec">		
+		<div class="titlebar">
+			<h1 class="title">联系方式</h1>
+		</div>
+		<div class="pcontent">
+		<!-- 登录会员 -->
+		<if condition="($id eq $logid) OR ($con.jurisdiction eq 1)">
+			<ul class="infolist">
+				<table class="tb-home" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td width="8%">邮箱：</td>
+							<td width="42%">{$usertable.email|default="未填写"}</td>
+							<td width="8%">手机：</td>
+							<td width="42%">{$con.phone|default="未填写"}</td>
+						</tr>
+						<tr>
+							<td>Q Q：</td>
+							<td>{$con.qq|default="未填写"}</td>
+							<td>微信：</td>
+							<td><font>{$con.wechat|default="未填写"}</font></td>
+						</tr>
+						<tr>
+							<td>微博：</td>
+							<td colspan="3"><font>{$con.blog|default="未填写"}</font></td>
+						</tr>
+					</tbody>
+				</table>
+				<div style="clear:both;"></div>
+			</ul>
+			<else/>		
+			<ul class="infolist">
+				<table cellpadding="10" cellspacing="10" border="0" width="98%">
+					<tbody>
+						<tr>
+							<td align="center">对不起，您没有权限查看联系方式，
+							<a href="#" class="btn_c2"><span>升级VIP可见</span></a>						
+							&nbsp;&nbsp;
+							<!-- 支付费用查看 -->
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div style="clear:both;"></div>
+			</ul>		
+		</if>		
+		</div>
+		</div>
+	<!-- 相册 -->	
+		<div class="articlesec detailsec">
+          <div class="titlebar">
+            <h1 class="title">相册（<span id="shu"></span>张）</h1>
+          </div>
+		  <div class="pcontent">
+			  <div class="album_Pic">
+				<div class="JQ-slide">
+				 <!-- <div class="JQ-slide-nav"><a class="prev" href="">‹</a><a class="next" href="#">›</a></div>-->
+				  <div id="imgdiv" class="wrap">
+					<ul class="JQ-slide-content imgList">
+						<if condition="$photos eq null">
+						<b>相册中没有图片！</b>
+						<else/>
+							<volist name="photos" id="p">
+								<li> <a rel="example_group" href="__PUBLIC__/Uploads/pic/{$p.uploadimage}" class="img" target="_blank"><img src="__PUBLIC__/Uploads/pic/z_{$p.uploadimage}" alt="{$p.info}" title="{$p.info}"></a> <a href="" class="txt">{$p.info}</a> </li>
+							</volist>
+						</if>
+					</ul>
+				  </div>
+				</div>
+			  </div> 
+		  </div>
+		</div>	
+		<script type="text/javascript">
+		//图片的数量
+			var imgnum = <?php echo $image;?>;
+			var shu = document.getElementById("shu"); 
+				shu.innerHTML=imgnum.length;
+		//相册图片的轮放	
+		window.onload=function ()
+		{
+			var oDiv=document.getElementById('imgdiv');
+			var oUl=oDiv.getElementsByTagName('ul')[0];
+			var aLi=oUl.getElementsByTagName('li');
+			var aA=document.getElementsByTagName('a');
+			var timer=null;
+			var iSpeed=10;
+			
+			oUl.innerHTML+=oUl.innerHTML;
+			oUl.style.width=aLi.length*aLi[0].offsetWidth+'px';
+			
+			function fnMove()
+			{
+				if(oUl.offsetLeft<-oUl.offsetWidth/2)
+				{
+					oUl.style.left=0;
+				}
+				else if(oUl.offsetLeft>0)
+				{
+					oUl.style.left=-oUl.offsetWidth/2+'px';
+				}
+				oUl.style.left=oUl.offsetLeft+iSpeed+'px';
+			}
+			
+			timer=setInterval(fnMove, 150);
+			
+			aA[0].onclick=function ()
+			{
+				iSpeed=-10;
+			};
+			aA[1].onclick=function ()
+			{
+				iSpeed=10;
+			};
+			
+			oDiv.onmouseover=function ()
+			{
+				clearInterval(timer);
+			};
+			
+			oDiv.onmouseout=function ()
+			{
+				timer=setInterval(fnMove, 150);
+			};
+		};
+</script>		
+	<!--详细资料-->
+        <div class="articlesec detailsec">
+        <div class="titlebar">
+            <h1 class="title">详细资料</h1>
+        </div>
+        <div class="pcontent">
+            <ul class="infolist">
+				<table class="tb-home" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td width="15%">年　　龄：</td>
+							<td width="35%">{$userinfo.age|default="未透露"} 岁</td>
+							<td width="15%">生　　肖：</td>
+							<td width="35%">{$shuxing|default="未透露"}</td>
+						</tr>
+						<tr>
+							<td>交友类型：</td>
+							<td>{$lovesort|default="未透露"}</td>
+							<td>血　　型：</td>
+							<td>{$bloodtype|default="未透露"} </td>
+						</tr>
+						<tr>
+							<td>民　　族：</td>
+							<td>汉族</td>
+							<td>有无子女：</td>
+							<td>{$child|default="未透露"}</td>
+						</tr>
+						<tr>
+							<td>购车情况：</td>
+							<td><if condition="$car eq 1">暂未购车<else/>已经购车</if> </td>
+							<td>住房情况：</td>
+							<td>{$house|default="未透露"}</td>
+						</tr>
+						<tr>
+							<td>是否吸烟：</td>
+							<td><font>{$smoking|default="未透露"}</font></td>
+							<td>是否喝酒：</td>
+							<td><font>{$drinking|default="未透露"}</font></td>
+						</tr>  
+					</tbody>
+				</table>
+				<div style="clear:both;"></div>
+            </ul>
+		</div>
+        </div>
+        <div class="articlesec detailsec">
+        <div class="titlebar">
+            <h1 class="title">择友要求</h1>
+        </div>
+        <div class="pcontent">
+            <ul class="infolist">
+				<table class="tb-home" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td width="15%">性　　别：</td>
+							<td width="35%"><if condition="$sex eq 0">不限<elseif condition="$sex eq 1"/>男<else/>女</if> </td>
+							<td width="15%">照片要求：</td>
+							<td width="35%"><font><if condition="$ishead eq 1">有形象照<else/>不限</if></font></td>
+						</tr>
+						<tr>
+							<td>年龄范围：</td>
+							<td>{$age[0]|default="不限"}<if condition="$age[1] neq null">~{$age[1]}岁</if></td>
+							<td>身高范围：</td>
+							<td><font>{$weight[0]|default="不限"}<if condition="$weight[1] neq null">~{$weight[1]} CM</if></font></td>
+						</tr>
+						<tr>
+							<td>交友类型：</td>
+							<td>{$type1|default="不限"} {$type2}</td>
+							<td>婚史状况：</td>
+							<td>{$hismarriage1|default="不限"} {$hismarriage2}</td>
+						</tr>
+						<tr>
+							<td>学历要求：</td>
+							<td><font>{$education1|default="不限"}<if condition="$education2 neq null">~{$education2}</if></font></td>
+							<td>所在地区：</td>
+							<td colspan="3">
+								{$shengs.name|default="不限"} {$shis.name}<br>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div style="clear:both;"></div>
+            </ul>
+		</div>
+        </div>
+        <div class="articlesec detailsec">
+			<div class="titlebar">
+            <h1 class="title">生活描述</h1>
+			</div>
+			<div class="pcontent">
+            <ul class="infolist">
+				<table class="tb-home" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td width="15%">家中排行：</td>
+							<td width="35%"><font><if condition="$tophome eq null">未透露<else/>{$tophome}</if></font></td>
+							<td width="15%">最大消费：</td>
+							<td width="35%"><font><if condition="$consume eq null">未透露<else/>{$consume}</if></font></td>
+						</tr>
+						<tr>
+							<td>宗教信仰：</td>
+							<td><font><if condition="$faith eq null">未透露<else/>{$faith}</if></font></td>
+							<td>锻炼习惯：</td>
+							<td><font><if condition="$workout eq null">未透露<else/>{$workout}</if></font></td>
+						</tr>
+						<tr>
+							<td>作息习惯：</td>
+							<td><font><if condition="$rest eq null">未透露<else/>{$rest}</if></font></td>
+							<td>是否要孩子 </td>
+							<td><font><if condition="$havechildren eq null">未透露<else/>{$havechildren}</if></font></td>
+						</tr>
+						<tr>
+							<td colspan="2">愿意与对方父母同住： <font><if condition="$talive eq null">未透露<else/>{$talive}</if></font></td>
+							<td colspan="2">喜欢制造浪漫： <font><if condition="$romantic eq null">未透露<else/>{$romantic}</if></font></td>
+						</tr>
+						<tr>
+							<td colspan="4">擅长生活技能： 
+								<font>
+								<if condition="$lifeskill[0] neq null">{$lifeskill[0]}
+								<elseif condition="$lifeskill[1] neq null"/>{$lifeskill[1]}
+								<elseif condition="$lifeskill[2] neq null"/>{$lifeskill[2]}
+								<elseif condition="$lifeskill[3] neq null"/>{$lifeskill[3]}
+								<elseif condition="$lifeskill[4] neq null"/>{$lifeskill[4]}<else/>未透露</if>
+								</font>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<div style="clear:both;"></div>
+            </ul>
+			</div>
+        </div>
+        <div class="articlesec detailsec">
+        <div class="titlebar">
+            <h1 class="title">兴趣爱好</h1>
+        </div>
+			<div class="pcontent">
+				<ul class="infolist">
+					<table class="tb-home" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tbody>
+						<tr>
+							<td width="20%">喜欢的运动：</td>
+							<td width="80%"><font>		
+							<if condition="$sport eq null">未透露
+							<else/>
+								<volist name='sport' id='vo'>					
+									{$vo}&nbsp;
+								</volist>
+							</if>
+							</font></td>
+						</tr>
+						<tr>
+							<td>喜欢的食物：</td>
+							<td><font>
+							<if condition="$food eq null">未透露
+							<else/>
+								<volist name='food' id='fo'>							
+									{$fo}&nbsp;							
+								</volist>	
+							</if>						
+							</font></td>
+						</tr>
+						<tr>
+							<td>喜欢的书籍：</td>
+							<td><font>
+							<if condition="$book eq null">未透露
+							<else/>
+								<volist name='book' id='bo'>							
+									{$bo}&nbsp;						
+								</volist>
+							</if>							
+							</font></td>
+						</tr>
+						<tr>
+							<td>喜欢的电影：</td>
+							<td><font>
+							<if condition="$film eq null">未透露
+							<else/>
+								<volist name='film' id='fi'>
+									{$fi}&nbsp;
+								</volist>					
+							</if>
+							</font></td>
+						</tr>
+						<tr>
+							<td>业 余 爱 好：</td>
+							<td><font>
+							<if condition="$interest eq null">未透露
+							<else/>
+								<volist name='interest' id='int'>
+									{$int}&nbsp;
+								</volist>						
+							</if>
+							</font></td>
+						</tr>
+						<tr>
+							<td>喜欢的旅游去处：</td>
+							<td><font>
+							<if condition="$travel eq null">未透露
+							<else/>
+								<volist name='travel' id='tra'>							
+									{$tra}&nbsp;							
+								</volist>	
+							</if>						
+							</font></td>
+						</tr>
+						<tr>
+							<td>关注的节目：</td>
+							<td><font>
+							<if condition="$attention eq null">未透露
+							<else/>
+								<volist name='attention' id='at'>						
+									{$at}&nbsp;				
+								</volist>	
+							</if>						
+							</font></td>
+						</tr>
+						<tr>
+							<td>娱 乐 休 闲：</td>
+							<td><font>
+							<if condition="$leisure eq null">未透露
+							<else/>
+								<volist name='leisure' id='le'>						
+									{$le}&nbsp;					
+								</volist>	
+							</if>							
+							</font></td>
+						</tr>
+					</tbody>
+					</table>
+					<div style="clear:both;"></div>
+				</ul>
+			</div>
+        </div>
+		<div class="mbtnwrap">
+			<div class="center_buttons"> 
+				<a href="javascript:void(0);" onclick="showBox('greet',{$id})" > <img src=" __PUBLIC__/images/a2.gif"></a> 
+				<a href="javascript:void(0);" onclick="showBox('message',{$id})" > <img src=" __PUBLIC__/images/a1.gif"></a> 
+				<a href="javascript:void(0);" > <img onclick="toClick({$id})" class="dianji" src=" __PUBLIC__/images/a4.gif"></a>
+				<a href="javascript:void(0);"> <img src=" __PUBLIC__/images/a5.gif" onclick='return doClick();'></a> 
+			</div>
+		</div>
+	  </div>	  
+    </div>	
+    <div class="right yue1">
+		<h2>会员状态</h2>
+		<ul class="center">
+			<li>诚信星级：<if condition="$userinfo.gender eq 1"><img src=" __PUBLIC__/images/f2fde8e7d8aa2a10.gif" class="" border="0"><else/><img src=" __PUBLIC__/images/87197a0d51022068.gif" class="" border="0"></if>7星</li>
+			<li>访问人气：<font id="json_hits">{$views}</font></li>
+			<li>个人相册：{$photonum} 张</li>
+			<li>心情日记：{$dia} 篇</li>
+			<li>收到礼物：{$gif} 个</li>
+			<li>微博动态：{$wb} 个</li>
+			<li>关　　注：{$att} 个</li>
+			<li>粉　　丝：{$see} 个</li>
+			<li>注册时间：
+				<a href="###">VIP可见&gt;&gt;</a>
+			</li>
+			<li>最后登录：
+				<a href="###">VIP可见&gt;&gt;</a>
+			</li>
+			<div style="clear:both;"></div>
+		</ul>
+		<div class="ju">  
+			<span id="tips_listen"><a id="a_listen" href="###" onclick='return doClick();'>加入关注</a></span>   
+		</div>
+		<div class="bao"> 
+		若此会员有交友动机不纯、故意中伤、侮辱、提供虚假资料、散步广告等恶劣行为。
+		<a href="###">请向网站举报</a> </div>	    	  
+		<h2><img src="__PUBLIC__/images/crown.png"> 推荐会员</h2>
+		<volist name="recuser" id="user">
+	        <div class="img_list"> <a href="__MODULE__/HomePage/index/id/{$user.userid}" title="{$user.user.username}" target="_blank">
+			<img src=" __PUBLIC__/Uploads/pic/{$user.user.avatar}" class="h3h" height="96" width="80"></a><br>
+			<img src="__PUBLIC__/images/{$user.icon}" class="" border="0">{$user.user.username}</div>
+		</volist>
+	    <div class="ycgg_home"></div>
+	</div>
+			
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  <div style="clear:both;"></div>
+	
+<!-- 礼物部分开始 -->	
+<div id="heiceng" style="display:none;background:black; filter: alpha(opacity=70); opacity:0.70; position:absolute;top:0px;left:0px; width:100%; height:2000px;"></div>
+<div id="layout" style="display:absolute;margin-left:310px;margin-top:-1570px;">
+	<div class="give-topic" id="bian">
+		<div style="background-color:#dd127b;width:730px;height:34px;"><div style="float:left;margin:8px;color:white">赠送礼物</div><div style="float:right;margin:8px;"><a href="###" id="doClose" style="color:white;">X</a></div></div>
+		<div class="nav-tips" style="background-color:#fefce7;width:700px;height:35px;margin:0 auto;">
+			<div style="padding:8px;margin:8px">
+			送给用户：<if condition="$userinfo.gender eq 1"><img src="__PUBLIC__/images/f2fde8e7d8aa2a10.gif"  border="0"><else/><img src="__PUBLIC__/images/87197a0d51022068.gif"  border="0"></if> <a href="#" target="_blank">{$usertable.username}</a>&nbsp;(<if condition="$userinfo.gender eq 1">男<else/>女</if>&nbsp;&nbsp;{$userinfo.age}岁&nbsp;&nbsp;
+			{$sheng}省 {$shi}
+			&nbsp;{$education})
+			</div>
+		</div>
+		<!--TAB BEGIN-->
+		<div class='menu-list' style='margin-left:38px'></div>
+		<!--TAB END-->
+		<div class="clear"></div>
+		<div class="gift-list" style="margin:15px 28px 20px 20px">
+			<ul id="ulid">
+			<volist name="list" id="vo">
+				<li class='mod-gift'>
+					<a href='###' ><img class="mouseover" onclick='doSend({$vo.giftid})' src='__PUBLIC__/presentimg/{$vo.imgurl}' height='75' width='75'>
+					<span id='select-127'></span>
+					</a>
+					<span id='msg-127' style='display:none;'>{$vo.intro}</span>
+					<div class='gift-text'>
+					&nbsp;&nbsp;{$vo.giftname}<br>
+					积分：{$vo.points}
+					</div>
+				</li>
+			</volist>	
+			</ul>
+		<div class="clear"></div>
+		</div>
+
+		<div class="badoo"></div>
+		<div class="clear"></div> 
+		<iframe name="myform" frameborder="0" style="display:none;"></iframe>		
+		<div class="gift-ft">
+			<form action='__URL__/doSend/id/{$usertable.id}' target="myform" method='post' id='myform' style='margin-top:18px'>
+				<div class="panel" style="margin-left:20px">
+					<label for="gift-words">赠言：</label>
+					<input class="gift-words" id="words" name="word" disabled="disabled" size="85" style="height:20px" value="" type="text">
+				</div>
+				<div class="m-gift-send" style="margin-top:15px;float:right;margin-right:25px;">
+					<div class="form_send_box">
+						<i id="calendarGift" class="img i-calendar">
+						选择的礼物：<span class="visual-none" id="tips-giftname"></span>&nbsp;&nbsp;&nbsp;
+						积分：<span class="visual-none" id="tips-points"></span> &nbsp;&nbsp;&nbsp;
+						</i> 
+						<input value="确定赠送" style="cursor:pointer;background-color:#f42460;color:white;padding: 5px 10px;margin: 0px;border-radius: 3px;min-width: 65px;border:0px" type="submit">
+					</div>
+				</div>
+			</form>
+		</div>		
+	</div>	
+</div>
+</div>
+<script type="text/javascript">
+	//获取礼物信息
+	function doSend(id){
+		$.ajax({
+			url: '__URL__/loadpresent',
+			type: 'post',
+			data: {id:id},
+			dataType: 'json',
+			success:function(info){
+				$("#words").val(info['intro']);
+				$("#tips-giftname").html(info['giftname']);
+				$("#tips-points").html(info['points']);
+				$("<input name='id' value='"+info['giftid']+"' type='hidden'/>").appendTo("#myform");
+			},
+		});
+	}
+	//返回发送礼物信息
+	function doreturn(info){
+		if(info=="false"){
+			alert("发送失败！");
+			return;
+		}else if(info=="notok"){
+			alert("对不起！您的积分不足！");
+			return;
+		}
+		alert("发送成功!");
+	}
+	
+</script>
+<!-- 礼物部分结束 -->  
+</div>	
+<script type="text/javascript">
+	//屏幕分辨率大小变动调节div位置
+	reSizeDiv();
+	function reSizeDiv(){
+		var s = document.body.offsetWidth;  //(带浏览器边框的宽度)
+
+		if(isFirefox=navigator.userAgent.indexOf("Firefox")>0)
+			s=window.innerWidth;
+			var a = 1024;  //要变换的临界点
+		if(s > a){
+			$("#layout").animate({ 
+				marginLeft: "300px",
+				marginTop: "-1820px",
+			}, 1000 );
+		}else{
+			$("#layout").animate({ 
+				marginLeft: "125px",
+				marginTop: "-1820px",
+			}, 1000 );
+		}
+	}
+			
+</script>
+</block>

@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="imgcs">
+		<view class="imgcs" @click="fun()">
 			<image v-for="(v,i) in arr" :key="i" :src="v.src" mode=""></image>
 		</view>
 	</view>
@@ -23,6 +23,13 @@
 					{src:'../../static/10.jpg'},
 				],
 			};
+		},
+		methods:{
+			fun(){
+				uni.navigateTo({
+					url: '/pages/duihua/shipin'
+				});
+			}
 		}
 	}
 </script>

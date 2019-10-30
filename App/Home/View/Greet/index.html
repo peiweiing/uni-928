@@ -1,0 +1,83 @@
+<extend name="Public/member"/>
+<block name="mainright">
+<div class="main_right">
+<div class="div_">个人中心 &gt;&gt; 我的问候</div>
+<!--TAB BEGIN-->
+<div class="tab_list">
+  <div class="tab_nv">
+	<ul>
+	  <li class="tab_item"><a href="__MODULE__/Message/index">会员来信</a></li>
+	  <li class="tab_item"><a href="__MODULE__/Message/send">已发信件</a></li>
+	  <li class="tab_item current"><a href="__MODULE__/Greet/index">收到问候</a></li>
+	  <li class="tab_item"><a href="__MODULE__/Greet/send">已发问候</a></li>
+	  <li class="tab_item"><a href="__MODULE__/SystemMessage/index">系统信件</a></li>
+	</ul>
+  </div>
+</div>
+	<!--TAB END-->
+    <div class="div_smallnav_content_hover">
+	  <div class="nav-tips">
+	    <div class="span">共收到个{$total|default=0}问候</div>
+	    筛选排序：
+	    <img src="__PUBLIC__/images/tips-msg01.gif"><a href="__MODULE__/Greet/index/status/1">未读问候</a> &nbsp;&nbsp;&nbsp;
+	    <img src="__PUBLIC__/images/tips-msg02.gif"><a href="__MODULE__/Greet/index/status/2">已读问候</a>&nbsp;&nbsp;&nbsp;
+	  </div>
+
+	  <table class="table">
+		<tbody>
+		<tr>
+		  <td width="3%">&nbsp;</td>
+		  <td width="6%">状态</td>
+		  <td width="17%">发件人</td>
+		  <td width="46%" align="left">发信人信息</td>
+		  <td width="10%">操作</td>
+		  <td width="18%">时间</td>
+		</tr>
+		<if condition="$total eq 0">
+		<tr>
+		  <td colspan="6" class="hback" align="center">对不起， 暂没有会员和你打招呼。</td>
+		</tr>
+		<else />
+		<volist name="list" id="list">
+		<tr>
+		  <td><input type="checkbox" name="id" value="{$list.id}"/></td>
+		  <td><if condition="$list.status eq 1">未读<img src="__PUBLIC__/images/tips-msg01.gif"><else />已读<img src="__PUBLIC__/images/tips-msg02.gif"></if></td>
+		  <td width="60">
+			<img src="__PUBLIC__/images/{$list.user.icon}"/>
+			<a href="__MODULE__/HomePage/index/id/{$list.user.userid}" target="_blank">{$list.user.username}</a>
+		  </td>
+		  <td align="left">
+			  {$list.user.gender}&nbsp;&nbsp;{$list.user.age}岁&nbsp;&nbsp;
+			  {$list.user.marrystatus}
+			  {$list.user.provinceid}&nbsp;
+			  {$list.user.cityid}&nbsp;
+			  {$list.user.education}&nbsp;
+			  {$list.user.salary}
+		  </td>
+		  <td><a href="__URL__/receiveView/id/{$list.id}" class="letter-button5"></a></td>
+		  <td>{$list.addtime|date="Y-m-d H:i:s",###}</td>
+		</tr>
+		</volist>
+		<tr>
+			<td colspan="6">
+				<div class="pagecode">
+					{$show}
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="5" style="text-align:left;">
+				&nbsp;&nbsp;<button class="chooseall">全选</button>
+				&nbsp;&nbsp;<button class="chooseallno">全不选</button>
+				&nbsp;&nbsp;<button class="chooseallno">反选</button>&nbsp;&nbsp;
+				<input type="submit" value="删除选定" class="button-red" onclick="messageDel('Greet','receivedel')"/>
+			</td>
+		</tr>
+		</if>
+	  </tbody>
+	  </table>
+
+    </div>
+	<!--//div_smallnav_content_hover End-->
+  </div>
+</block>

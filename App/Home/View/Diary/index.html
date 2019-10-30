@@ -1,0 +1,59 @@
+<extend name="Public/member"/>
+<block name="mainright">
+<div class="main_right">
+	<div class="div_"> 个人中心 &gt;&gt; 我的日记</div>
+	<!--TAB BEGIN-->
+	<div class="tab_list">
+		<div class="tab_nv">
+			<ul>
+				<li class="tab_item current"><a href="__URL__/index">我的日记</a></li>
+				<li class="tab_item"><a href="__URL__/add">发表日记</a></li>
+				<li class="tab_item">编辑日记</li>
+			</ul>
+		</div>
+	</div>
+	<!--TAB END-->
+<empty name="diaryList">
+	<div class="div_smallnav_content_hover">
+		<table class="user-table table-margin lh35" border="0" cellpadding="0" cellspacing="0" width="98%">
+		  <tbody>
+			<tr>
+				<td align="center">对不起，你还没写日记。</td>
+			</tr>
+		  </tbody>
+		</table>
+	</div>
+	
+<else/>
+<volist name='diaryList' id='diary'>
+<div class="div_smallnav_content_hover">
+	<div class="diary_item">
+		<div class="item_left" style="float:left;">
+			<img src="__PUBLIC__/images/<if condition='$diary.power eq 1'>unlock.png<else/>lock.png</if>" title="公开" width='18' toc="unlock">
+		</div>
+		
+		<div class="item_right" style="float:left;margin-left:10px;" id="mydiary_140">
+			
+			<a href="__URL__/edit/id/{$diary.id}"><strong>{$diary.title}</strong></a><m>[{$diary.catid.catname}]</m>&nbsp;&nbsp;&nbsp;&nbsp;<span class="cc">{$diary.addtime|date="Y-m-d H:i:s",###}</span>&nbsp;&nbsp;&nbsp;
+			(
+			<font color="green"><if condition="$diary.status eq 2">已通过<else/>审核中</if></font>
+			)
+		</div>
+		<div class="diary_gn" style="float:right;" id="mydiary_140_cz">浏览({$diary.views})&nbsp;&nbsp;&nbsp;评论({$diary.comment})&nbsp;&nbsp;&nbsp;
+		<a href="__URL__/edit/id/{$diary.id}">编辑</a>&nbsp;&nbsp;&nbsp;
+		<a href="javascript:void(0);" id='{$diary.id}' class="diarydel">删除</a>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+</volist>
+ <div class="page1">
+	<div class="pagecode">
+	{$show}
+	</div>
+	<div style="clear:both;"></div>
+  </div>
+
+</empty>
+</div>
+</block>

@@ -1,0 +1,91 @@
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/listdiary/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+		<input type="hidden" name="id" value="{$vo.id}"/>
+		<div class="pageFormContent" layoutH="57">
+			<dl>
+				<dt>分类：</dt>
+				<dd>
+					<select class="required combox" name="catid" id="w_combox_catid">
+						<option value='' disabled>请选择</option>
+						<option value='1' <if condition="$vo.catid eq 1">selected</if>>婚恋课堂</option>
+						<option value='2' <if condition="$vo.catid eq 2">selected</if>>爱情故事</option>
+						<option value='3' <if condition="$vo.catid eq 3">selected</if>>两性私语</option>
+						<option value='4' <if condition="$vo.catid eq 4">selected</if>>情感物语</option>
+						<option value='5' <if condition="$vo.catid eq 5">selected</if>>生活点滴</option>
+						<option value='6' <if condition="$vo.catid eq 6">selected</if>>文学随笔</option>
+						<option value='7' <if condition="$vo.catid eq 7">selected</if>>其他日志</option>
+					</select>
+				</dd>
+			</dl>
+			
+			<dl>
+				<dt>阅读权限：</dt>
+				<dd>
+					<select class="required combox" name="power" id="w_combox_power">
+						<option value='1' <if condition="$vo.power eq 1">selected</if> >公开</option>
+						<option value='2' <if condition="$vo.power eq 2">selected</if> >仅自己看</option>
+					</select>
+				</dd>
+			</dl>
+			
+			<dl>
+				<dt>天气：</dt>
+				<dd>
+					<select class="combox" name="weather" id="w_combox_weather">
+						<option value=''>请选择</option>
+						<option value="1" <if condition="$vo.weather eq 1">selected</if> >晴天</option>
+						<option value="2" <if condition="$vo.weather eq 2">selected</if> >阴天</option>
+						<option value="3" <if condition="$vo.weather eq 3">selected</if> >多云</option>
+						<option value="4" <if condition="$vo.weather eq 4">selected</if> >雨天</option>
+						<option value="5" <if condition="$vo.weather eq 5">selected</if> >雷阵雨</option>
+						<option value="6" <if condition="$vo.weather eq 6">selected</if> >雪天</option>
+					</select>
+				</dd>
+			</dl>
+			
+			<dl>
+				<dt>心情：</dt>
+				<dd>
+					<select class="combox" name="feel" id="w_combox_feel">
+						<option value=''>请选择</option>
+						<option value="1" <if condition="$vo.feel eq 1">selected</if> >开心</option>
+						<option value="2" <if condition="$vo.feel eq 2">selected</if> >吃惊</option>
+						<option value="3" <if condition="$vo.feel eq 3">selected</if> >抓狂</option>
+						<option value="4" <if condition="$vo.feel eq 4">selected</if> >伤心</option>
+						<option value="5" <if condition="$vo.feel eq 5">selected</if> >动心</option>
+						<option value="6" <if condition="$vo.feel eq 6">selected</if> >愤怒</option>
+						<option value="7" <if condition="$vo.feel eq 7">selected</if> >傻笑</option>
+						<option value="8" <if condition="$vo.feel eq 8">selected</if> >疑惑</option>
+						<option value="9" <if condition="$vo.feel eq 9">selected</if> >感叹</option>
+						<option value="10" <if condition="$vo.feel eq 10">selected</if> >郁闷</option>
+						<option value="11" <if condition="$vo.feel eq 11">selected</if> >沮丧</option>
+						<option value="12" <if condition="$vo.feel eq 12">selected</if> >一般</option>
+					</select>
+				</dd>
+			</dl>
+			
+			<dl>
+				<dt>标题：</dt>
+				<dd><input type="text" class="required" style="width:100%" name="title" value="{$vo.title}"/></dd>
+			</dl>
+			
+			<dl class="nowrap">
+				<dt>内容：</dt>
+				<dd><textarea class="editor" name="description" rows="12" cols="100" tools="simple">{$vo.content}</textarea></dd>
+			</dl>
+			<dl>
+				<dt>标题：</dt>
+				<dd><input type="radio" name="status" value='1' <if condition="$vo.status eq 1">checked</if> />未审核
+					<input type="radio" name="status" value='2' <if condition="$vo.status eq 2">checked</if> />已审核
+				</dd>
+			</dl>
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

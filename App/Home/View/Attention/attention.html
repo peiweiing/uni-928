@@ -1,0 +1,112 @@
+<extend name='Public/member'/>
+
+  <!--//user_main_left End-->
+  
+  <block name='mainright'>
+  <div class="main_right">
+    <div class="div_"> 个人中心 &gt;&gt; 我的关注 </div>
+
+    <!--TAB BEGIN-->
+    <div class="tab_list">
+	  <div class="tab_nv">
+	    <ul>
+		  <li class="tab_item current"><a href="__MODULE__/Attention/index">我的关注</a></li>
+		  <li class="tab_item"><a href="__MODULE__/ByAttention/index">我的粉丝</a></li>
+		  <li class="tab_item"><a href="__MODULE__/BySee/index">谁看过我</a></li>
+		  <li class="tab_item"><a href="__MODULE__/See/index">我看过谁</a></li>
+		  
+	    </ul>
+	  </div>
+    </div>
+	<!--TAB END-->
+
+    <div class="div_smallnav_content_hover" style='width:780px;border:1px solid #ddd' >
+	  	  	  <table class="user-table table-margin lh35" border="0" cellpadding="0" cellspacing="0" width="98%">
+		<tbody><tr>
+		
+		 
+		 <if condition="$users eq null">
+		  <td align="center" style="color:red" id='meiyou'><b>对不起，你还没关注任何人！</b></td>
+		 <else/>
+		 <foreach name='users' item='vo' key='k'>
+	<div class="myfollow_item" id="xx{$res.$k.attentionid}" style="height:100px">
+		 
+		  
+			  <!--$vo.avatar头像地址-->
+			<div class="myfollow_logo"><a href="__MODULE__/HomePage/index/id/{$vo.id}" target="_blank"><img class="user-logo" src="__PUBLIC__/Uploads/pic/{$vo.avatar}" width="50" height="60" /></a></div>
+			<ul class="myfollow_info">
+			  <li><a href="__MODULE__/HomePage/index/id/{$vo.id}" target="_blank">{$vo.username}</a>&nbsp;&nbsp;{$res.$k.ageyear}岁</li>
+			  <li> 
+			  {$res.$k.marrystatus} {$res.$k.height}CM&nbsp;&nbsp;{$city1.$k.name}&nbsp;{$city.$k.name}
+			  </li>
+			  <li>
+			  <img src="__PUBLIC__/images/cid_h.png" title="身份证未认证" />
+			  <img src="__PUBLIC__/images/video_h.png" title="视频未认证" />
+			  <img src="__PUBLIC__/images/email_h.png" title="邮箱未认证" /> 
+			  </li>
+			</ul>
+			<div class="clear"></div>
+			<div class="myfollow_db" id="myfollow_184625_db">
+					  <font color='#999999' title='{$res.$k.monolog}'>{$res.$k.monolog1}</font>
+					
+			</div>
+			<div style='color:#ddd;display:none' class='mouse'>
+			<a href="javascript:void(0)" onclick="showBox('greet',{$vo.id});">打招呼</a> | 
+			<a href="javascript:void(0)" onclick="showBox('message',{$vo.id});">写信件</a> | 
+			<a href="###" onclick="return doClick({$res.$k.attentionid});">删除</a>
+			</div>	
+	</div>
+
+		  
+		</tr>
+		</foreach>
+		</if>
+	  </tbody></table>
+	 <div class="page1">
+        <div class="pagecode">
+		{$pageInfo}
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+	  	      </div>
+	<!--//div_smallnav_content_hover End-->
+		
+  
+  <div class="clear"> </div>
+  <!--//main_right End-->
+
+
+
+<!--//user_footer End-->
+
+
+
+</div>
+<script type='text/javascript'>
+	var div = document.getElementById('mouse');
+	$(".myfollow_item").mouseover(function(){
+		$(this).children('.mouse').css('display','block');
+	});
+	$(".myfollow_item").mouseout(function(){
+		$(this).children('.mouse').css('display','none');
+	});
+	
+	function doClick(attentionid){
+	var otherid = $('#dongtai').attr('value');
+			$.ajax({
+			url:'__MODULE__/Attention/del',
+			type:'post',
+			dataType:'json',
+			data:{ id:attentionid },
+			success:function(info){
+				if(info['error'] == true){
+					$('#xx'+attentionid).fadeOut("slow");
+				}else{
+					alert(info['data']);
+				}
+			}
+			});
+			return false;
+	}
+</script>
+</block>

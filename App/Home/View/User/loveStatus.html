@@ -1,0 +1,60 @@
+<extend name="Public/member" />
+
+<block name="mainright">
+<div class="main_right">
+    <div class="div_"> 个人中心 &gt;&gt; 帐号信息</div>
+    <!--TAB BEGIN-->
+    <div class="tab_list">
+	  <div class="tab_nv">
+	    <ul>
+		  <li class="tab_item"><a href="__MODULE__/User/view/act/userInfo">我的帐号</a></li>
+		  <li class="tab_item"><a href="__MODULE__/User/view/act/editPass">修改密码</a></li>
+		  <li class="tab_item"><a href="__MODULE__/User/view/act/receiveEmail">邮件接收</a></li>
+		  <li class="tab_item current"><a href="__MODULE__/User/view/act/loveStatus">设置状态</a></li>
+	    </ul>
+	  </div>
+    </div>
+	<!--TAB END-->
+
+	<div class="div_smallnav_content_hover">
+	  
+	  
+	  
+	  	  <form name="myform" action="__MODULE__/User/update/type/loveStatus" method="post">
+	  <table class="user-table table-margin lh35" cellpadding="0" cellspacing="0" border="0" width="98%">
+		  <tbody><tr>
+			<td colspan="2" style="padding-bottom:10px;"><div class="item_title" style="width:100%"><p>设置交友状态</p><span class="shadow"></span></div></td>
+		  </tr>
+		  <tr>
+			<td colspan="2"><b>如果征友状态关闭，别人再也无法看到您的资料和照片；</b><br>
+			征友状态关闭之后，不需要再做任何其它操作。
+			</td>
+		  </tr>
+		  <tr>
+			<td class="lblock" width="10%"></td>
+			<td class="rblock" width="90%">征友进行中
+                <input name="lovestatus" value="1" <if condition='$lsta eq 1'>checked="checked" </if> type="radio"> 
+                <span id="dlovestatus" class="f_red"></span></td>
+		  </tr>
+		  <tr>
+			<td class="lblock"></td>
+			<td class="rblock">关闭征友 
+                <input name="lovestatus" value="0" <if condition='$lsta eq 0'>checked="checked" </if> type="radio"> 
+                <span id="dlovestatus" class="f_red"></span></td>
+		  </tr>
+		  <!-- 提交保存 -->
+		  <tr>
+			<td class="lblock"></td>
+			<td class="rblock"><input name="btn_save" value="保 存" class="button-red" type="submit"></td>
+		  </tr>
+	  </tbody></table>
+	  </form>
+	  
+
+    </div>
+	<!--//div_smallnav_content_hover End-->
+
+  </div>
+  <div class="clear"> </div>
+  <!--//main_right End-->
+</block>

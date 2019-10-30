@@ -1,0 +1,93 @@
+<extend name="Public/member" />
+<block name="mainright">
+	<div class="main_right">
+    <div class="div_">个人中心 &gt;&gt; 编辑资料</div>
+    <!--TAB BEGIN-->
+	<div class="tab_list">
+		<div class="tab_nv">
+			<ul>
+				<li class="tab_item"><a href="__MODULE__/UserParams/index">基本资料</a></li>
+				<li class="tab_item"><a href="__MODULE__/Profile/index">详细资料</a></li>
+				<li class="tab_item current"><a href="__URL__/index">内心独白</a></li>
+				<li class="tab_item"><a href="__MODULE__/Information/index">联系资料</a></li>
+			</ul>
+		</div>
+    </div>
+	<!--TAB END-->
+	<div class="div_smallnav_content_hover basicdata">
+	  	<!--内心独白 Begin-->
+		<form name="myform" onsubmit="return doSubmit('content','dcontent')" id="myform" action="__URL__/update" method="post">
+		<table class="user-table table-margin lh35" border="0" cellpadding="0" cellspacing="0" width="98%">
+			<tbody>
+			<tr>
+				<td class="lblock" width="15%">状 态</td>
+				<td class="rblock" width="85%">
+					<img src="__PUBLIC__/images/ok.gif"> <font color="green">审核通过</font>
+				</td>
+			</tr>
+			<!-- 独白 -->
+			<tr>
+				<td class="lblock">内心独白 <span class="f_red">*</span></td>
+				<td class="rblock">
+				<textarea name="monologue" id="content" onkeydown="countChar('content','counter','dcontent');" onkeyup="countChar('content','counter','dcontent');" style="width:98%;height:200px;display:;overflow:auto;">{$monologue}</textarea>
+				<br><span id="dcontent" class="f_red" style="display:none;"><img src="__PUBLIC__/images/x.jpg"/>内心独白字数必须在20~100个字之间!</span>
+				</td>
+			</tr>
+			<script type="text/javascript">
+			//键盘按下抬起事件函数
+			function countChar(textareaName,spanName,dcontents){
+				//输入框内容的长度
+				var textvalue = document.getElementById(textareaName).value.length;
+				//让输入框内容长度等于显示的总字数
+				document.getElementById(spanName).innerHTML=textvalue;
+				var dcon = document.getElementById(dcontents);
+				
+				if(textvalue > 100 || textvalue <20){
+					dcon.style.display = "block";
+					return false;				
+				}else{
+					dcon.style.display = "none";
+				}
+			}
+			//表单提交事件函数
+			function doSubmit(textName,showId){
+				//输入框内容的长度
+				var textval = document.getElementById(textName).value.length;
+				//隐藏的提示内容id
+				var dcontent = document.getElementById(showId);
+				//判断
+				if(textval > 100 || textval <20){
+					dcontent.style.display = "block";
+					return false;				
+				}else{
+					dcontent.style.display = "none";
+				}
+			}
+			</script>
+			<!-- 字数统计 -->
+			<tr>
+				<td class="lblock"></td>
+				<td class="rblock">限20 ~ 100个字，目前已输入<strong id="counter">20</strong>个。</td>
+			</tr>
+			<tr>
+				<td class="lblock"></td>
+				<td class="rblock">
+				<input name="btn_save" value="提交保存" onclick="return checkmonolog();" class="button-red" type="submit">
+				</td>
+			</tr>
+			<!-- 温馨提示 -->
+			<tr>
+				<td class="rblock" colspan="2" align="left">
+				温馨提示：<br>1、内心独白字数需在20 ~ 100个字之内；<br>2、内心独白中请勿出现QQ、微信、电话号码以及网址、广告、色情或其他不健康的内容；<br>3、修改保存后，我们将进行审核，通过了才能显示在个人资料页面。
+				</td>
+			</tr>
+		</tbody>
+		</table>
+		</form>
+		<!--内心独白 End-->
+	</div>
+	<div class="clear"></div>
+	<!--//div_smallnav_content_hover End-->
+	</div>
+	<div class="clear"></div>
+</block>

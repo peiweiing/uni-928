@@ -1,0 +1,82 @@
+
+<form id="pagerForm" action="__URL__/index" method="post">
+	<input type="hidden" name="pageNum" value="{$currentPage|default='1'}" />
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<input type="hidden" name="_order" value="{$Think.request._order}"/>
+	<input type="hidden" name="_sort" value="{$Think.request._sort}"/>
+</form>
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					<b>搜索</b> &nbsp; 昵称/用户名：<input type="text" name="username" value="{$Think.post.username}" /> 
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="delete" href="__URL__/del/id/{$Think.config.TMPL_L_DELIM}item_id{$Think.config.TMPL_R_DELIM}/navTabId/listuser" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			
+			<!--<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>-->
+		</ul>
+	</div>
+	
+	<table class="table" width="100%" layoutH="112">
+		<thead>
+			<tr>
+                <th width="">编号</th>
+				<th width="">用户uid</th>
+				<th width="">订单号</th>
+				<th width="">商品名称</th>
+				<th width="">订单时间</th>
+                <th width="">支付状态</th>
+				<th width="">金额</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="list" id="vo">
+				<tr style="height:30px;" target="item_id" rel="{$vo['order_id']}">
+                    <td>{$vo['order_id']}</td>
+					<td>{$vo['uid']}</td>
+					<td>{$vo['orderno']}</td>
+					<td>{$vo['order_name']}</td>
+					<td>{$vo['order_time']|date="Y-m-d H:i:s",###}</td>
+					<td><if condition="$vo['is_pay'] eq 1">已支付<else />未支付</if></td>
+                    <td>{$vo['sum_money']}</td>
+                    
+				</tr>
+			</volist>
+		</tbody>
+	</table>
+	<div class="panelBar">
+        
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({$Think.config.TMPL_L_DELIM}numPerPage:this.value{$Think.config.TMPL_R_DELIM})">
+				<option value="10" <if condition="$numPerPage eq 10">selected</if>>10</option>
+				<option value="15" <if condition="$numPerPage eq 15">selected</if>>15</option>
+				<option value="20" <if condition="$numPerPage eq 20">selected</if>>20</option>
+				<option value="25" <if condition="$numPerPage eq 25">selected</if>>25</option>
+				<option value="30" <if condition="$numPerPage eq 30">selected</if>>30</option>
+			</select>
+			<span>共{$totalCount}条</span>
+		</div>
+        <div style="line-heigth:20px;">
+            
+        </div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+	</div>
+</div>
+
+
+

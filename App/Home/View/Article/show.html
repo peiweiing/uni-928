@@ -1,0 +1,56 @@
+<extend name="Public/base"/>
+<block name="maincontent">
+<div class="ce member">
+<include file="Public:search"/>
+    <div class="left ri">
+      <div class="search_sort">
+        <div id="rank" class="search_sle">你的位置：<a  href="__MODULE__/Index">首页</a> &gt;&gt; <a  href="__MODULE__/DiaryShow/index">文章中心</a> &gt;&gt; 正文 </div>
+      </div>
+      <div class="content">
+        <h1>{$info.title}</h1>
+        <div class="real">
+          <div style="clear:both"></div>
+		  <div  style="width:100%;">
+			{$info.content}
+		  </div>
+		  </div>
+      </div>
+    </div>
+
+    <div class="right yue1">
+		<h2>常见问题</h2>
+		<ul class="" style="text-align:center">
+		<volist name="cjwt" id="vo">
+		 <li><a  href="{:U('Article/show',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}</a> </li>
+		 </volist>
+		</ul>
+        <h2>交友须知</h2>
+		<ul class="" style="text-align:center">
+		<volist name="jyxz" id="vo">
+		 <li><a  href="{:U('Article/show',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}</a> </li>
+		 </volist>
+		</ul>
+        <h2>关于婚恋</h2>
+		<ul class="" style="text-align:center">
+		<volist name="gyhl" id="vo">
+		 <li><a  href="{:U('Article/show',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}</a> </li>
+		 </volist>
+		</ul>
+        <h2>合作联系</h2>
+		<ul class="" style="text-align:center">
+		<volist name="hzlx" id="vo">
+		 <li><a  href="{:U('Article/show',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}</a> </li>
+		 </volist>
+		</ul>
+        <h2>帮助中心</h2>
+		<ul class="" style="text-align:center">
+		<volist name="bzzx" id="vo">
+		 <li><a  href="{:U('Article/show',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}</a> </li>
+		 </volist>
+		</ul>
+		
+	    <div style="clear:both;"></div>
+    </div>
+   <div style="clear:both;"></div>
+  </div>
+</block>

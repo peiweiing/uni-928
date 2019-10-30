@@ -1,0 +1,249 @@
+<extend name="Public/base"/>
+<block name="maincontent">
+ <div class="ce member">
+    <div class="left ri">
+      <div class="content">
+        <div class="search_box" id="searchBox" style="display:block;width:100%">
+          <h3>高级搜索</h3>
+          <div>
+              <div class="search_cont">
+
+				<form method="post" action="__URL__/search" id="search_high_level">
+				<input id="s_searchtype" name="s_searchtype" value="adv" type="hidden">
+				
+                <div class="search_cont_l">
+                  <label class="t">我要找：</label>
+                  <input name="s_sex" id="s_sex" value="2" type="radio">
+                  <label class="r" for="sex_1">女会员</label>
+                  <input name="s_sex" id="s_sex" value="1" type="radio">
+                  <label class="r" for="sex_2">男会员</label>
+                </div>
+				
+				<div class="search_cont_l">
+                  <label id="height" class="t">交友类型：</label>
+				  <select name="s_lovesort" id="s_lovesort">
+					  <option selected="selected" value="">=不限=</option>
+					  <option value="1">朋友</option>
+					  <option value="2">知己</option>
+					  <option value="3">恋爱</option>
+					  <option value="4">结婚</option>
+				  </select>
+				</div>
+                <div class="search_cont_l">
+                  <label id="age" class="t">年龄：</label>
+				  <select name="s_sage" id="s_sage">
+				  <option value=""selected="selected">=不限=</option>
+					  <for start="18" end="61">
+						<option value="{$i}">{$i}</option>
+					  </for>
+				  </select>
+				  <span>&nbsp;~&nbsp;</span>
+				  <select name="s_eage" id="s_eage">
+					  <option value="" selected="selected">=不限=</option>
+					  <for start="18" end="61">
+						<option value="{$i}">{$i}</option>
+					  </for>
+				  </select> 岁
+                </div>
+				
+				<div class="search_cont_l">
+                  <label id="height" class="t">身高：</label>
+				  <select name="s_sheight" id="s_sheight">
+					  <option value="" selected="selected">=不限=</option>
+					  <for start="130" end="201">
+						<option value="{$i}">{$i}</option>
+					  </for>
+				  </select>
+				  <span>&nbsp;~&nbsp;</span>
+				  <select name="s_eheight" id="s_eheight">
+				  <option value="" selected="selected">=不限=</option>
+					  <for start="130" end="201">
+						<option value="{$i}">{$i}</option>
+					  </for>
+				  </select> CM
+				</div>
+				
+				<div class="search_cont_l">
+                  <label id="workCity" class="t">地区：</label>
+				  <select name="s_dist1" id="s_dist1" ><option selected="selected" value="">=请选择=</option><option value="1">北京</option><option value="3">天津</option><option value="5">上海</option><option value="7">重庆</option><option value="9">广东</option><option value="33">江苏</option><option value="57">浙江</option><option value="85">福建</option><option value="98">湖南</option><option value="122">湖北</option><option value="152">山东</option><option value="177">辽宁</option><option value="198">吉林</option><option value="218">云南</option><option value="233">四川</option><option value="252">安徽</option><option value="271">江西</option><option value="286">黑龙江</option><option value="306">河北</option><option value="326">陕西</option><option value="336">海南</option><option value="342">河南</option><option value="362">山西</option><option value="374">内蒙古</option><option value="392">广西</option><option value="405">贵州</option><option value="416">宁夏</option><option value="421">青海</option><option value="427">新疆</option><option value="445">西藏</option><option value="449">甘肃</option><option value="463">台湾</option><option value="469">香港</option><option value="471">澳门</option><option value="475">其他</option></select>&nbsp;
+				  <span id="json_s_dist2"></span>&nbsp;
+				  <span id="json_s_dist3"></span>&nbsp;&nbsp;
+                </div>
+				
+				 <div class="search_cont_l">
+                  <label id="education" class="t">学历：</label>
+				  <select name="s_sedu" id="s_sedu">
+					  <option selected="selected" value="">=不限=</option>
+					  <option value="1">中专以下学历</option>
+					  <option value="2">中专</option>
+					  <option value="3">大专</option>
+					  <option value="4">本科</option>
+					  <option value="5">硕士</option>
+					  <option value="6">博士</option>
+					  <option value="7">博士后</option>
+				  </select>
+				</div>
+                
+                <div class="search_cont_l">
+                  <label id="salary" class="t">月收入：</label>
+				  <select name="s_ssalary" id="s_ssalary">
+					  <option selected="selected" value="">=不限=</option>
+					  <option value="1">2000元以下</option>
+					  <option value="2">2000~5000元</option>
+					  <option value="3">5000~10000元</option>
+					  <option value="4">10000~20000元</option>
+					  <option value="5">20000元以上</option>
+				  </select>
+				  </div>
+               
+
+				<div style="line-height:40px;">
+				  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tbody>
+					<tr>
+					  <td align="right" width="75px">婚史：</td>
+					  <td style="margin-left:5px;">
+						  <table border="0" cellpadding="0" cellspacing="0" align="left" width="98%">
+						  <tbody>
+							  <tr>
+								  <td class="hback" width="20%">
+									<input name="s_marry[]" id="s_marry[]"  value="1" type="checkbox"> 未婚 
+								  </td> 
+								  <td class="hback" width="20%"> 
+									<input name="s_marry[]" id="s_marry[]"  value="2" type="checkbox"> 已婚 
+								  </td> 
+								  <td class="hback" width="20%"> 
+									<input name="s_marry[]" id="s_marry[]"  value="3" type="checkbox"> 离异 
+								  </td> 
+								  <td class="hback" width="20%"> 
+									<input name="s_marry[]" id="s_marry[]"  value="4" type="checkbox"> 丧偶 
+								  </td>  
+							  </tr>
+						  </tbody>
+						  </table>
+					  </td>
+					</tr>
+				  </tbody></table>
+				  <div class="c"></div>
+				</div>
+
+
+				<div style="line-height:40px;">
+				  <table border="0" cellpadding="0" cellspacing="0" width="100%">
+					<tbody>
+						<tr>
+						  <td align="right" width="75px">有无子女：</td>
+						  <td style="margin-left:5px;">
+							  <table border="0" cellpadding="0" cellspacing="0" align="left" width="98%">  
+							  <tbody>
+								  <tr> 
+									  <td class="hback" width="20%"> 
+										<input name="s_havechild[]" id="s_havechild[]"  value="1" type="checkbox"> 无小孩 
+									  </td> 
+									  <td class="hback" width="20%"> 
+										<input name="s_havechild[]" id="s_havechild[]"  value="2" type="checkbox"> 有,和我住一起 
+									  </td> 
+									  <td class="hback" width="20%"> 
+										<input name="s_havechild[]" id="s_havechild[]"  value="3" type="checkbox"> 有,有时和我住一起 
+									  </td> 
+									  <td class="hback" width="20%"> 
+										<input name="s_havechild[]" id="s_havechild[]"  value="4" type="checkbox"> 有,不和我住一起 
+									  </td>  
+								  </tr>
+							  </tbody>
+							  </table>
+						  </td>
+						</tr>
+					</tbody>
+				  </table>
+				  <div class="c"></div>
+				</div>
+
+
+                <div class="search_cont_l">
+                  <label id="house" class="t">住房：</label>
+                  <select name="s_house" id="s_house">
+					  <option selected="selected" value="">=不限=</option>
+					  <option value="1">暂未购房</option>
+					  <option value="2">需要时置房</option>
+					  <option value="3">已购住房</option>
+					  <option value="4">与人合租</option>
+					  <option value="5">独自租房</option>
+					  <option value="6">与父母同住</option>
+					  <option value="7">住亲朋家</option>
+					  <option value="8">住单位房</option>
+				  </select>
+                </div>
+                <div class="search_cont_l">
+                  <label class="t">购车：</label>
+                  <select name="s_car" id="s_car">
+					  <option selected="selected" value="">=不限=</option>
+					  <option value="1">暂未购车</option>
+					  <option value="2">已经购车</option>
+				  </select>
+                </div>
+                <div class="search_cont_l">
+                  <label class="t">形像照：</label>
+                  <input value="1" name="s_avatar" id="s_avatar" type="checkbox">
+                  <label class="padd_r" for="ph_1">有</label>
+                </div>
+                <div class="search_cont_l">
+                  <label class="t">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                  <button type="submit" id="btn_search"><span>搜 索</span></button>
+                </div>
+				</form>
+              </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="right yue1">
+      <h2>热门日记</h2>
+      <ul class="list_blog">
+	    		        <li><a target="_blank" href="http://www.yyw1314.com/diary/57.html" title="对我有意思的就CALL吧">对我有意思的就CALL吧</a> </li>
+		        <li><a target="_blank" href="http://www.yyw1314.com/diary/68.html" title="第一次">第一次</a> </li>
+		        <li><a target="_blank" href="http://www.yyw1314.com/diary/71.html" title="单身女寻素质男无稳定工作者，不在北京者,勿扰">单身女寻素质男无稳定工作者，不在北京者,</a> </li>
+		        <li><a target="_blank" href="http://www.yyw1314.com/diary/65.html" title="真诚征婚，想找一个真心相待的另一半">真诚征婚，想找一个真心相待的另一半</a> </li>
+		        <li><a target="_blank" href="http://www.yyw1314.com/diary/77.html" title="本人联系方式">本人联系方式</a> </li>
+		        <li><a target="_blank" href="http://www.yyw1314.com/diary/82.html" title="请加我扣扣">请加我扣扣</a> </li>
+		        <li><a target="_blank" href="http://www.yyw1314.com/diary/63.html" title="择偶月收入上万+已购房">择偶月收入上万+已购房</a> </li>
+		        <li><a target="_blank" href="http://www.yyw1314.com/diary/45.html" title="控制情绪和欲望">控制情绪和欲望</a> </li>
+		        <li><a target="_blank" href="http://www.yyw1314.com/diary/69.html" title="征婚">征婚</a> </li>
+		        <li><a target="_blank" href="http://www.yyw1314.com/diary/51.html" title="算算你和另一个人的关系">算算你和另一个人的关系</a> </li>
+		      </ul>
+      <h2 style="margin-top:10px;">猜你喜欢</h2>
+	  	        <div class="img_list"> <a href="http://www.yyw1314.com/home/184696"><img src="__PUBLIC__/images/avatar_big_002.jpg" class="h3h" height="96" width="80"></a><br>
+        <img src="__PUBLIC__/images/87197a0d51022068.gif" class="" border="0"><a href="http://www.yyw1314.com/home/184696">cx520</a><br>
+        24岁  湖南 </div>
+	        <div class="img_list"> <a href="http://www.yyw1314.com/home/184695"><img src="__PUBLIC__/images/avatar_big.jpg" class="h3h" height="96" width="80"></a><br>
+        <img src="__PUBLIC__/images/87197a0d51022068.gif" class="" border="0"><a href="http://www.yyw1314.com/home/184695">莫颜</a><br>
+        25岁  贵州 </div>
+	        <div class="img_list"> <a href="http://www.yyw1314.com/home/184684"><img src="__PUBLIC__/images/avatar_big_007.jpg" class="h3h" height="96" width="80"></a><br>
+        <img src="__PUBLIC__/images/87197a0d51022068.gif" class="" border="0"><a href="http://www.yyw1314.com/home/184684">最好的情书0</a><br>
+        24岁  福建 </div>
+	        <div class="img_list"> <a href="http://www.yyw1314.com/home/184680"><img src="__PUBLIC__/images/avatar_big_005.jpg" class="h3h" height="96" width="80"></a><br>
+        <img src="__PUBLIC__/images/87197a0d51022068.gif" class="" border="0"><a href="http://www.yyw1314.com/home/184680">随缘哩</a><br>
+        26岁  河南 </div>
+	        <div class="img_list"> <a href="http://www.yyw1314.com/home/184677"><img src="__PUBLIC__/images/avatar_big_006.jpg" class="h3h" height="96" width="80"></a><br>
+        <img src="__PUBLIC__/images/87197a0d51022068.gif" class="" border="0"><a href="http://www.yyw1314.com/home/184677">笑笑笑笑</a><br>
+        24岁  北京 </div>
+	        <div class="img_list"> <a href="http://www.yyw1314.com/home/184675"><img src="__PUBLIC__/images/avatar_big_004.jpg" class="h3h" height="96" width="80"></a><br>
+        <img src="__PUBLIC__/images/87197a0d51022068.gif" class="" border="0"><a href="http://www.yyw1314.com/home/184675">我本善良</a><br>
+        22岁  北京 </div>
+	        <div class="img_list"> <a href="http://www.yyw1314.com/home/184673"><img src="__PUBLIC__/images/avatar_big_008.jpg" class="h3h" height="96" width="80"></a><br>
+        <img src="__PUBLIC__/images/87197a0d51022068.gif" class="" border="0"><a href="http://www.yyw1314.com/home/184673">Promise</a><br>
+        20岁  辽宁 </div>
+	        <div class="img_list"> <a href="http://www.yyw1314.com/home/184668"><img src="__PUBLIC__/images/avatar_big_003.jpg" class="h3h" height="96" width="80"></a><br>
+        <img src="__PUBLIC__/images/87197a0d51022068.gif" class="" border="0"><a href="http://www.yyw1314.com/home/184668">油菜花</a><br>
+        23岁  湖北 </div>
+	        <div class="img_list"> <a href="http://www.yyw1314.com/home/184665"><img src="__PUBLIC__/images/avatar_big_009.jpg" class="h3h" height="96" width="80"></a><br>
+        <img src="__PUBLIC__/images/87197a0d51022068.gif" class="" border="0"><a href="http://www.yyw1314.com/home/184665">惠子i</a><br>
+        22岁  陕西 </div>
+	        <div style="clear:both;"></div>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  <div style="clear:both;"></div>
+</block>

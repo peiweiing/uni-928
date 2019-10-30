@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title></title>
+	</head>
+	<body>
+		<form action="__URL__/insert" method="post">
+			<input type="hidden" name="fromuserid" value="90"/>
+			<input type="hidden" name="touserid" value="1"/>
+		<for start="0" end="5" name="i">
+			<input type="radio" name="greetid" value="{$info[$i]['id']}"/>{$info[$i]['greeting']}<br/><br/>
+		</for>
+		<input type="submit" value="提交"/>
+		<a href="__URL__/add">换一批</a>
+		</form>
+	</body>
+</html>

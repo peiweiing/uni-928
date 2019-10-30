@@ -1,0 +1,108 @@
+<extend name="Public/member" />
+<block name="mainright">
+	<div class="main_right">
+    <div class="div_">个人中心 &gt;&gt; 编辑资料</div>
+    <!--TAB BEGIN-->
+    <div class="tab_list">
+	<div class="tab_nv">
+	    <ul>
+		  <li class="tab_item"><a href="__MODULE__/UserParams/index">基本资料</a></li>
+		  <li class="tab_item"><a href="__MODULE__/Profile/index">详细资料</a></li>
+		  <li class="tab_item"><a href="__MODULE__/Monologue/index">内心独白</a></li>
+		  <li class="tab_item current"><a href="__URL__/index">联系资料</a></li>
+		</ul>
+	</div>
+    </div>
+	<!--TAB END-->
+	<div class="div_smallnav_content_hover basicdata">
+		<!-- 联系资料 Begin-->
+		<form name="myform" id="myform" onsubmit="doSubmit('mobile','qq')" action="__URL__/update" method="post">
+		<input name="yincang" id="yincang" value="savecontact" type="hidden">
+		<table class="user-table table-margin lh35" border="0" cellpadding="0" cellspacing="0" width="98%">
+		<tbody>
+			<tr>
+				<td colspan="2" style="padding-bottom:10px;"><div class="item_title" style="width:100%"><p>联系方式</p><span class="shadow"></span></div></td>
+			</tr>
+			<!-- 查看权限 -->
+			<tr style="display:;">
+				<td class="lblock" width="25%">查看权限 <span class="f_red"></span></td>
+				<td class="rblock" width="75%"><input name="jurisdiction" id="privacy" value="1" <if condition="$jurisdiction eq 1">checked="checked"</if> type="radio">任何人可见&nbsp;&nbsp;<input name="jurisdiction" id="privacy" value="2" type="radio" <if condition="$jurisdiction eq 2">checked="checked"</if>>保密&nbsp;&nbsp; <span id="dprivacy" class="f_red"></span></td>
+			</tr>
+			<!-- 手机号码 -->
+			<tr>
+				<td class="lblock"><font color="red">*</font>手机号 <span class="f_red"></span></td>
+				<td class="rblock" colspan="3">
+					<input name="mobilerz" id="mobilerz" value="0" type="hidden">
+					<input name="phone" id="mobile" value="{$information['phone']}" maxlength="11" class="input-150" onblur="ajax_usermobile('mobile', 'tips_mobile');" type="text"> 	
+					<span id="dmobile" class="f_red"></span>
+					<span id="tips_mobile">(手机号码和QQ号码至少填写一项)</span>
+				</td>
+			</tr>
+			<!-- QQ -->
+			<tr>
+				<td class="lblock"><font color="red">*</font>QQ号 <span class="f_red"></span></td>
+				<td class="rblock" colspan="3">
+
+				<input name="qq" id="qq" value="{$information['qq']}" class="input-150" maxlength="11" onblur="ajax_userqq('qq', 'tips_qq');" type="text"> 
+						<span id="dqq" class="f_red"></span>  
+				<span id="tips_qq">(手机号码和QQ号码至少填写一项)</span>
+			
+				</td>
+			</tr>
+			<!-- 联系电话 -->
+			<tr>
+				<td class="lblock">电话 <span class="f_red"></span></td>
+				<td class="rblock" colspan="3"><input name="telephone" id="telephone" value="{$information['telephone']}" class="input-100" type="text"> <span id="dtelephone" class="f_red"></span></td>
+			</tr>
+
+			<!--  MSN -->
+			<tr>
+				<td class="lblock">微信 <span class="f_red"></span></td>
+				<td class="rblock" colspan="3"><input name="wechat" value="{$information['wechat']}" id="msn" class="input-txt" type="text"> <span id="dmsn" class="f_red"></span></td>
+			</tr>
+			<!-- 个人博客/微博 -->
+			<tr>
+				<td class="lblock">个人博客/微博 <span class="f_red"></span></td>
+				<td class="rblock" colspan="3"><input name="blog" value="{$information['blog']}" id="homepage" class="input-txt" type="text"> <span id="dhomepage" class="f_red"></span></td>
+			</tr>
+			<!-- 联系地址 -->
+			<tr>
+				<td class="lblock">联系地址 <span class="f_red"></span></td>
+				<td class="rblock" colspan="3"><input name="address" value="{$information['address']}" id="address" class="input-txt" type="text"> <span id="daddress" class="f_red"></span> </td>
+			</tr>
+			<!-- 邮政编码 -->
+			<tr>
+				<td class="lblock">邮政编码 <span class="f_red"></span></td>
+				<td class="rblock" colspan="3"><input name="code" value="{$information['code']}" id="zipcode" class="input-s" type="text"> <span id="dzipcode" class="f_red"></span> </td>
+			</tr>
+			<!-- 提交按钮 -->
+			<tr>
+				<td class="lblock"></td>
+				<td class="rblock" height="45">
+				<input name="btn_save" value="提交保存" onclick="return checkcontact();" class="button-red" type="submit">
+				</td>
+			</tr>
+			<script type="text/javascript">
+			//表单提交事件函数
+			function doSubmit(mobileId,qqId){
+				//输入框内容的长度
+				var  mobile= document.getElementById(mobileId).value;
+				//隐藏的提示内容id
+				var qq = document.getElementById(qqId).value;
+				//判断
+				if(mobile == "null" || qq == "null"){
+					alert('手机号码和QQ号码至少填写一项!');
+					return false;				
+				}
+			}
+			</script>
+		</tbody>
+		</table>
+		</form>		
+	<!-- 联系资料 End-->
+	</div>
+	<div class="clear"></div>
+	<!--//div_smallnav_content_hover End-->
+	</div>
+	<div class="clear"></div>
+</block>

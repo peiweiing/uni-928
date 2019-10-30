@@ -1,0 +1,31 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/listgreet/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type="hidden" name="id" value="{$vo.id}"/>
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>类型：</dt>
+				<dd>
+					<select class="combox" name='type' id="w_combox_type">
+						<option value='1' <if condition="$vo.type eq 1">selected</if> >同性恋</option>
+						<option value='2' <if condition="$vo.type eq 2">selected</if> >男泡女</option>
+						<option value='3' <if condition="$vo.type eq 3">selected</if> >女泡男</option>
+					</select>
+				</dd>
+			</dl>
+			<dl class="nowrap">
+				<dt>内容：</dt>
+				<dd><textarea name="greeting" cols="80" rows="5">{$vo.greeting}</textarea></dd>
+			</dl>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

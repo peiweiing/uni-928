@@ -1,0 +1,21 @@
+[ 2014-09-18T11:54:02+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001013s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001693s ]
+SQL: DESCRIBE yyw_district [ RunTime:0.045004s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.051584s ]
+
+[ 2014-09-18T11:54:08+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001617s ]
+SQL: DESCRIBE yyw_district [ RunTime:0.007395s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.000748s ]
+
+[ 2014-09-18T11:54:21+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002266s ]
+SQL: DESCRIBE yyw_district [ RunTime:0.007842s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.000815s ]
+

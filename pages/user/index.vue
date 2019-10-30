@@ -15,7 +15,7 @@
 						<text class="user-Id">{{'ID号:110101'}}</text>
 					</view>
 				</view>
-				<view class="edit"> 编辑资料</view>
+				<view class="edit" @click="alter"> 编辑资料</view>
 				<view class="pay-money">
 					<text>收益的聊币</text>
 					<text>总理奥比</text>
@@ -34,14 +34,18 @@
 			<view class="recharge"  @click="navTo('/pages/moneyCz/index')">充值</view>
 		</view>
 		<view class="history-section icon">
-			<list-cell icon="icon-iconfontweixin" iconColor="#e07472" title="同城约泡" tips="查看VIP特权"></list-cell>
-			<list-cell icon="icon-iconfontweixin" iconColor="#e07472" title="邀请赚钱"></list-cell>
+			<list-cell icon="icon-iconfontweixin" iconColor="#e07472" title="同城约泡" tips="查看VIP特权" @eventClick="navTo('/pages/user/vip')"></list-cell>
+			<list-cell icon="icon-iconfontweixin" iconColor="#e07472" title="邀请赚钱" @eventClick="navTo('/pages/invite/invite')"></list-cell>
 			<list-cell icon="icon-dizhi" iconColor="#5fcda2" title="收支明细" @eventClick="navTo('/pages/address/address')"></list-cell>
-			<list-cell icon="icon-share" iconColor="#9789f7" title="情书"></list-cell>
-			<list-cell icon="icon-pinglun-copy" iconColor="#ee883b" title="谁看过我"></list-cell>
+			<view class="mp" @click="billet">
+				<list-cell icon="icon-share" iconColor="#9789f7" title="情书"></list-cell>
+			</view>
+			<view class="mp" @click="vip()">
+				<list-cell icon="icon-pinglun-copy" iconColor="#ee883b" title="谁看过我"></list-cell>
+			</view>
 			<list-cell icon="icon-shoucang_xuanzhongzhuangtai" iconColor="#54b4ef"></list-cell>
-			<list-cell icon="icon-shezhi1" iconColor="#e07472" title="撩妹指南" @eventClick="navTo('/pages/set/set')"></list-cell>
-			<list-cell icon="icon-shezhi1" iconColor="#e07472" title="客户咨询 " @eventClick="navTo('/pages/set/set')"></list-cell>
+			<list-cell icon="icon-shezhi1" iconColor="#e07472" title="撩妹指南" @eventClick="navTo('/pages/user/liaomei')"></list-cell>
+			<list-cell icon="icon-shezhi1" iconColor="#e07472" title="客户咨询 " @eventClick="navTo('/pages/client/index')"></list-cell>
 		</view>
 
 	</view>
@@ -81,12 +85,40 @@
 				uni.navigateTo({
 					url
 				})
-			}
+			},
+			alter(){
+				uni.navigateTo({
+					url: '/pages/user/alter'
+				});
+			},
+			billet(){uni.navigateTo({
+					url: '/pages/user/billet'
+				});
+			},
+			vip(){
+				uni.showModal({
+					title: '访客记录为尊贵VIP的特权，是否立即成为VIP？',
+					success: function (res) {
+						if (res.confirm) {
+							uni.navigateTo({
+								url: '/pages/moneyCz/index'
+							});
+							console.log('用户点击确定');
+						} else if (res.cancel) {
+							console.log('用户点击取消');
+						}
+					}
+				});
+			},
 		}
 	}
 </script>
 
 <style lang="scss">
+	.mp{
+		margin: 0;
+		padding: 0;
+	}
 	%flex-center {
 		display: flex;
 		flex-direction: center;

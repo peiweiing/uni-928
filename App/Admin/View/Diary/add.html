@@ -1,0 +1,85 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/insert/navTabId/listdiary/callbackType/closeCurrent" class="pageForm required-validate" onsubmit="return validateCallback(this, navTabAjaxDone);">
+		<div class="pageFormContent" layoutH="57">
+			<dl>
+				<dt>分类：</dt>
+				<dd>
+					<select class="required combox" name="catid" id="w_combox_catid">
+						<option value=''>请选择</option>
+						<option value='1'>婚恋课堂</option>
+						<option value='2'>爱情故事</option>
+						<option value='3'>两性私语</option>
+						<option value='4'>情感物语</option>
+						<option value='5'>生活点滴</option>
+						<option value='6'>文学随笔</option>
+						<option value='7'>其他日志</option>
+					</select>
+				</dd>
+			</dl>
+			
+			<dl>
+				<dt>阅读权限：</dt>
+				<dd>
+					<select class="required combox" name="power" id="w_combox_power">
+						<option value='1'>公开</option>
+						<option value='2'>仅自己看</option>
+					</select>
+				</dd>
+			</dl>
+			
+			<dl>
+				<dt>天气：</dt>
+				<dd>
+					<select class="combox" name="weather" id="w_combox_weather">
+						<option value=''>请选择</option>
+						<option value="1">晴天</option>
+						<option value="2">阴天</option>
+						<option value="3">多云</option>
+						<option value="4">雨天</option>
+						<option value="5">雷阵雨</option>
+						<option value="6">雪天</option>
+					</select>
+				</dd>
+			</dl>
+			
+			<dl>
+				<dt>心情：</dt>
+				<dd>
+					<select class="combox" name="feel" id="w_combox_feel">
+						<option value=''>请选择</option>
+						<option value="1">开心</option>
+						<option value="2">吃惊</option>
+						<option value="3">抓狂</option>
+						<option value="4">伤心</option>
+						<option value="5">动心</option>
+						<option value="6">愤怒</option>
+						<option value="7">傻笑</option>
+						<option value="8">疑惑</option>
+						<option value="9">感叹</option>
+						<option value="10">郁闷</option>
+						<option value="11">沮丧</option>
+						<option value="12">一般</option>
+					</select>
+				</dd>
+			</dl>
+			
+			<dl>
+				<dt>标题：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="title"/></dd>
+			</dl>
+			<dl class="nowrap">
+				<dt>内容：</dt>
+				<dd><textarea class="editor" name="description" rows="12" cols="100" tools="simple"></textarea></dd>
+			</dl>
+			
+		</div>
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

@@ -1,0 +1,49 @@
+<div class="search_top">
+	<form method="post" action="__MODULE__/UserList/index" id="search_normal" onsubmit="return searchSubmit()">
+	<div class="search_in">
+		
+		<label id="search_scroll_bar_gender">我要找:</label>
+		<select name="gender" id="gender">
+			<option selected="selected" value="2">女会员</option>
+			<option value="1">男会员</option>
+		</select>
+		
+		<label id="search_scroll_bar_age">&nbsp;&nbsp;年龄:</label>
+		<select name="min_age" id="min_age">
+		<option value="">不限</option>
+		<for start="18" end="61">
+		<option value="{$i}">{$i}</option>
+		</for>
+		</select>
+		
+		<span>~</span>
+		
+		<select name="max_age" id="max_age">
+		<option value="">不限</option>
+		<for start="18" end="61">
+		<option value="{$i}">{$i}</option>
+		</for>
+		</select>
+		
+		<label id="search_scroll_bar_workCity">&nbsp;&nbsp;地区:</label>
+		<select name="province" id="province"  style="width:80px;">
+			
+		</select>&nbsp;
+		<span id="json_s_dist2">
+		</span>&nbsp;
+		<span id="json_s_dist3">
+		</span>&nbsp;&nbsp;
+
+		<input type="checkbox" name="avatar" value="1" id="s_avatar" />
+		<label for="s_p_img">有形象照</label>
+		&nbsp;&nbsp;<a class="ser" href="">
+		<button type="submit">搜 索</button></a>
+		<a class="search_all" href="__MODULE__/HighSearch/index" id="searchMore"><span class="">更多搜索</span></a> 
+		&nbsp;&nbsp;
+		<!--<b>497</b> 人在线-->
+	</div>
+	</form>
+
+</div> 
+
+	

@@ -1,0 +1,64 @@
+<extend name='Public/member'/>
+
+  <!--//user_main_left End-->
+  
+  <block name='mainright'>
+<div class="main_right">
+    <div class="div_"> 个人中心 &gt;&gt; 我看过谁</div>
+
+    <!--TAB BEGIN-->
+    <div class="tab_list">
+	  <div class="tab_nv">
+	    <ul>
+		  <li class="tab_item"><a href="__MODULE__/Attention/index">我的关注</a></li>
+		  <li class="tab_item"><a href="__MODULE__/ByAttention/index">我的粉丝</a></li>
+		  <li class="tab_item"><a href="__MODULE__/BySee/index">谁看过我</a></li>
+		  <li class="tab_item current"><a href="__MODULE__/See/index">我看过谁</a></li>
+	    </ul>
+	  </div>
+    </div>
+	<!--TAB END-->
+
+    <div class="div_smallnav_content_hover">
+	
+	<if condition="$users eq null">
+		 <center><b> 对不起，你还被任何人关注！</b></center>
+	<else/>
+	<foreach name='users' item='vo' key='k'>
+	  <div class="myfan_item">
+	    <div class="myfan_logo">
+		  <a href="__MODULE__/HomePage/index/id/{$vo.id}"><img width="50" height="60" src="__PUBLIC__/Uploads/pic/{$vo.avatar}" class="user-logo">
+			</a>
+		</div>
+	    <div class="myfan_info">
+		  <div style="width:100%;">
+		    <strong><a target="_blank" href="__MODULE__/HomePage/index/id/{$vo.id}">{$vo.username}</a></strong>
+			<div id="tips_listen_184823" class="myfan-button"></div>
+			<span><a href="javascript:void(0)" onclick="showBox('message',{$vo.id});">发信件</a></span>
+			<span><a href="javascript:void(0)" onclick="showBox('greet',{$vo.id});">打招呼</a></span>
+		  </div>
+		  <div class="myfan_x">
+			{$res.$k.ageyear}岁 {$res.$k.marrystatus} {$res.$k.height}CM&nbsp;&nbsp;
+		    {$city1.$k.name} {$city.$k.name}&nbsp;&nbsp;
+		    {$res.$k.education}&nbsp;&nbsp;{$res.$k.salary}
+		  </div>
+		  <div class="myfan_d">
+		  		  {$res.$k.monolog}
+		  		  </div>
+		</div>
+		<div class="clear"></div>
+	  </div>
+	  </foreach>
+	 </if>
+	 
+	 <div class="page1">
+        <div class="pagecode">
+		{$pageInfo}
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+	<!--//div_smallnav_content_hover End-->
+
+  </div>
+  </div>
+</block>

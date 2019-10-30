@@ -1,0 +1,104 @@
+<extend name="Public/member" />
+
+<block name="mainright">
+<!--//user_main_left End-->
+  <div class="main_right">
+    <div class="div_"> 个人中心 &gt;&gt; 积分记录 </div>
+	<div class="nav-tips">
+	您当前剩余积分：<b><font color="green">{$newPoints}</font></b>
+	</div>
+    <!--TAB BEGIN-->
+    <div class="tab_list">
+	  <div class="tab_nv">
+	    <ul>
+		  <!-- <li class="tab_item current"><a href="http://www.yyw1314.com/usercp.php?c=money">易币记录</a></li> -->
+		  <li class="tab_item current"><a href="__MODULE__/UserPoints/index">积分记录</a></li>
+	    </ul>
+	  </div>
+    </div>
+	<!--TAB END-->
+
+    <div class="div_smallnav_content_hover">
+	  	  <form method="post" id="search_form" action="__MODULE__/UserPoints/index">
+              <div class="item" style="padding:10px 0px;">
+                <label>开始日期&nbsp;</label>
+                    <input name="startDate" class="Wdate" type="text" onClick="WdatePicker()" readonly value="{$startDate}">&nbsp;&nbsp;
+                <label>结束日期&nbsp;</label>
+                    <input name="endDate" class="Wdate" type="text" onClick="WdatePicker()" readonly value="{$endDate}">&nbsp;&nbsp;
+                <label>关键字&nbsp;</label>
+                    <input name="skeyword" id="skeyword" class="input-150" type="text" value="{$skeyword}">&nbsp;&nbsp;
+                <input value="搜 索" name="btn_search" class="button-coff" type="submit">		  
+              </div>
+	  </form>
+	  <table class="table">
+		<tbody><tr> 	 	 	 	
+		  <td width="20%">时间</td>
+		  <td width="20%">增加</td>
+		  <td width="12%">减少</td>
+		  <td width="12%">剩余</td>
+		  <td>备注</td>
+          <td width="10%">删除</td>
+		</tr>
+        <if condition="$list neq null">
+            <volist name="list" id="vo">
+            <tr>
+              <td>{$vo['addtime']|date="Y-m-d H:i:s",###}</td>
+              <td><if condition="$vo['increase'] neq null"><font color="green">{$vo['increase']}</if></font></td>
+              
+              <td><if condition="$vo['reduce'] neq null"><font color="red">{$vo['reduce']}</font></if></td>
+              <td><font color="blue">{$vo['points']}</font></td>
+              <td align="left">{$vo['content']}</td>
+              <td><a href="__MODULE__/UserPoints/del/id/{$vo['id']}" onclick="if(confirm('确定要删除这条记录吗?')){return true;}return false;">删除记录</a></td>
+            </tr>
+            </volist>
+            
+        <else />
+            <tr>
+                <td align="center" colspan="5" style="color:pink;">
+                    没有找到你要查询的积分记录！
+                </td>
+            </tr>
+        
+        </if>
+        </tbody>
+        </table>
+        <!-- <div style="width:100px;height:100px;background:red;"></div> -->
+        <div id="page" style="text-align:center; ">{$showPage}</div>
+        <script type="text/javascript">
+            var aLinks = $("#page a");
+            //alert(aLinks.length);
+            var disPage = $('#page span');
+            disPage.css({
+                padding:'4px 4px',
+                background:'#f05783',
+                color:'white',
+                border:'1px solid #f05783',
+            });
+            
+            for(var i=0; i<aLinks.length; i++){
+                if(!isNaN(parseFloat(aLinks[i].innerHTML))){
+                    //var iTag = parseFloat(aLinks[i].innerHTML);
+                    
+                    aLinks[i].style = "padding:3px 3px;background:#e8e8e8;border:1px solid #c4c4c4;";
+                    aLinks[i].onmouseover = function(){
+                        this.style = "padding:4px 4px;margin:0px 1px;  background:#f05783; color:white;border:1px solid #f05783;";
+                    }
+                    
+                    aLinks[i].onmouseout = function(){
+                        this.style = "padding:3px 3px;margin:0px 1px;  background:#e8e8e8; border:1px solid #c4c4c4;border:1px solid #c4c4c4;";
+                    }
+                }
+                //如果你不是一个数字
+                
+            }
+            //parseFloat(location.href.charAt(location.href.length-1));
+        </script>
+	</div>
+	<!--//div_smallnav_content_hover End-->
+    
+
+  </div>
+  <div class="clear"> </div>
+  <!--//main_right End-->
+
+</block>

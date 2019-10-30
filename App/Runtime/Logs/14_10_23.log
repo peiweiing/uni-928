@@ -1,0 +1,1032 @@
+[ 2014-10-23T09:34:02+08:00 ] 127.0.0.1 /yyw/
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
+
+[ 2014-10-23T09:34:15+08:00 ] 127.0.0.1 /yyw/
+ERR: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)
+
+[ 2014-10-23T09:34:48+08:00 ] 127.0.0.1 /yyw/
+ERR: invalid data source name
+
+[ 2014-10-23T09:35:10+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.063004s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.047002s ]
+
+[ 2014-10-23T09:51:31+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T09:51:53+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T09:53:17+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.006001s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T09:54:35+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.005001s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:32:25+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001001s ]
+
+[ 2014-10-23T10:32:37+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:32:47+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:37:59+08:00 ] 127.0.0.1 /yyw/index.php/Admin/User/add?_=1414031879749
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:38:02+08:00 ] 127.0.0.1 /yyw/index.php/Admin/Profile/index?_=1414031882399
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_profile` [ RunTime:0.006000s ]
+SQL: SHOW COLUMNS FROM `yyw_profile` [ RunTime:0.010001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_profile` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `yyw_profile` ORDER BY id desc LIMIT 0,10   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.010000s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=135 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=73 ) LIMIT 1   [ RunTime:0.034001s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=72 ) LIMIT 1   [ RunTime:0.002001s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=71 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id= ) LIMIT 1   [ RunTime:0.001000s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') LIMIT 1' at line 1
+ [ SQL语句 ] : SELECT `username` FROM `yyw_user` WHERE ( id= ) LIMIT 1  
+NOTIC: [8] Undefined offset: 4 F:\www\yyw\Yyw\Admin\Controller\ProfileController.class.php 第 25 行.
+NOTIC: [8] Undefined index:  F:\www\yyw\Yyw\Admin\Controller\ProfileController.class.php 第 25 行.
+NOTIC: [8] Undefined variable: search F:\www\yyw\Yyw\Admin\Controller\ProfileController.class.php 第 105 行.
+NOTIC: [8] Undefined index: values F:\www\yyw\Yyw\Admin\Controller\ProfileController.class.php 第 106 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: _order F:\www\yyw\Yyw\Runtime\Cache\Admin\12b0efe3e3a48931643777a3638b10bc.php 第 4 行.
+NOTIC: [8] Undefined index: _sort F:\www\yyw\Yyw\Runtime\Cache\Admin\12b0efe3e3a48931643777a3638b10bc.php 第 5 行.
+NOTIC: [8] Undefined index: title F:\www\yyw\Yyw\Runtime\Cache\Admin\12b0efe3e3a48931643777a3638b10bc.php 第 14 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.063003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.063003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:38:03+08:00 ] 127.0.0.1 /yyw/index.php/Admin/UserParams/index?_=1414031883212
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [2048] Declaration of Admin\Controller\UserParamsController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') F:\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 5 行.
+SQL: SHOW COLUMNS FROM `yyw_user_params` [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `yyw_user_params` [ RunTime:0.012001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_params` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `yyw_user_params` ORDER BY id desc LIMIT 0,10   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.009000s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=137 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.008000s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index:  F:\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 21 行.
+NOTIC: [8] Undefined index:  F:\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 23 行.
+NOTIC: [8] Undefined index:  F:\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 24 行.
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=136 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=16 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined offset: 0 F:\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 23 行.
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=135 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=17 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=134 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=133 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=2 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index:  F:\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 21 行.
+NOTIC: [8] Undefined index:  F:\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 23 行.
+NOTIC: [8] Undefined index:  F:\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 24 行.
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=132 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index:  F:\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 21 行.
+NOTIC: [8] Undefined index:  F:\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 23 行.
+NOTIC: [8] Undefined index:  F:\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 24 行.
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=130 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined offset: 0 F:\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 23 行.
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=129 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=128 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `username` FROM `yyw_user` WHERE ( id=127 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined offset: 0 F:\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 23 行.
+NOTIC: [8] Undefined variable: search F:\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 133 行.
+NOTIC: [8] Undefined index: values F:\www\yyw\Yyw\Admin\Controller\UserParamsController.class.php 第 134 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: _order F:\www\yyw\Yyw\Runtime\Cache\Admin\a111bb6ae10ad1fa6ab40326651c3be9.php 第 4 行.
+NOTIC: [8] Undefined index: _sort F:\www\yyw\Yyw\Runtime\Cache\Admin\a111bb6ae10ad1fa6ab40326651c3be9.php 第 5 行.
+NOTIC: [8] Undefined index: gender F:\www\yyw\Yyw\Runtime\Cache\Admin\a111bb6ae10ad1fa6ab40326651c3be9.php 第 14 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:38:57+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.027002s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.000000s ]
+
+[ 2014-10-23T10:39:11+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.000000s ]
+
+[ 2014-10-23T10:39:13+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:39:15+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.006001s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:39:16+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.007001s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:39:20+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:39:23+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001001s ]
+
+[ 2014-10-23T10:43:54+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:44:45+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:45:22+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:48:02+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:48:07+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.020001s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.000000s ]
+
+[ 2014-10-23T10:48:07+08:00 ] 127.0.0.1 /yyw/index.php/Home/Login/addrAjax
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:48:13+08:00 ] 127.0.0.1 /yyw/index.php/Home/Login/unique?inputName=username&inputValue=hupeng
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.005000s ]
+SQL: SELECT `username` FROM `yyw_user`  [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:48:20+08:00 ] 127.0.0.1 /yyw/index.php/Home/Login/unique?inputName=email&inputValue=guchengwuyue@163.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.006001s ]
+SQL: SELECT `email` FROM `yyw_user`  [ RunTime:0.000000s ]
+
+[ 2014-10-23T10:48:41+08:00 ] 127.0.0.1 /yyw/index.php/Home/Login/addrAjax?upid=3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=3 )  [ RunTime:0.000000s ]
+
+[ 2014-10-23T10:48:45+08:00 ] 127.0.0.1 /yyw/index.php/Home/Login/verify
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:48:45+08:00 ] 127.0.0.1 /yyw/index.php/Home/Login/unique?inputName=username&inputValue=hupeng
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.004000s ]
+SQL: SELECT `username` FROM `yyw_user`  [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:48:45+08:00 ] 127.0.0.1 /yyw/index.php/Home/Login/unique?inputName=email&inputValue=guchengwuyue@163.com
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.007001s ]
+SQL: SELECT `email` FROM `yyw_user`  [ RunTime:0.000000s ]
+
+[ 2014-10-23T10:48:46+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.009001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.007000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001001s ]
+
+[ 2014-10-23T10:48:46+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:54:45+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.005001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.006000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:54:45+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.000000s ]
+
+[ 2014-10-23T10:54:48+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.007000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T10:54:48+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.000000s ]
+
+[ 2014-10-23T10:55:03+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.008000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.008001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T10:55:03+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.000000s ]
+
+[ 2014-10-23T10:55:43+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.009001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.023002s ]
+
+[ 2014-10-23T10:55:43+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.005000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.005001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T10:55:49+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.006000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.010001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T10:55:49+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.006001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.008000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T10:57:50+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.006000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.010001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T10:57:50+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.006000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.006000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:00:09+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.029001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.006001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:00:09+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.007000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.009001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:00:14+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.005000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:00:14+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.007001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.006000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:00:21+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.008000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.006001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:00:21+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.008000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.006001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:00:22+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.008001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.006000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:00:22+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.006001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.006000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:00:24+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.008000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.009001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:00:24+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.005001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.007000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:00:25+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.004001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.006000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:00:25+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.008000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.008001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:00:25+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.006000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.008001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:00:26+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.007001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.006000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:00:27+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.018001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.007000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:00:27+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.006001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.009000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:00:33+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.006001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.006000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:00:33+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.006000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.007000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:00:34+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.005001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.008000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:00:34+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.008001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.007000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:00:42+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.009001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.007000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:00:42+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.007000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.008001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:04:08+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.013001s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.008001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:04:08+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.008000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.008001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:04:10+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.009000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.007001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:04:10+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.009001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.010000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:04:11+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.009001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.007000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:04:11+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.007000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.005001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:04:12+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.005000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.007001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:04:12+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.009000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.006001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:04:25+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.005001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.007000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:04:25+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.006001s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:04:27+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.006001s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:04:33+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:04:43+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.008001s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:05:08+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:05:26+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:05:26+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:05:36+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.005001s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:07:31+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:07:43+08:00 ] 127.0.0.1 /yyw/index.php/Home/Login/checkUser
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:07:43+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.007000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `id`,`username`,`avatar` FROM `yyw_user` WHERE ( status=1 and id=121 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] Missing argument 2 for Home\Controller\MessageController::getUserParams(), called in F:\www\yyw\Yyw\Home\Controller\MessageController.class.php on line 50 and defined F:\www\yyw\Yyw\Home\Controller\MessageController.class.php 第 87 行.
+SQL: SELECT `id`,`username`,`avatar` FROM `yyw_user` WHERE ( `id` = 121 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `yyw_user_params` [ RunTime:0.010000s ]
+SQL: SELECT `gender`,`marrystatus`,`education`,`salary`,`age`,`height`,`provinceid`,`cityid` FROM `yyw_user_params` WHERE ( userid=121 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.009001s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=84 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:07:43+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.009001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_params` [ RunTime:0.007000s ]
+SQL: SELECT `gender` FROM `yyw_user_params` WHERE ( userid=138 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `gender` FROM `yyw_user_params` WHERE ( userid=121 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_greet` [ RunTime:0.007000s ]
+SQL: SELECT id,greeting FROM yyw_greet WHERE  male=0 and female=1  and id >= floor(RAND() * (SELECT MAX(id) FROM `yyw_greet`)) ORDER BY id LIMIT 5 [ RunTime:0.043002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2014-10-23T11:07:54+08:00 ] 127.0.0.1 /yyw/index.php/Home/Login/checkUser
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+
+[ 2014-10-23T11:07:55+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/add
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.009000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `id`,`username`,`avatar` FROM `yyw_user` WHERE ( status=1 and id=121 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2] Missing argument 2 for Home\Controller\MessageController::getUserParams(), called in F:\www\yyw\Yyw\Home\Controller\MessageController.class.php on line 50 and defined F:\www\yyw\Yyw\Home\Controller\MessageController.class.php 第 87 行.
+SQL: SELECT `id`,`username`,`avatar` FROM `yyw_user` WHERE ( `id` = 121 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_params` [ RunTime:0.006001s ]
+SQL: SELECT `gender`,`marrystatus`,`education`,`salary`,`age`,`height`,`provinceid`,`cityid` FROM `yyw_user_params` WHERE ( userid=121 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.017001s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=4 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `name` FROM `yyw_district` WHERE ( id=84 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:08:28+08:00 ] 127.0.0.1 /yyw/index.php/Home/Attention/insert
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.005000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_attention` [ RunTime:0.004000s ]
+SQL: SELECT `attenid` FROM `yyw_attention` WHERE ( uid=138 )  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() F:\www\yyw\Yyw\Home\Controller\AttentionController.class.php 第 75 行.
+SQL: INSERT INTO `yyw_attention` (`attenid`,`uid`) VALUES (121,138) [ RunTime:0.044003s ]
+SQL: SHOW COLUMNS FROM `yyw_byattention` [ RunTime:0.004000s ]
+SQL: INSERT INTO `yyw_byattention` (`byattenid`,`uid`) VALUES (121,138) [ RunTime:0.025001s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `points` FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_points` [ RunTime:0.004001s ]
+SQL: SELECT `addtime` FROM `yyw_user_points` WHERE ( `userid` = '138' ) AND ( `content` = '每日登录网站，奖励积分' ) ORDER BY addtime desc LIMIT 1   [ RunTime:0.014000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_points` WHERE ( `userid` = '138' ) AND ( `content` = '发表一篇微博，奖励积分' ) AND (  (`addtime` BETWEEN '1414032525' AND 1414033708 ) ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: reduce F:\www\yyw\Yyw\Home\Controller\UserPointsController.class.php 第 124 行.
+SQL: INSERT INTO `yyw_user_points` (`increase`,`content`,`points`,`userid`,`addtime`) VALUES (20,'发表一篇微博，奖励积分',330,138,1414033708) [ RunTime:0.037002s ]
+SQL: UPDATE `yyw_user` SET `points`=330 WHERE ( `id` = 138 ) [ RunTime:0.037002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:08:33+08:00 ] 127.0.0.1 /yyw/index.php/Home/Message/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.005000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yyw_user_message` [ RunTime:0.005001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_user_message` WHERE ( receiveid=138 and status = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+
+[ 2014-10-23T11:08:33+08:00 ] 127.0.0.1 /yyw/index.php/Home/Greet/noRead
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_user` [ RunTime:0.010000s ]
+NOTIC: [2] Missing argument 1 for Think\Model::field(), called in F:\www\yyw\Yyw\Home\Controller\CommonController.class.php on line 13 and defined F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1541 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1542 行.
+NOTIC: [8] Undefined variable: field F:\www\yyw\ThinkPHP\Library\Think\Model.class.php 第 1552 行.
+SQL: SELECT * FROM `yyw_user` WHERE ( `id` = 138 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_hibox` [ RunTime:0.006001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yyw_hibox` WHERE ( touserid=138 and status = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:08:37+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:08:43+08:00 ] 127.0.0.1 /yyw/index.php/Home/Login/addrAjax
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.001000s ]
+
+[ 2014-10-23T11:08:43+08:00 ] 127.0.0.1 /yyw/index.php/Home/District/loaddist
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yyw_district` [ RunTime:0.005001s ]
+SQL: SELECT * FROM `yyw_district` WHERE ( upid=0 )  [ RunTime:0.000000s ]
+

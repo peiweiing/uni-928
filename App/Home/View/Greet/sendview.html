@@ -1,0 +1,36 @@
+<extend name="Public/member"/>
+<block name="mainright">
+<div class="main_right">
+<div class="div_">个人中心 &gt;&gt; 我的问候</div>
+<div class="tab_list">
+  <div class="tab_nv">
+	<ul>
+	  <li class="tab_item"><a href="__MODULE__/Message/index">会员来信</a></li>
+	  <li class="tab_item"><a href="__MODULE__/Message/send">已发信件</a></li>
+	  <li class="tab_item"><a href="__MODULE__/Greet/index">收到问候</a></li>
+	  <li class="tab_item current"><a href="__MODULE__/Greet/send">已发问候</a></li>
+	  <li class="tab_item"><a href="__MODULE__/SystemMessage/index">系统信件</a></li>
+	</ul>
+  </div>
+</div>
+	<!--TAB END-->
+    <div class="div_smallnav_content_hover">
+	  	  <!--已发问候列表-->
+	  <div class="nav-tips">
+	    <div class="span">已发问候14个</div>
+	    筛选排序：
+	    <img src="__PUBLIC__/images/tips-msg01.gif"><a href="__MODULE__/Greet/send/status/1">未读问候</a> &nbsp;&nbsp;&nbsp;
+	    <img src="__PUBLIC__/images/tips-msg02.gif"><a href="__MODULE__/Greet/send/status/2">已读问候</a>&nbsp;&nbsp;&nbsp;
+	  </div>
+	  <table class="user-table table-margin lh25" width="98%" border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+				<tr><td class="lblock" width="15%">发件时间：</td><td class="rblock" width="85%">{$info.addtime|date="Y-m-d H:i:s",###}</td></tr>
+				<tr><td class="lblock" width="15%">收件人：</td><td class="rblock" width="85%">{$info.user.username}</td></tr>
+				<tr><td class="lblock" width="15%">信件内容：</td><td class="rblock" width="85%">{$info.content.greeting}</td></tr>
+				<tr><td></td><td><button onclick="javascript:window.location='__URL__/send'" id="btn_return" class="button-qing"  name="btn_return">返回列表</button></td></tr>
+			</tbody>
+		</table>
+    </div>
+	<!--//div_smallnav_content_hover End-->
+  </div>
+</block>

@@ -1,0 +1,159 @@
+<extend name="Public/member" />
+<block name="mainright">
+<style>
+	#layout {border:2px solid #3399ff; float:left; margin:0 auto;position:relative;left:25px;display:none; height:300px;width:550px;  background:#fff;}
+	.alpha { filter: alpha(Opacity=50, FinishOpacity=50, Style=0, StartX=0, StartY=0, FinishX=100, FinishY=100｝
+</style>
+<link rel="stylesheet" href="__PUBLIC__/css/page.css">
+	<div class="main_right">
+    <div class="div_">个人中心 &gt;&gt; 我的相册</div>	
+    <!--TAB BEGIN-->
+    <div class="tab_list">
+		<div class="tab_nv">
+			<ul>
+			  <li class="tab_item current"><a href="__URL__/index">我的相册</a></li>
+			  <li class="tab_item"><a href="__URL__/add">上传相册</a></li>
+			  <li class="tab_item"><a href="__MODULE__/Photo/set">设置形象照</a></li>
+			</ul>
+		</div>
+    </div>
+	<!--TAB END-->   
+	<div id="heiceng" style="display:none;background:black; filter: alpha(opacity=70); opacity:0.70; position:absolute;top:0px;left:0px; width:100%; height:1000px;"></div>
+
+	<div id="layout">
+		<div style="width:100%;height:35px;background-color:#c3cbd2;">
+		<div style='padding:7px;'>编辑相册</div><div id='guanbi' style='width:23px;height:30px;padding-left:15px;padding-top:5px;margin-left:510px;margin-top:-31px'><a href='###'>X</a></div>
+		<div id="bianid"></div>
+		</div>	
+		<div id="divbox" style="background-color:white;width:550px;height:265px;position:absolute;">
+			<img src="__PUBLIC__/images/loading40.gif" style="height:265px;width:550px;"/>
+		</div>
+	</div>	
+	
+	<!--div_smallnav_content_hover Begin-->
+	<div class="div_smallnav_content_hover">
+	<div class="nav-tips">
+		您已经上传了 [<font id="green" color="green">0</font>] 张图片！
+	</div>
+
+	<table class="user-table table-margin lh35" border="0" cellpadding="0" cellspacing="0" width="98%">
+		<tbody>
+			<tr>
+			<if condition="$list eq null">
+				<td align="center">对不起，你还没有任何相册！</td>	
+			<else/>		
+				<td id="imageid">
+					<volist name="list" id="data">
+						<div style="float:left;width:125px;height:200px;margin:10px">
+							<div style="border:1px solid #ddd;width:125px;height:125px;">
+								<img src="__PUBLIC__/__UPLOAD__/pic/z_{$data.uploadimage}" style="width:125px;height:110px;cursor:pointer" alt="{$data.info}" title="{$data.info}"/>
+							</div>
+							<div style="margin-left:25px;margin-top:10px;color:green">
+							<img src="__PUBLIC__/images/ok.gif"/>
+							审核通过</div>
+							<a href="###" onclick="bianji({$data.id})" class="dianji">编辑</a>
+							<a href="javascript:if(confirm('确认删除吗?'))window.location='__URL__/del/id/{$data.id}'">删除</a>
+							<a href="__MODULE__/Photo/uploadcut/id/{$data.id}">设置形象照</a>
+						</div>	
+					</volist>
+				</td>	
+			</if>
+			</tr>		
+		</tbody>		
+	</table>
+	<div class="badoo">{$pageinfo}</div>
+	<script type="text/javascript">
+	var imgnum = <?php echo $image;?>;
+	var green = document.getElementById("green"); 
+		green.innerHTML=imgnum;
+
+	var liulan = document.getElementById("liulan"); 
+	function bianji(id){
+		$.ajax({
+			url:'__URL__/edit',
+			type:'post',
+			data: {id:id},
+			dataType:'json',
+			success:function(data){
+				var info='';
+
+				info+="<div style='clear:both;margin-top:20px;margin-left:25px;'>温馨提示：打勾(√)表示正常，打叉(X)表示待审核或者锁定。</div>";
+				info+="<div id='imgdiv' style='margin-top:38px;margin-left:25px'>";
+				info+="<a target='_blank' href='__PUBLIC__/__UPLOAD__/pic/c_"+data['uploadimage']+"'>";
+				info+="<img src='__PUBLIC__/__UPLOAD__/pic/z_"+data['uploadimage']+"' style='width:125px;height:110px;cursor:pointer' alt='"+data['info']+"' title='"+data['info']+"'/></a>";
+				info+="</div>";
+				info+="<div style='position:absolute;left:180px;top:100px'>	";
+				info+="	<form action='__URL__/info/id/"+data['id']+"' method='post'>";
+				info+="	<table style='width:300px;height:150px;'>";
+				info+="		<tr>";
+				info+="			<td>审核状态:</td>";
+				info+="			<td style='color:green'><img src='__PUBLIC__/images/ok.gif'/>&nbsp;正常</td>";
+				info+="		</tr>";
+				info+="		<tr id='shijian'>";
+				info+="		<td>上传时间:</td><td>"+data['addtime']+"</td>";
+				info+="		</tr>";	
+				info+="		<tr>";
+				info+="			<td>浏览次数:</td>";
+				info+="			<td id='liulan'>"+data['views']+"</td>";
+				info+="		</tr>";
+				info+="		<tr>";
+				info+="			<td>照片描述:</td>";
+				info+="			<td id='miaoshu'><input type='text' name='info' value='"+data['info']+"'></td>";
+				info+="		</tr>";
+				info+="		<tr>";
+				info+="			<td colspan='2' id='formid'>";				
+				info+="				<input style='cursor:pointer;background-color:#74d6d1;color:white' type='submit' value='提交保存'/>";
+				info+="			</td>";
+				info+="		</tr>";
+				info+="	</table>";
+				info+="	</form>";
+				info+="</div>";
+				
+				$(info).appendTo("#bianid");
+			},
+		});						
+	}	
+	</script>
+	<div class="clear"></div>
+	</div>
+    <div class="clear"></div>
+    	<!--//div_smallnav_content_hover End-->
+	</div>
+		<div class="clear"> </div>
+		<!--//main_right End-->
+		<div style="display: none;" class="right_kj">
+			<ul>
+			  <li><a href="__URL__/index">我的相册</a></li>
+			  <li><a href="__URL__/add">上传相册</a></li>
+			  <li><a href="__MODULE__/Photo/index">设置形象照</a></li>
+			</ul>
+		</div>
+	</div>
+<script type="text/javascript">
+	$(function(){
+		//点击编辑事件
+		$(".dianji").click(function(){
+			//将隐藏编辑层显示
+			$("#heiceng").css("display","block");
+			$("#layout").css("display","block");
+		});
+		//点击关闭
+		$("#guanbi").click(function(){
+			$("#heiceng").css("display","none");
+			$("#layout").css("display","none");
+			$("#divbox").css("display","block");
+			$("#bianid").empty();
+		//鼠标移入移出 关闭按钮变色
+		}).hover(function(){
+			$(this).css("background-color","#b7b7cf");
+		},function(){
+			$(this).css("background-color","#c3cbd2");
+		});	
+	});
+	function dianji(){
+		var box=document.getElementById("divbox");
+		box.style.display="none"; 			
+	}
+	setInterval(dianji,4000);
+</script>
+</block>

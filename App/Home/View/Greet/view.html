@@ -1,0 +1,24 @@
+<extend name="Public/member"/>
+<block name="mainright">
+	<div class="main_right">
+	<include file="Public:messagehead"/>
+	<!--TAB END-->
+    <div class="div_smallnav_content_hover">
+	  	  <!--已发问候列表-->
+	  <div class="nav-tips">
+	    <div class="span">已发问候14个</div>
+	    筛选排序：
+	    <img src="__PUBLIC__/images/tips-msg01.gif"><a href="http://www.yyw1314.com/usercp.php?c=hi&amp;a=to&amp;type=unread">未读问候</a> &nbsp;&nbsp;&nbsp;
+	    <img src="__PUBLIC__/images/tips-msg02.gif"><a href="http://www.yyw1314.com/usercp.php?c=hi&amp;a=to&amp;type=read">已读问候</a>&nbsp;&nbsp;&nbsp;
+	  </div>
+	  <form action="/usercp.php?c=hi&amp;a=to" method="post" name="myform" id="myform">
+	  <input name="a" id="a" value="" type="hidden">
+	  <table class="table">
+		<tbody>
+	   </tbody>
+	   </table>
+	  </form>
+    </div>
+	<!--//div_smallnav_content_hover End-->
+  </div>
+</block>

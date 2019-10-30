@@ -1,0 +1,713 @@
+<extend name="Public/member" />
+<block name="mainright">
+<div class="main_right">
+    <div class="div_">个人中心 &gt;&gt; 编辑资料</div>
+    <!--TAB BEGIN-->
+    <div class="tab_list">
+	  <div class="tab_nv">
+	    <ul>
+		  <li class="tab_item"><a href="__MODULE__/UserParams/index">基本资料</a></li>
+		  <li class="tab_item current"><a href="__URL__/index">详细资料</a></li>
+		  <li class="tab_item"><a href="__MODULE__/Monologue/index">内心独白</a></li>
+		  <li class="tab_item"><a href="__MODULE__/Information/index">联系资料</a></li>
+		  	    </ul>
+	  </div>
+    </div>
+	<!--TAB END-->
+	<div class="div_smallnav_content_hover basicdata"> 
+	<!--详细资料 Begin-->
+	<form name="myform" id="myform" action="__URL__/update" method="post">
+	<table class="user-table table-margin lh35" border="0" cellpadding="0" cellspacing="0" width="98%">
+		<tbody>
+			<tr>
+				<td colspan="4" style="padding-bottom:10px;"><div class="item_title" style="width:100%"><p>工作学习</p><span class="shadow"></span></div></td>
+			</tr>
+			<!-- 公司类型、收入 -->
+			<tr>
+				<td class="lblock" width="15%">公司类型 <span class="f_red"></span></td>
+				<td class="rblock" width="35%">
+				<select name="companytype" id="companytype">
+					<volist name="shiye" id="shiye">
+						<option value="{$key}" <if condition="$info.companytype eq $key">selected="selected"</if> >{$shiye}</option>
+					</volist>
+					</select> <span id="dcompanytype" class="f_red"></span>
+				</td>
+				<td class="lblock" width="15%">收入描述 <span class="f_red"></span></td>
+				<td class="rblock" width="35%">
+					<select name="income" id="income">
+					<volist name="shouru" id="shouru">
+						<option value="{$key}"<if condition="$info.income eq $key">selected='selected'</if>>{$shouru}</option>
+					</volist>
+					</select> <span id="dincome"></span>
+				</td>
+			</tr>
+			<!-- 工作、公司 -->
+			<assign 
+			<tr>
+				<td class="lblock">工作状况 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="workstatus" id="workstatus">
+						<volist name="gongzuo" id="gongzuo">
+						<option value="{$key}"<if condition="$info.workstatus eq $key">selected='selected'</if>>{$gongzuo}</option>
+						</volist>
+					</select> <span id="dworkstatus"></span>
+				</td>
+				<td class="lblock">公司名称 <span class="f_red"></span></td>
+				<td class="rblock">
+					<input name="companyname" id="companyname" class="input-150" type="text" value="{$companyname}">
+					<span id="dcompanyname" class="f_red"></span>
+				</td>
+			</tr>
+			<!-- 学历、专业 -->
+			<tr>
+				<td class="lblock">学 历 <span class="f_red"></span></td>
+				<td class="rblock"><font color="#999999">{$education}</font> <span id="deducation"></span></td>
+				<td class="lblock">专业类型 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="specialty" id="specialty">
+						<volist name="zhuanye" id="zhuanye">
+						<option value="{$key}"<if condition="$info.specialty eq $key">selected='selected'</if>>{$zhuanye}</option>
+						</volist>
+					</select> <span id="dspecialty" class="f_red"></span>
+				</td>
+			</tr>
+			<!-- 学校 -->
+			<tr>
+				<td class="lblock">毕业学校 <span class="f_red"></span></td>
+				<td class="rblock"><input name="school" id="school" class="input-150" type="text" value="{$school}"> <span id="dschool"></span></td>
+				<td class="lblock">入学年份 <span class="f_red"></span></td>
+				<td class="rblock"><input name="schoolyear" id="schoolyear" value="{$schoolyear}" style="width:226px;background: #fefefe;border: 1px solid #bbb;font-size: 14px;color: #333;padding: 7px;border-radius: 3px;" type="text" class="date_picker"> <span id="dschoolyear" class="f_red"></span></td>
+			</tr>
+			<!-- 语言能力 -->
+			<tr>
+				<td class="lblock">语言能力 <span class="f_red"></span></td>
+				<td class="rblock" colspan="3" id="em_language_edit">
+			<table id="languagetable" border="0" cellpadding="0" cellspacing="0" align="left" width="98%">  
+				<tbody>
+			
+					<tr>                                                                            
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="1" <for start="0" end="5"><if condition="$language[$i] eq 1">checked='checked'</if></for> type="checkbox"> 中文(普通话) </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="2" <for start="0" end="5"><if condition="$language[$i] eq 2">checked='checked'</if></for> type="checkbox"> 中文(广东话) </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="3" <for start="0" end="5"><if condition="$language[$i] eq 3">checked='checked'</if></for> type="checkbox"> 英语 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="4" <for start="0" end="5"><if condition="$language[$i] eq 4">checked='checked'</if></for> type="checkbox"> 法语 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="5" <for start="0" end="5"><if condition="$language[$i] eq 5">checked='checked'</if></for> type="checkbox"> 日语 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="6" <for start="0" end="5"><if condition="$language[$i] eq 6">checked='checked'</if></for> type="checkbox"> 韩语 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="7" <for start="0" end="5"><if condition="$language[$i] eq 7">checked='checked'</if></for> type="checkbox"> 德语 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="8" <for start="0" end="5"><if condition="$language[$i] eq 8">checked='checked'</if></for> type="checkbox"> 意大利语 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="9" <for start="0" end="5"><if condition="$language[$i] eq 9">checked='checked'</if></for> type="checkbox"> 俄语 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="10" <for start="0" end="5"><if condition="$language[$i] eq 10">checked='checked'</if></for> type="checkbox"> 芬兰语 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="11" <for start="0" end="5"><if condition="$language[$i] eq 11">checked='checked'</if></for> type="checkbox"> 荷兰语 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="12" <for start="0" end="5"><if condition="$language[$i] eq 12">checked='checked'</if></for> type="checkbox"> 葡萄牙语 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="13" <for start="0" end="5"><if condition="$language[$i] eq 13">checked='checked'</if></for> type="checkbox"> 西班牙语 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="14" <for start="0" end="5"><if condition="$language[$i] eq 14">checked='checked'</if></for> type="checkbox"> 越南语 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="15" <for start="0" end="5"><if condition="$language[$i] eq 15">checked='checked'</if></for> type="checkbox"> 阿拉伯语 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="16" <for start="0" end="5"><if condition="$language[$i] eq 16">checked='checked'</if></for> type="checkbox"> 泰国语 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="17" <for start="0" end="5"><if condition="$language[$i] eq 17">checked='checked'</if></for> type="checkbox"> 印度尼西亚语 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="18" <for start="0" end="5"><if condition="$language[$i] eq 18">checked='checked'</if></for> type="checkbox"> 印度语 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="19" <for start="0" end="5"><if condition="$language[$i] eq 19">checked='checked'</if></for> type="checkbox"> 丹麦语 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="20" <for start="0" end="5"><if condition="$language[$i] eq 20">checked='checked'</if></for> type="checkbox"> 希腊语 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="21" <for start="0" end="5"><if condition="$language[$i] eq 21">checked='checked'</if></for> type="checkbox"> 伊朗语 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="22" <for start="0" end="5"><if condition="$language[$i] eq 22">checked='checked'</if></for> type="checkbox"> 匈牙利语 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="23" <for start="0" end="5"><if condition="$language[$i] eq 23">checked='checked'</if></for> type="checkbox"> 土耳其语 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="24" <for start="0" end="5"><if condition="$language[$i] eq 24">checked='checked'</if></for> type="checkbox"> 挪威语 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="25" <for start="0" end="5"><if condition="$language[$i] eq 25">checked='checked'</if></for> type="checkbox"> 捷克语 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="26" <for start="0" end="5"><if condition="$language[$i] eq 26">checked='checked'</if></for> type="checkbox"> 波兰语 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="27" <for start="0" end="5"><if condition="$language[$i] eq 27">checked='checked'</if></for> type="checkbox"> 瑞典语 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="28" <for start="0" end="5"><if condition="$language[$i] eq 28">checked='checked'</if></for> type="checkbox"> 缅甸语 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="language[]" id="language[]" value="29" <for start="0" end="5"><if condition="$language[$i] eq 29">checked='checked'</if></for> type="checkbox"> 罗马尼亚语 </td>
+					</tr>
+				</tbody>
+			</table>
+			<span id="dlanguage" class="f_red"></span></td>
+			</tr>
+			<tr>
+			<td colspan="4" style="padding-top:10px;padding-bottom:10px;"><div class="item_title" style="width:100%"><p>生活描述</p><span class="shadow"></span></div></td>
+			</tr>
+			<!-- 排行、消费 -->
+			<tr>
+				<td class="lblock">家中排行 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="tophome" id="tophome">
+						<volist name="paihang" id="paihang">
+						<option value="{$key}"<if condition="$info.tophome eq $key">selected='selected'</if>>{$paihang}</option>
+						</volist>
+					</select> <span id="dtophome" class="f_red"></span></td>
+				<td class="lblock">最大消费 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="consume" id="consume">
+						<volist name="xiaofei" id="xiaofei">
+						<option value="{$key}"<if condition="$info.consume eq $key">selected='selected'</if>>{$xiaofei}</option>
+						</volist>
+					</select> <span id="dconsume"></span>
+				</td>
+			</tr>
+			<!-- 吸烟、喝酒 -->
+			<tr>
+				<td class="lblock">是否吸烟  <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="smoking" id="smoking">
+						<option selected="selected" value="">=请选择=</option>
+						<option value="1"<if condition="$info.smoking eq 1">selected='selected'</if>>吸，很反感吸烟</option>
+						<option value="2"<if condition="$info.smoking eq 2">selected='selected'</if>>不吸，但不反感</option>
+						<option value="3"<if condition="$info.smoking eq 3">selected='selected'</if>>社交时偶尔吸</option>
+						<option value="4"<if condition="$info.smoking eq 4">selected='selected'</if>>每周吸几次</option>
+						<option value="5"<if condition="$info.smoking eq 5">selected='selected'</if>>每天都吸</option>
+						<option value="6"<if condition="$info.smoking eq 6">selected='selected'</if>>有烟瘾</option>
+					</select> <span id="dsmoking"></span>
+				</td>
+				<td class="lblock">是否喝酒 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="drinking" id="drinking">
+						<option selected="selected" value="">=请选择=</option>
+						<option value="1"<if condition="$info.drinking eq 1">selected='selected'</if>>不喝</option>
+						<option value="2"<if condition="$info.drinking eq 2">selected='selected'</if>>社交需要时喝</option>
+						<option value="3"<if condition="$info.drinking eq 3">selected='selected'</if>>有兴致时喝</option>
+						<option value="4"<if condition="$info.drinking eq 4">selected='selected'</if>>每天都离不开酒</option>
+					</select> <span id="ddrinking" class="f_red"></span>
+				</td>
+			</tr>
+			<!-- 信仰、锻炼 -->
+			<tr>
+				<td class="lblock">宗教信仰 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="faith" id="faith">
+						<volist name="zongjiao" id="zongjiao">
+						<option value="{$key}"<if condition="$info.faith eq $key">selected='selected'</if>>{$zongjiao}</option>
+						</volist>
+					</select> <span id="dfaith"></span>
+				</td>
+				<td class="lblock">锻炼习惯 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="workout" id="workout">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$info.workout eq 1">selected='selected'</if>>每天锻炼</option>
+						<option value="2"<if condition="$info.workout eq 2">selected='selected'</if>>每周至少一次</option>
+						<option value="3"<if condition="$info.workout eq 3">selected='selected'</if>>每月几次</option>
+						<option value="4"<if condition="$info.workout eq 4">selected='selected'</if>>没时间锻炼</option>
+						<option value="5"<if condition="$info.workout eq 5">selected='selected'</if>>集中时间锻炼</option>
+						<option value="6"<if condition="$info.workout eq 6">selected='selected'</if>>不喜欢锻炼</option>
+					</select> <span id="dworkout" class="f_red"></span>
+				</td>
+			</tr>
+			<!-- 习惯、孩子 -->
+			<tr>
+				<td class="lblock">作息习惯 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="rest" id="rest">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$info.rest eq 1">selected='selected'</if>>早睡早起很规律</option>
+						<option value="2"<if condition="$info.rest eq 2">selected='selected'</if>>经常夜猫子</option>
+						<option value="3"<if condition="$info.rest eq 3">selected='selected'</if>>总是早起鸟</option>
+						<option value="4"<if condition="$info.rest eq 4">selected='selected'</if>>偶尔懒散一下</option>
+						<option value="5"<if condition="$info.rest eq 5">selected='selected'</if>>没有规律</option>
+					</select> <span id="drest"></span>
+				</td>
+				<td class="lblock">是否要孩子 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="havechildren" id="havechildren">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$info.havechildren eq 1">selected='selected'</if>>愿意</option>
+						<option value="2"<if condition="$info.havechildren eq 2">selected='selected'</if>>不愿意</option>
+						<option value="3"<if condition="$info.havechildren eq 3">selected='selected'</if>>视情况而定</option>
+					</select> <span id="dhavechildren" class="f_red"></span>
+				</td>
+			</tr>
+			<!-- 同住、浪漫 -->
+			<tr>
+				<td class="lblock">与对方父母同住 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="talive" id="talive">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$info.talive eq 1">selected='selected'</if>>愿意</option>
+						<option value="2"<if condition="$info.talive eq 2">selected='selected'</if>>不愿意</option>
+						<option value="3"<if condition="$info.talive eq 3">selected='selected'</if>>视情况而定</option>
+					</select> <span id="dtalive"></span>
+				</td>
+				<td class="lblock">喜欢制造浪漫 <span class="f_red"></span></td>
+				<td class="rblock">
+					<select name="romantic" id="romantic">
+						<option selected="selected" value="0">=请选择=</option>
+						<option value="1"<if condition="$info.romantic eq 1">selected='selected'</if>>经常</option>
+						<option value="2"<if condition="$info.romantic eq 2">selected='selected'</if>>偶尔</option>
+						<option value="3"<if condition="$info.romantic eq 3">selected='selected'</if>>视情况而定</option>
+						<option value="4"<if condition="$info.romantic eq 4">selected='selected'</if>>从不</option>
+						<option value="5"<if condition="$info.romantic eq 5">selected='selected'</if>>不喜欢</option>
+					</select> <span id="dromantic"></span>
+				</td>
+			</tr>
+			<!-- 生活技能 -->
+			<tr>
+				<td class="lblock">生活技能 <span class="f_red"></span></td>
+				<td class="rblock" colspan="3" id="em_lifeskill_edit">
+			<table border="0" cellpadding="0" cellspacing="0" align="left" width="98%"> 
+				<tbody>
+					<tr>
+					
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="1" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 1">checked='checked'</if></for>> 现实个人目标 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="2" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 2">checked='checked'</if></for>> 维护朋友圈关系 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="3" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 3">checked='checked'</if></for>> 装修房屋 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="4" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 4">checked='checked'</if></for>> 志愿者/义工 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="5" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 5">checked='checked'</if></for>> 热衷电脑 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="6" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 6">checked='checked'</if></for>> 保持生活条律 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="7" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 7">checked='checked'</if></for>> 理财 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="8" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 8">checked='checked'</if></for>> 在家款待朋友 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="9" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 9">checked='checked'</if></for>> 抚养或照顾孩子 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="10" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 10">checked='checked'</if></for>> 制造浪漫 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="11" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 11">checked='checked'</if></for>> 社交活动 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="12" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 12">checked='checked'</if></for>> 谈生意 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="13" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 13">checked='checked'</if></for>> 保持健康 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="14" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 14">checked='checked'</if></for>> 解决冲突 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="15" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 15">checked='checked'</if></for>> 博闻强识 </td>
+					</tr>
+					<tr>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="16" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 16">checked='checked'</if></for>> 对自我长期规划 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="17" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 17">checked='checked'</if></for>> 在简单中寻求快乐与满足 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="18" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 18">checked='checked'</if></for>> 文化和艺术 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="19" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 19">checked='checked'</if></for>> 结交新朋友 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="20" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 20">checked='checked'</if></for>> 烹饪 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="21" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 21">checked='checked'</if></for>> 赚钱养家 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="22" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 22">checked='checked'</if></for>> 保养、修理汽车 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="23" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 23">checked='checked'</if></for>> 做别人的好朋友和好同事 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="lifeskill[]" id="lifeskill[]" value="24" type="checkbox" <for start="0" end="5"><if condition="$lifeskill[$i] eq 24">checked='checked'</if></for>> 其他 </td> 
+					</tr>
+				</tbody>
+			</table>
+			<span id="dlifeskill" class="f_red"></span></td>
+			</tr>
+			<tr>
+				<td colspan="4" style="padding-top:10px;padding-bottom:10px;"><div class="item_title" style="width:100%"><p>兴趣爱好</p><span class="shadow"></span></div></td>
+			</tr>
+			<!-- 喜欢的运动 -->
+			<tr>
+				<td class="lblock">喜欢的运动 <span class="f_red"></span></td>
+				<td class="rblock" id="em_sports_edit" colspan="3">
+			<table border="0" cellpadding="0" cellspacing="0" align="left" width="98%">  
+				<tbody>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="1" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 1">checked='checked'</if></for>> 足球 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="2" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 2">checked='checked'</if></for>> 篮球 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="3" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 3">checked='checked'</if></for>> 排球 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="4" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 4">checked='checked'</if></for>> 网球 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="5" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 5">checked='checked'</if></for>> 羽毛球 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="6" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 6">checked='checked'</if></for>> 乒乓球 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="7" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 7">checked='checked'</if></for>> 壁球 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="8" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 8">checked='checked'</if></for>> 保龄球 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="9" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 9">checked='checked'</if></for>> 手球 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="10" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 10">checked='checked'</if></for>> 橄榄球 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="11" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 11">checked='checked'</if></for>> 棒球 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="12" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 12">checked='checked'</if></for>> 高尔夫 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="13" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 13">checked='checked'</if></for>> 健身 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="14" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 14">checked='checked'</if></for>> 跑步 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="15" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 15">checked='checked'</if></for>> 自行车 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="16" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 16">checked='checked'</if></for>> 摩托车 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="17" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 17">checked='checked'</if></for>> 汽车 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="18" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 18">checked='checked'</if></for>> 舞蹈 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="19" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 19">checked='checked'</if></for>> 体操 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="20" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 20">checked='checked'</if></for>> 跆拳道 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="21" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 21">checked='checked'</if></for>> 柔道 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="22" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 22">checked='checked'</if></for>> 空手道 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="23" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 23">checked='checked'</if></for>> 游泳 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="24" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 24">checked='checked'</if></for>> 潜水 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="25" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 25">checked='checked'</if></for>> 水上运动 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="26" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 26">checked='checked'</if></for>> 航海 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="27" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 27">checked='checked'</if></for>> 滑雪/滑冰 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="28" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 28">checked='checked'</if></for>> 拳击 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="29" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 29">checked='checked'</if></for>> 钓鱼 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="30" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 30">checked='checked'</if></for>> 瑜伽 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="31" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 31">checked='checked'</if></for>> 武术 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="32" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 32">checked='checked'</if></for>> 其它 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="sports[]" id="sports[]" value="33" type="checkbox" <for start="0" end="5"><if condition="$sports[$i] eq 33">checked='checked'</if></for>> 不喜欢运动 </td>  
+					</tr>
+				</tbody>
+			</table>
+			<span id="dsports" class="f_red"></span></td>
+			</tr>
+			<!-- 喜欢的食物 -->
+			<tr>
+				<td class="lblock">喜欢的食物 <span class="f_red"></span></td>
+				<td class="rblock" id="em_food_edit" colspan="3">
+			<table id="foodTable" border="0" cellpadding="0" cellspacing="0" align="left" width="98%"> 
+				<tbody>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="food[]" id="food[]" value="1" type="checkbox" <for start="0" end="5"><if condition="$food[$i] eq 1">checked='checked'</if></for>> 中国菜 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="food[]" id="food[]" value="2" type="checkbox" <for start="0" end="5"><if condition="$food[$i] eq 2">checked='checked'</if></for>> 印度菜 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="food[]" id="food[]" value="3" type="checkbox" <for start="0" end="5"><if condition="$food[$i] eq 3">checked='checked'</if></for>> 泰国菜 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="food[]" id="food[]" value="4" type="checkbox" <for start="0" end="5"><if condition="$food[$i] eq 4">checked='checked'</if></for>> 法国菜 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="food[]" id="food[]" value="5" type="checkbox" <for start="0" end="5"><if condition="$food[$i] eq 5">checked='checked'</if></for>> 意大利菜 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="food[]" id="food[]" value="6" type="checkbox" <for start="0" end="5"><if condition="$food[$i] eq 6">checked='checked'</if></for>> 俄罗斯菜 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="food[]" id="food[]" value="7" type="checkbox" <for start="0" end="5"><if condition="$food[$i] eq 7">checked='checked'</if></for>> 日本菜 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="food[]" id="food[]" value="8" type="checkbox" <for start="0" end="5"><if condition="$food[$i] eq 8">checked='checked'</if></for>> 烧烤 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="food[]" id="food[]" value="9" type="checkbox" <for start="0" end="5"><if condition="$food[$i] eq 9">checked='checked'</if></for>> 健康食品 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="food[]" id="food[]" value="10" type="checkbox" <for start="0" end="5"><if condition="$food[$i] eq 10">checked='checked'</if></for>> 素食 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="food[]" id="food[]" value="11" type="checkbox" <for start="0" end="5"><if condition="$food[$i] eq 11">checked='checked'</if></for>> 快餐 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="food[]" id="food[]" value="12" type="checkbox" <for start="0" end="5"><if condition="$food[$i] eq 12">checked='checked'</if></for>> 巧克力和甜品 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="food[]" id="food[]" value="13" type="checkbox" <for start="0" end="5"><if condition="$food[$i] eq 13">checked='checked'</if></for>> 其他 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="food[]" id="food[]" value="14" type="checkbox" <for start="0" end="5"><if condition="$food[$i] eq 14">checked='checked'</if></for>> 无特别爱好 </td>  
+					</tr>
+				</tbody>
+			</table>
+			<span id="dfood" class="f_red"></span></td>
+			</tr>
+			<!-- 喜欢的书籍 -->
+			<tr>
+				<td class="lblock">喜欢的书籍 <span class="f_red"></span></td>
+				<td class="rblock" id="em_book_edit" colspan="3">
+			<table border="0" cellpadding="0" cellspacing="0" align="left" width="98%"> 
+				<tbody>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="1" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 1">checked='checked'</if></for>> 校园青春 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="2" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 2">checked='checked'</if></for>> 文学 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="3" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 3">checked='checked'</if></for>> 艺术与摄影 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="4" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 4">checked='checked'</if></for>> 励志与成功 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="5" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 5">checked='checked'</if></for>> 动漫与幽默 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="6" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 6">checked='checked'</if></for>> 政治与军事 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="7" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 7">checked='checked'</if></for>> 哲学与宗教 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="8" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 8">checked='checked'</if></for>> 历史传记 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="9" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 9">checked='checked'</if></for>> 运动健身 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="10" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 10">checked='checked'</if></for>> 健康与养生 </td>
+					</tr>
+					<tr>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="11" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 11">checked='checked'</if></for>> 烹饪与饮食 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="12" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 12">checked='checked'</if></for>> 旅游 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="13" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 13">checked='checked'</if></for>> 投资理财 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="14" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 14">checked='checked'</if></for>> 婚恋与家庭 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="15" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 15">checked='checked'</if></for>> 期刊杂志 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="16" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 16">checked='checked'</if></for>> 娱乐时尚 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="17" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 17">checked='checked'</if></for>> 人文社科 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="18" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 18">checked='checked'</if></for>> 自然科学 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="19" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 19">checked='checked'</if></for>> 收藏与鉴赏 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="20" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 20">checked='checked'</if></for>> 其他 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="book[]" id="book[]" value="21" type="checkbox" <for start="0" end="5"><if condition="$book[$i] eq 21">checked='checked'</if></for>> 什么都看 </td> 
+					</tr>
+				</tbody>
+			</table>
+			<span id="dbook" class="f_red"></span></td>
+			</tr>
+			<!-- 喜欢的电影 -->
+			<tr>
+				<td class="lblock">喜欢的电影 <span class="f_red"></span></td>
+				<td class="rblock" id="em_film_edit" colspan="3">
+			<table border="0" cellpadding="0" cellspacing="0" align="left" width="98%"> 
+				<tbody>
+					<tr>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="film[]" id="film[]" value="1" type="checkbox" <for start="0" end="5"><if condition="$film[$i] eq 1">checked='checked'</if></for>> 爱情 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="film[]" id="film[]" value="2" type="checkbox" <for start="0" end="5"><if condition="$film[$i] eq 2">checked='checked'</if></for>> 喜剧 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="film[]" id="film[]" value="3" type="checkbox" <for start="0" end="5"><if condition="$film[$i] eq 3">checked='checked'</if></for>> 动作冒险 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="film[]" id="film[]" value="4" type="checkbox" <for start="0" end="5"><if condition="$film[$i] eq 4">checked='checked'</if></for>> 古装武侠 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="film[]" id="film[]" value="5" type="checkbox" <for start="0" end="5"><if condition="$film[$i] eq 5">checked='checked'</if></for>> 科幻魔幻 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="film[]" id="film[]" value="6" type="checkbox" <for start="0" end="5"><if condition="$film[$i] eq 6">checked='checked'</if></for>> 悬疑推理 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="film[]" id="film[]" value="7" type="checkbox" <for start="0" end="5"><if condition="$film[$i] eq 7">checked='checked'</if></for>> 惊悚恐怖 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="film[]" id="film[]" value="8" type="checkbox" <for start="0" end="5"><if condition="$film[$i] eq 8">checked='checked'</if></for>> 动画 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="film[]" id="film[]" value="9" type="checkbox" <for start="0" end="5"><if condition="$film[$i] eq 9">checked='checked'</if></for>> 战争 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="film[]" id="film[]" value="10" type="checkbox" <for start="0" end="5"><if condition="$film[$i] eq 10">checked='checked'</if></for>> 音乐歌舞 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="film[]" id="film[]" value="11" type="checkbox" <for start="0" end="5"><if condition="$film[$i] eq 11">checked='checked'</if></for>> 纪录片 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="film[]" id="film[]" value="12" type="checkbox" <for start="0" end="5"><if condition="$film[$i] eq 12">checked='checked'</if></for>> 剧情 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="film[]" id="film[]" value="13" type="checkbox" <for start="0" end="5"><if condition="$film[$i] eq 13">checked='checked'</if></for>> 西部 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="film[]" id="film[]" value="14" type="checkbox" <for start="0" end="5"><if condition="$film[$i] eq 14">checked='checked'</if></for>> 历史传记 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="film[]" id="film[]" value="15" type="checkbox" <for start="0" end="5"><if condition="$film[$i] eq 15">checked='checked'</if></for>> 其他 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="film[]" id="film[]" value="16" type="checkbox" <for start="0" end="5"><if condition="$film[$i] eq 16">checked='checked'</if></for>> 什么都看 </td>  
+					</tr>
+				</tbody>
+			</table>
+			<span id="dfilm" class="f_red"></span></td>
+			</tr>
+			<!-- 业余爱好 -->
+			<tr>
+				<td class="lblock">业余爱好 <span class="f_red"></span></td>
+				<td class="rblock" id="em_interest_edit" colspan="3">
+			<table border="0" cellpadding="0" cellspacing="0" align="left" width="98%">
+				<tbody>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="1" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 1">checked='checked'</if></for>> 网络 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="2" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 2">checked='checked'</if></for>> 汽车 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="3" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 3">checked='checked'</if></for>> 动物 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="4" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 4">checked='checked'</if></for>> 摄影 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="5" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 5">checked='checked'</if></for>> 影视 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="6" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 6">checked='checked'</if></for>> 音乐 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="7" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 7">checked='checked'</if></for>> 写作 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="8" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 8">checked='checked'</if></for>> 购物 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="9" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 9">checked='checked'</if></for>> 手工艺 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="10" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 10">checked='checked'</if></for>> 园艺 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="11" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 11">checked='checked'</if></for>> 舞蹈 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="12" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 12">checked='checked'</if></for>> 展览 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="13" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 13">checked='checked'</if></for>> 烹饪 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="14" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 14">checked='checked'</if></for>> 读书 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="15" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 15">checked='checked'</if></for>> 绘画 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="16" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 16">checked='checked'</if></for>> 计算机 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="17" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 17">checked='checked'</if></for>> 体育运动 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="18" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 18">checked='checked'</if></for>> 旅游 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="19" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 19">checked='checked'</if></for>> 电子游戏 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="interest[]" id="interest[]" value="20" type="checkbox" <for start="0" end="5"><if condition="$interest[$i] eq 20">checked='checked'</if></for>> 其它 </td>
+					</tr>
+					<tr>  
+					</tr>
+				</tbody>
+			</table>
+		    <span id="dinterest" class="f_red"></span></td>
+			</tr>
+			<!-- 喜欢的旅游 -->
+			<tr>
+				<td class="lblock">喜欢的旅游 <span class="f_red"></span></td>
+				<td class="rblock" id="em_travel_edit" colspan="3">
+			<table border="0" cellpadding="0" cellspacing="0" align="left" width="98%">  
+				<tbody>
+					<tr>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="travel[]" id="travel[]" value="1" type="checkbox" <for start="0" end="5"><if condition="$travel[$i] eq 1">checked='checked'</if></for>> 惬意海岛 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="travel[]" id="travel[]" value="2" type="checkbox" <for start="0" end="5"><if condition="$travel[$i] eq 2">checked='checked'</if></for>> 名山古刹 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="travel[]" id="travel[]" value="3" type="checkbox" <for start="0" end="5"><if condition="$travel[$i] eq 3">checked='checked'</if></for>> 繁华都市 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="travel[]" id="travel[]" value="4" type="checkbox" <for start="0" end="5"><if condition="$travel[$i] eq 4">checked='checked'</if></for>> 风情名城 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="travel[]" id="travel[]" value="5" type="checkbox" <for start="0" end="5"><if condition="$travel[$i] eq 5">checked='checked'</if></for>> 广袤森林 </td>
+					</tr>
+					<tr>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="travel[]" id="travel[]" value="6" type="checkbox" <for start="0" end="5"><if condition="$travel[$i] eq 6">checked='checked'</if></for>> 高原雪域 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="travel[]" id="travel[]" value="7" type="checkbox" <for start="0" end="5"><if condition="$travel[$i] eq 7">checked='checked'</if></for>> 秀美山水 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="travel[]" id="travel[]" value="8" type="checkbox" <for start="0" end="5"><if condition="$travel[$i] eq 8">checked='checked'</if></for>> 历史遗迹 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="travel[]" id="travel[]" value="9" type="checkbox" <for start="0" end="5"><if condition="$travel[$i] eq 9">checked='checked'</if></for>> 江河大川 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="travel[]" id="travel[]" value="10" type="checkbox" <for start="0" end="5"><if condition="$travel[$i] eq 10">checked='checked'</if></for>> 峻秀峡谷 </td>
+					</tr>
+					<tr>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="travel[]" id="travel[]" value="11" type="checkbox" <for start="0" end="5"><if condition="$travel[$i] eq 11">checked='checked'</if></for>> 小桥流水人家 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="travel[]" id="travel[]" value="12" type="checkbox" <for start="0" end="5"><if condition="$travel[$i] eq 12">checked='checked'</if></for>> 其他选择 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="travel[]" id="travel[]" value="13" type="checkbox" <for start="0" end="5"><if condition="$travel[$i] eq 13">checked='checked'</if></for>> 还没想好 </td> 
+					</tr>
+				</tbody>
+			</table>
+			<span id="dtravel" class="f_red"></span></td>
+			</tr>
+			<!-- 关注的节目 -->
+			<tr>
+				<td class="lblock">关注的节目 <span class="f_red"></span></td>
+				<td class="rblock" id="em_attention_edit" colspan="3">
+			<table border="0" cellpadding="0" cellspacing="0" align="left" width="98%"> 
+				<tbody>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="attention[]" id="attention[]" value="1" type="checkbox" <for start="0" end="5"><if condition="$attention[$i] eq 1">checked='checked'</if></for>> 政治事件 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="attention[]" id="attention[]" value="2" type="checkbox" <for start="0" end="5"><if condition="$attention[$i] eq 2">checked='checked'</if></for>> 娱乐八卦 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="attention[]" id="attention[]" value="3" type="checkbox" <for start="0" end="5"><if condition="$attention[$i] eq 3">checked='checked'</if></for>> 体育赛事 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="attention[]" id="attention[]" value="4" type="checkbox" <for start="0" end="5"><if condition="$attention[$i] eq 4">checked='checked'</if></for>> 理财投资 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="attention[]" id="attention[]" value="5" type="checkbox" <for start="0" end="5"><if condition="$attention[$i] eq 5">checked='checked'</if></for>> 相声曲艺 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="attention[]" id="attention[]" value="6" type="checkbox" <for start="0" end="5"><if condition="$attention[$i] eq 6">checked='checked'</if></for>> 海选活动 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="attention[]" id="attention[]" value="7" type="checkbox" <for start="0" end="5"><if condition="$attention[$i] eq 7">checked='checked'</if></for>> 畅销书 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="attention[]" id="attention[]" value="8" type="checkbox" <for start="0" end="5"><if condition="$attention[$i] eq 8">checked='checked'</if></for>> 影视热片 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="attention[]" id="attention[]" value="9" type="checkbox" <for start="0" end="5"><if condition="$attention[$i] eq 9">checked='checked'</if></for>> 休闲生活 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="attention[]" id="attention[]" value="10" type="checkbox" <for start="0" end="5"><if condition="$attention[$i] eq 10">checked='checked'</if></for>> 行业发展 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="attention[]" id="attention[]" value="11" type="checkbox" <for start="0" end="5"><if condition="$attention[$i] eq 11">checked='checked'</if></for>> 其他 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="attention[]" id="attention[]" value="12" type="checkbox" <for start="0" end="5"><if condition="$attention[$i] eq 12">checked='checked'</if></for>> 暂无 </td> 
+					</tr>
+				</tbody>
+			</table>
+			<span id="dattention" class="f_red"></span></td>
+			</tr>
+			<!-- 娱乐休闲 -->
+			<tr>
+				<td class="lblock">娱乐休闲 <span class="f_red"></span></td>
+				<td class="rblock" id="em_leisure_edit" colspan="3">
+			<table border="0" cellpadding="0" cellspacing="0" align="left" width="98%">  
+				<tbody>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="1" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 1">checked='checked'</if></for>> 饭店 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="2" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 2">checked='checked'</if></for>> 商场 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="3" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 3">checked='checked'</if></for>> 剧院 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="4" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 4">checked='checked'</if></for>> 酒吧 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="5" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 5">checked='checked'</if></for>> 电影院 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="6" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 6">checked='checked'</if></for>> 音乐会 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="7" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 7">checked='checked'</if></for>> 迪斯科 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="8" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 8">checked='checked'</if></for>> 网吧 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="9" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 9">checked='checked'</if></for>> 温泉 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="10" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 10">checked='checked'</if></for>> 图书馆/书店 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="11" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 11">checked='checked'</if></for>> 咖啡厅 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="12" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 12">checked='checked'</if></for>> 游乐场 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="13" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 13">checked='checked'</if></for>> 卡拉OK </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="14" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 14">checked='checked'</if></for>> 体育馆 </td> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="15" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 15">checked='checked'</if></for>> 逛街 </td>
+					</tr>
+					<tr> 
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="16" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 16">checked='checked'</if></for>> 在自己或朋友家里 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="17" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 17">checked='checked'</if></for>> 其他 </td>
+						<td class="hback" width="20%"> <input onclick="doClick(this,5 )" name="leisure[]" id="leisure[]" value="18" type="checkbox" <for start="0" end="5"><if condition="$leisure[$i] eq 18">checked='checked'</if></for>> 不想说 </td> 
+					</tr>
+				</tbody>
+			</table>
+			<span id="dleisure" class="f_red"></span></td>
+			</tr>
+			<!-- 提交按钮 -->
+			<tr>
+				<td class="lblock"></td>
+				<td class="rblock" colspan="3">
+				<input name="btn_save" value="提交保存" class="button-red" type="submit">
+				</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+	<!--详细资料 End-->
+	</div>
+	<div class="clear"></div>
+	<!--//div_smallnav_content_hover End-->
+</div>
+<div class="clear"></div>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/rili.css"/>
+<script type="text/javascript" src="__PUBLIC__/js/jquery.date_input.pack.js"></script>
+<script type="text/javascript">
+$(function(){
+	//日历调用函数
+	$('.date_picker').date_input();
+})
+</script>
+<script type="text/javascript">
+
+function doClick(obj, num) {
+	var s=0;a=0;t=0;ter=0;f=0;b=0;fo=0;sp=0;li=0;la=0; //计数器
+	var ob = document.getElementsByName("leisure[]");
+	var attention = document.getElementsByName("attention[]");
+	var travel = document.getElementsByName("travel[]");
+	var interest = document.getElementsByName("interest[]");
+	var film = document.getElementsByName("film[]");
+	var book = document.getElementsByName("book[]");
+	var food = document.getElementsByName("food[]");
+	var sports = document.getElementsByName("sports[]");
+	var lifeskill = document.getElementsByName("lifeskill[]");
+	var language = document.getElementsByName("language[]");
+	//统计已选中的复选框个数
+	for (i = 0; i < ob.length; i++) {
+		if (ob[i].checked == true)
+			s=s+1;
+	}	
+	for (i = 0; i < attention.length; i++) {
+		if (attention[i].checked == true)
+			a=a+1;
+	}	
+	for (i = 0; i < travel.length; i++) {
+		if (travel[i].checked == true)
+			t=t+1;
+	}	
+	for (i = 0; i < interest.length; i++) {
+		if (interest[i].checked == true)
+			ter=ter+1;
+	}	
+	for (i = 0; i < film.length; i++) {
+		if (film[i].checked == true)
+			f=f+1;
+	}	
+	for (i = 0; i < book.length; i++) {
+		if (book[i].checked == true)
+			b=b+1;
+	}	
+	for (i = 0; i < food.length; i++) {
+		if (food[i].checked == true)
+			fo=fo+1;
+	}	
+	for (i = 0; i < sports.length; i++) {
+		if (sports[i].checked == true)
+			sp=sp+1;
+	}	
+	for (i = 0; i < lifeskill.length; i++) {
+		if (lifeskill[i].checked == true)
+			li=li+1;
+	}	
+	for (i = 0; i < language.length; i++) {
+		if (language[i].checked == true)
+			la=la+1;
+	}
+	if (s > num) {
+		alert("最多选择五项！");
+		obj.checked = false;
+	}	
+	if (a > num) {
+		alert("最多选择五项！");
+		obj.checked = false;
+	}	
+	if (t > num) {
+		alert("最多选择五项！");
+		obj.checked = false;
+	}	
+	if (ter > num) {
+		alert("最多选择五项！");
+		obj.checked = false;
+	}	
+	if (f > num) {
+		alert("最多选择五项！");
+		obj.checked = false;
+	}	
+	if (b > num) {
+		alert("最多选择五项！");
+		obj.checked = false;
+	}	
+	if (fo > num) {
+		alert("最多选择五项！");
+		obj.checked = false;
+	}	
+	if (sp > num) {
+		alert("最多选择五项！");
+		obj.checked = false;
+	}	
+	if (li > num) {
+		alert("最多选择五项！");
+		obj.checked = false;
+	}	
+	if (la > num) {
+		alert("最多选择五项！");
+		obj.checked = false;
+	}
+}
+ 
+</script>
+</block>

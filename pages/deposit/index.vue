@@ -19,24 +19,122 @@
 			<input class="desc" type="text" v-model="card" placeholder="未绑定" placeholder-class="placeholder" />
 		</view>
 		<button class="btn btn-card">绑定银行卡号提现</button>
-
+		 <view class="btn money-tixian">
+		 	<text class="info-tixian">提现记录</text>
+		 </view>
 		<view class="xiaoxi-inform">
-			<view class="inform-head"> 提现通知 </view>
-			<view class="inform-head">
-						
+			
+			<view class="uni-padding-wrap uni-common-mt">
+				<view class="inform-head"> 提现通知 </view>
+				<scroll-view :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower"
+				 @scroll="scroll">
+					<text>[是谁留痕]充值20</text>
+					<text>[是谁留痕]充值20</text>
+					<text>[是谁留痕]充值20</text>
+					<text>[是谁留痕]充值20</text>
+					<text>[是谁留痕]充值20</text>
+					<text>[是谁留痕]充值20</text>
+					<text>[是谁留痕]充值20</text>
+					<text>[是谁留痕]充值20</text>
+					<text>[是谁留痕]充值20</text>
+					<text>[是谁留痕]充值20</text>
+					<text>[是谁留痕]充值20</text>
+					<text>[是谁留痕]充值20</text>
+				</scroll-view>
 			</view>
 		</view>
+
+
+	</view>
+	</view>
 	</view>
 </template>
 
 <script>
-	
+	export default {
+		data() {
+			return {
+				desc: '',
+				card: '',
+				scrollTop: 0,
+				old: {
+					scrollTop: 0
+				}
+			}
+		},
+		methods: {
+			upper: function(e) {
+
+			},
+			lower: function(e) {
+
+			},
+			scroll: function(e) {
+
+				this.old.scrollTop = e.detail.scrollTop
+			},
+			goTop: function(e) {
+				// 解决view层不同步的问题
+				this.scrollTop = this.old.scrollTop
+				this.$nextTick(function() {
+					this.scrollTop = 0
+				});
+				uni.showToast({
+					icon: "none",
+					title: "纵向滚动 scrollTop 值已被修改为 0"
+				})
+			}
+		}
+	}
 </script>
 
 <style lang="scss">
 	page {
 		background: #ebedf1;
 	}
+//滚动start
+	.scroll-Y {
+		height: 401upx;
+	}
+
+	.scroll-view_H {
+		white-space: nowrap;
+		width: 100%;
+	}
+
+	.scroll-view-item {
+		height: 300upx;
+		line-height: 300upx;
+		text-align: center;
+		font-size: 36upx;
+	}
+
+	.scroll-view-item_H {
+		display: inline-block;
+		width: 100%;
+		height: 300upx;
+		line-height: 300upx;
+		text-align: center;
+		font-size: 36upx;
+	}
+
+	.inform-head {
+		height: 40upx;
+		line-height: 40upx;
+		margin: 20upx auto;
+		padding-left: 10upx;
+		font-size: 26upx;
+		display: block;
+	}
+
+	.xiaoxi-inform text {
+		display: block;
+		color: #cbcbcb;
+		background-color: #FFFFFF;
+		padding-left: 20upx;
+		font-size: 30upx;
+	}
+//滚动end
 
 	.uni-flex {
 		background-color: #FFF;
@@ -142,5 +240,19 @@
 		background-color: #b9b9b9;
 		color: #FFFFFF;
 		font-size: 30upx;
+	}
+	.money-tixian:after{
+		 content: "";
+		 display: block;
+		 height: 0;
+		 clear:both;
+		 visibility: hidden;
+	}
+	.info-tixian{
+		float: right;
+		color: #D096C3;
+		display: block;
+		font-size: 20upx;
+		padding:20upx 10upx 10upx 0;
 	}
 </style>

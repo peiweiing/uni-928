@@ -1,0 +1,44 @@
+<extend name="Public/login_info" />
+<block name="loginInfo">
+<div class="alert message">
+  <div class="alert_body">
+	    <h3>系统提示</h3>
+    <p class="alertcont pi1">
+    <span>
+            <img src="__PUBLIC__/images/ok2.gif" style="float:left;" />
+        <if condition="$sysCall || $Think.session.user neq null">
+            <span style="display:block;margin-left:10px;margin-top:10px;">
+                <if condition="$sysCall neq null">
+                    {$sysCall}
+                <else />
+                    登录成功!
+                </if>
+            </span>            
+        <else />        
+            <span style="display:block;margin-left:10px;margin-top:10px;">退出成功</span>
+        </if>
+        
+        
+            
+    <span>
+	</p>
+    <if condition="$sysUrl || $url neq null">
+        
+        <if condition="$sysUrl neq null">
+            <p align="center">
+                <a href="{$sysUrl}">2秒后 如果你的浏览器没有自动跳转，请点击此链接</a>
+            </p>
+        <else />
+            <p align="center">
+                <a href="__MODULE__/User/view/act/userInfo">2秒后 如果你的浏览器没有自动跳转，请点击此链接</a>
+            </p>
+        </if>
+    <else />
+        <p align="center">
+            <a href="__MODULE__/Index/index">2秒后 如果你的浏览器没有自动跳转，请点击此链接</a>
+        </p>
+    </if>    
+    
+    </div>
+</div>
+</block>

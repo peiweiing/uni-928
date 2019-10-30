@@ -18,7 +18,7 @@
 							<text>空闲</text>
 						</view>
 						<view class="right">
-							<text>+好友</text>
+							<text @click="tongzhi">+好友</text>
 						</view>
 					</view>
 					<view class="bottom" v-for="(v,i) in brr" :key="i">
@@ -69,15 +69,15 @@
 		
 		<footer>
 			<view class="foot">
-				<view class="sixin">
+				<view class="sixin" @click="vip">
 					<image src="../../static/i私密.png" mode=""></image>
 					<text>私信</text>
 				</view>
-				<view class="dashang">
+				<view class="dashang" @click="gift">
 					<image src="../../static/i打赏.png" mode=""></image>
 					<text>打赏</text>
 				</view>
-				<view class="shipin">
+				<view class="shipin" @click="vip">
 					<image src="../../static/i视频.png" mode=""></image>
 					<text>看看TA</text>
 				</view>
@@ -129,6 +129,39 @@
 				uni.switchTab({
 					url: '/pages/index/index'
 				});
+			},
+			gift(){
+				uni.navigateTo({
+					url:'../../pages/index/gift'
+				})
+			},
+			vip(){
+				uni.showModal({
+					title: '请充值VIP会员继续畅聊',
+					success: function (res) {
+						if (res.confirm) {
+							uni.navigateTo({
+								url: '/pages/moneyCz/index'
+							});
+							console.log('用户点击确定');
+						} else if (res.cancel) {
+							console.log('用户点击取消');
+						}
+					}
+				});
+			},
+			tongzhi(){
+				// uni.showToast({
+				// 	title: '已向对方发送添加好友请求',
+				// 	duration: 2000
+				// });
+				uni.showLoading({
+					title: '已向对方发送添加好友请求'
+				});
+
+				setTimeout(function () {
+					uni.hideLoading();
+				}, 1000);
 			}
 		},
 		mounted (){

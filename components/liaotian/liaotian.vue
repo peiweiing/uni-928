@@ -5,10 +5,10 @@
 			<text>我的通话</text> -->
 			<view class="header">
 				<view class="topcs">
-					<text>我的好友</text>
-					<text>我的通话</text>
+					<text @click="fun()">我的好友</text>
+					<text @click="fen()">我的通话</text>
 				</view>
-				<view class="box">
+				<view class="box" @click="xiaoxi">
 					<view class="imgcs">
 						<img src="../../static/L系统消息.png" alt="">
 					</view>
@@ -17,7 +17,7 @@
 						<text class="txtend">系统消息</text>
 					</view>
 				</view>
-				<view class="box">
+				<view class="box" @click="zixun">
 					<view class="imgcs">
 						<img src="../../static/L客户咨询.png" alt="">
 					</view>
@@ -26,7 +26,7 @@
 						<text class="txtend">欢迎来撩客服小姐姐</text>
 					</view>
 				</view>
-				<view class="box">
+				<view class="box" @click="tixin">
 					<view class="imgcs">
 						<img src="../../static/L同城提醒.png" alt="">
 					</view>
@@ -38,7 +38,7 @@
 				
 			</view>
 		
-			<view class="box" v-for="(v,i) in arr" :key="i">
+			<view class="box" v-for="(v,i) in arr" :key="i" @click="liaotian">
 				<view class="imgcs">
 					<img :src="v.src" alt="">
 				</view>
@@ -74,7 +74,39 @@
 					{src:"../../static/5.jpg",name:'刘涛',text:"帅哥你到底有没有空",time:"0:20"},
 				]
 			};
-		}
+		},
+		methods: {
+			fun() {
+				uni.navigateTo({
+					url: '/pages/login/login'
+				});
+			},
+			fen(){
+				uni.navigateTo({
+					url: '/pages/register/register'
+				});
+			},
+			liaotian(){
+				uni.navigateTo({
+					url:'../../pages/duihua/duihua'
+				})
+			},
+			xiaoxi(){
+				uni.navigateTo({
+					url:'../../pages/liaotian/xiaoxi'
+				})
+			},
+			tixin(){
+				uni.navigateTo({
+					url:'../../pages/liaotian/tixin'
+				})
+			},
+			zixun(){
+				uni.navigateTo({
+					url:'../../pages/client/index'
+				})
+			}
+		},
 	}
 </script>
 

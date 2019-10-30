@@ -1,0 +1,50 @@
+<extend name="Public/base"/>
+<block name="maincontent">
+<div class="ce member">
+    <include file="Public:search"/>  
+	<div class="left ri_list">
+      <img src="__PUBLIC__/images/path_diary.jpg">
+      
+		<div class="listtype"> 
+		  <volist name="cat" id="cat">
+			<a name="catnav" <if condition="$cat.id eq $catid">class="listnow"</if> href="__URL__/diaryList/catid/{$cat.id}">{$cat.catname}</a>
+		  </volist>
+	  	</div>
+
+	    <div class="content">
+		<ul>
+			<volist name="list" id="list">
+			<li>
+				<a href="__URL__/single/id/{$list.id}" class="tit" target="_blank" title="{$list.title}"> ◈ {$list.title}</a> <span>【<a href="{$list.userid}" target="_blank">{$list.username.username}</a>】{$list.addtime|date="Y-m-d",###}</span>
+			</li>
+			</volist>
+		</ul>
+		
+      </div>
+		<div class="page1">
+		<div class="pagecode">
+		{$show}
+		</div>
+		<div style="clear:both;"></div>
+		</div>
+	  
+    </div>
+    <div class="right yue1">
+     <h2>热门日记</h2>
+      <ul class="list_blog">
+		<volist name="hotdiary" id="hot">
+	    <li><a target="_blank" href="__URL__/single/id/{$hot.id}" title="{$hot.title}">{$hot.title}</a> </li>
+		</volist>        
+	  </ul>
+      <h2 style="margin-top:10px;">猜你喜欢</h2>
+	  <volist name='gueuser' id='gue'>
+	  	<div class="img_list"> 
+		<a href="__MODULE__/HomePage/index/id/{$gue.userid}"><img src="__PUBLIC__/Uploads/pic/{$gue.user.avatar}" class="h3h" height="96" width="80"></a><br>
+        <img src="__PUBLIC__/images/{$gue.icon}" class="" border="0"><a href="__MODULE__/HomePage/index/id/{$gue.userid}">{$gue.user.username}</a><br>
+		</div>
+	  </volist>
+	    <div style="clear:both;"></div>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  </block>

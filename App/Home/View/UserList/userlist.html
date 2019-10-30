@@ -1,0 +1,136 @@
+<extend name="Public/base" />
+<block name='maincontent'>
+
+<div class="search_max w960 online_page">
+	<!-- 搜索 -->
+	<div class="search_top">
+		<form method="post" action="__MODULE__/UserList/index" id="search_normal" onsubmit="return searchSubmit()">
+		<div class="search_in">
+			
+			<label id="search_scroll_bar_gender">我要找:</label>
+			<select name="gender" id="gender">
+				<option selected="selected" value="2">女会员</option>
+				<option value="1">男会员</option>
+			</select>
+			
+			<label id="search_scroll_bar_age">&nbsp;&nbsp;年龄:</label>
+			<select name="min_age" id="min_age">
+			<option value="">不限</option>
+			<for start="18" end="61">
+			<option value="{$i}">{$i}</option>
+			</for>
+			</select>
+			
+			<span>~</span>
+			
+			<select name="max_age" id="max_age">
+			<option value="">不限</option>
+			<for start="18" end="61">
+			<option value="{$i}">{$i}</option>
+			</for>
+			</select>
+			
+			<label id="search_scroll_bar_workCity">&nbsp;&nbsp;地区:</label>
+			<select name="province" id="province"  style="width:80px;">
+				
+			</select>&nbsp;
+			<span id="json_s_dist2">
+			</span>&nbsp;
+			<span id="json_s_dist3">
+			</span>&nbsp;&nbsp;
+
+			<input type="checkbox" name="avatar" value="1" id="s_avatar" />
+			<label for="s_p_img">有形象照</label>
+			&nbsp;&nbsp;<a class="ser" href="">
+			<button type="submit">搜 索</button></a>
+			<a class="search_all" href="__MODULE__/HighSearch/index" id="searchMore"><span class="">更多搜索</span></a> 
+			&nbsp;&nbsp;
+			<!--<b>497</b> 人在线-->
+		</div>
+		</form>
+	</div> 
+	<div class="search_sort">
+      <div class="search_tips"> 共<span>{$total}</span>人符合您的搜索条件 </div>
+      <div class="search_sort_sle" id="rank"> 
+	    <strong>显示方式：</strong> 		
+	    <a class="btnc btn_c3" href="__MODULE__/UserList"> <span class="h"><b>头像模式</b></span> </a>&nbsp;
+		<a class="btnc3 btn_c3" href="__MODULE__/UserList/index/type/mon"> <span><b>独白模式</b></span> </a> 
+	  </div>
+    </div>
+
+	<div class="online_list">
+	<if condition="$total eq '0'">
+		<div style="text-align:center">
+			<h3>sorry！没有您要搜索的会员！</h3>
+		</div>
+	  <else/>
+      <ul class="search_pic_list clearfix">  
+		<volist name="list" id="list">
+		<li>
+          <div class="search_user_bg"> <a target="_blank" href="__MODULE__/HomePage/index/id/{$list.userid}"><img src="__PUBLIC__/Uploads/pic/{$list.user.avatar}" class="img100" height="135" width="112"></a> </div>
+          <div class="search_user_inform">
+            <p class="search_user_t1"><img src="__PUBLIC__/images/{$list.icon}" class="" border="0"><a target="_blank" href="__MODULE__/HomePage/index/id/{$list.userid}">{$list.user.username}</a> </p>
+            <p class="search_user_add">{$list.age}岁 {$list.provinceid} {$list.cityid}</p>
+            <p class="search_vt"> 
+				<a class="btn_bt1 chat sayHiBtn" href="javascript:void(0);" onclick="showBox('greet',{$list.userid})"><span><img src="__PUBLIC__/images/d.gif"></span></a> 
+				<a class="btn_bt2 mail sendEmailBtn" href="javascript:void(0);" onclick="showBox('message',{$list.userid});"><span><img src="__PUBLIC__/images/r.gif"></span></a>
+			</p>
+          </div>
+        </li>
+		</volist>
+	   <div style="clear:both;"></div>
+      </ul>
+		</if>
+      <div style="clear:both;"></div>
+	  <!-- 分页 -->
+	  <div class="page1">
+        <div class="pagecode">
+		{$show}
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+	  
+    </div>
+    <div class="onright"> 
+
+	<div class="onrightad"><a><img src="__PUBLIC__/images/e3c71d7ebaa2745f.png" title="" border="0" height="102" width="220"></a></div>
+	  
+      <div class="divtitle">推荐会员</div>
+      <div class="onhead">
+		<volist name='recuser' id='rec'>
+	    <div class="odh">
+		  <a href="__MODULE__/HomePage/index/id/{$rec.userid}" target="_blank">
+		  <img src="__PUBLIC__/Uploads/pic/{$rec.user.avatar}" border="0" height="86" width="70"></a><br>
+		  <img src="__PUBLIC__/images/{$rec.icon}" class="" border="0">
+          <a href="__MODULE__/HomePage/index/id/{$rec.userid}" target="_blank">{$rec.user.username}</a>
+		</div>
+		</volist>     
+		<div style="clear:both;"></div>
+      </div>
+      <div class="divtitle" style="margin-top:5px;">最新日记</div>
+      <ul class="list_so">
+		<volist name="newdiary" id="newdiary">
+		<li><a target="_blank" href="__MODULE__/DiaryShow/single/id/{$newdiary.id}" title="{$newdiary.title}">{$newdiary.title}</a> </li>
+		</volist>
+	  </ul>
+      <div class="divtitle" style="margin-top:5px;">猜你喜欢</div>
+      <div class="onhead">
+		<volist name='gueuser' id='gue'>
+	    <div class="odh">
+		  <a href="__MODULE__/HomePage/index/id/{$gue.userid}" target="_blank"><img src="__PUBLIC__/Uploads/pic/{$gue.user.avatar}" border="0" height="86" width="70"></a><br>
+          <img src="__PUBLIC__/images/{$gue.icon}" class="" border="0">
+		  <a href="__MODULE__/HomePage/index/id/{$gue.userid}" target="_blank">{$gue.user.username}</a>
+		</div>
+		</volist>
+		        
+		<div style="clear:both;"></div>
+      </div>
+
+	  	  	  <div class="onrightad"><a><img src="__PUBLIC__/images/ec1db26e7d73e3e0.png" title="" border="0" height="102" width="220"></a></div>
+	  	  
+	  </div>
+    <div style="clear:both;"></div>
+  </div>
+  <div style="clear:both;"></div>
+ 
+</block>

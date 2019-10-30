@@ -1,0 +1,116 @@
+<extend name="Public/member" />
+
+<block name="mainright">
+<!-- 系统消息-信件 列表页、查询该用户所有 -->
+<div class="main_right">
+    <div class="div_"> 个人中心 &gt;&gt; 系统消息</div>
+    <!--TAB BEGIN-->
+    <div class="tab_list">
+	  <div class="tab_nv">
+	    <ul>
+		  <li class="tab_item"><a href="__MODULE__/Message/index">会员来信</a></li>
+		  <li class="tab_item"><a href="__MODULE__/Message/send">已发信件</a></li>
+		  <li class="tab_item"><a href="__MODULE__/Greet/index">收到问候</a></li>
+		  <li class="tab_item"><a href="__MODULE__/Greet/send">已发问候</a></li>
+		  <li class="tab_item current"><a href="__MODULE__/SystemMessage/index">系统消息</a></li>
+	    </ul>
+	  </div>
+    </div>
+	<!--TAB END-->
+    <div class="div_smallnav_content_hover">
+
+	  	  <div class="nav-tips">
+	    <div class="span">共{$totalCount}条消息</div>
+	    筛选排序：
+	    <img src="__PUBLIC__/images/tips-msg01.gif"><a href="__MODULE__/SystemMessage/index/type/unread">未读消息</a> &nbsp;&nbsp;&nbsp;
+	    <img src="__PUBLIC__/images/tips-msg02.gif"><a href="__MODULE__/SystemMessage/index/type/read">已读消息</a>&nbsp;&nbsp;&nbsp;
+	  </div>
+	  <form action="__MODULE__/SystemMessage/del" method="post" onsubmit="return doDelete();" name="myform" id="myform">
+      <input name="ids" id="ids" value="" type="hidden">
+	  <table class="table">
+		<tbody><tr> 	 	 	 	
+		  <td width="12%">状态</td>
+		  <td width="15%">发件人</td>
+		  <td width="45%">消息标题</td>
+		  <td width="20%">时间</td>
+		  <td>操作</td>
+		</tr>
+        <volist name="list" id="vo">
+            <tr>
+                <td>
+                    <input class="item" value="{$vo['id']}" type="checkbox">
+                    <if condition="$vo['status'] eq 1">
+                    <img src="__PUBLIC__/images/tips-msg01.gif" title="未读消息" alt="未读消息">
+                    <else />
+                    <img src="__PUBLIC__/images/tips-msg02.gif" title="已读消息" alt="已读消息">
+                    </if>
+                </td>
+                <td style="text-align:left;">系统管理员</td>
+                <td style="text-align:left;">
+                    <a href="__MODULE__/SystemMessage/detail/id/{$vo['id']}">{$vo['title']}</a>
+                </td>
+                <td>{$vo['addtime']|date="Y-m-d H:i:s",###}</td>
+                <td align="left"><a href="__MODULE__/SystemMessage/detail/id/{$vo['id']}">查看</a></td>
+            </tr>
+        </volist>
+        
+		<tr>
+		  <td><input name="chkAll" id="chkAll" value="checkbox" type="checkbox">全选</td>
+		  <td style="text-align:left;" colspan="4">
+		    <input name="btn_delete" id="btn_delete" value="删除选定" class="button-qing" style="cursor:pointer;" type="submit">
+		  </td>
+		</tr>
+			  
+        </tbody>
+        </table>
+	  </form>
+        <script>
+            var items = $("input.item");
+            var chkAll = $('#chkAll');
+            
+            chkAll.click(function(){
+                if($(this).attr('checked')){
+                    items.attr('checked', true);
+                }else{
+                    items.attr('checked', false);  
+                }
+                
+            });
+            
+            function check() {
+                
+                var ids = $("#ids");
+                var iTag = [];
+                $.each(items, function(i){
+                    if($(this).attr('checked')){
+                        iTag[iTag.length] = $(this).val();
+                    }
+                })
+                ids.val(iTag.toString());
+                //alert(ids.val());
+                if(iTag.length == 0){
+                    return false;
+                }
+                return true;
+            }
+            
+            function doDelete() {
+                
+                if(confirm('确定要删除这些消息吗?') && check()){
+                    
+                    return true;
+                    
+                }
+                return false;
+            }
+         
+        </script>
+
+	  	  	  
+	  
+
+    </div>
+	<!--//div_smallnav_content_hover End-->
+
+  </div>
+</block>

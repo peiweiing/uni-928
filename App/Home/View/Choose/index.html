@@ -1,0 +1,255 @@
+<extend name="Public/member" />
+<block name="mainright">
+	  <div class="main_right">
+    <div class="div_">个人中心 &gt;&gt; 设置择友条件</div>
+	<div class="nav-tips">设定您的择友要求，配对更对符合你心意的会员。</div>
+    <!--TAB BEGIN-->
+    <div class="tab_list">
+	  <div class="tab_nv">
+	    <ul>
+		  <li class="tab_item current"><a href="__URL__/index">择友条件</a></li>
+		  <li class="tab_item"><a href="http://www.yyw1314.com/usercp.php?c=match">缘分速配</a></li>
+	    </ul>
+	  </div>
+    </div>
+	<!--TAB END-->
+	<div class="div_smallnav_content_hover basicdata">
+	   
+	  <!--基本资料 Begin-->
+	<form name="myform" id="myform" action="__URL__/update" method="post">
+	<table class="user-table table-margin lh35" cellpadding="0" cellspacing="0" border="0" width="98%">
+		<tbody>
+		<tr>
+			<td colspan="4" style="padding-bottom:10px;"><div class="item_title" style="width:100%"><p>择友条件</p><span class="shadow"></span></div></td>
+		</tr>
+		<tr>
+			<td class="lblock" width="20%">性 别 </td>
+			<td class="rblock">
+			<input checked='checked' name="sex" id="gender" type="radio" value="0" <if condition="$sex eq 0">checked='checked'</if>>不限，
+			<input name="sex" id="gender" value="1" type="radio" <if condition="$sex eq 1">checked='checked'</if>>男会员，
+			<input name="sex" id="gender" value="2" type="radio" <if condition="$sex eq 2">checked='checked'</if>>女会员
+			</td>
+		</tr>
+		<tr>
+			<td class="lblock">年 龄 </td>
+			<td class="rblock">
+				<select name="age[]" id="startage">
+					<option value="0" selected="selected">不限</option>
+					<for start="18" end="61">
+					<option value="{$i}" <if condition="$age[0] eq $i">selected='selected'</if>>{$i}</option>
+					</for>
+				</select> 到 
+				<select name="age[]" id="endage">
+					<option value="0" selected="selected">不限</option>
+					<for start="18" end="61">
+					<option value="{$i}" <if condition="$age[1] eq $i">selected='selected'</if>>{$i}</option>
+					</for>
+				</select> 岁
+			</td>
+		</tr>
+		<tr>
+			<td class="lblock">身 高 </td>
+			<td class="rblock">
+				<select name="weight[]" id="startheight">
+					<option value="0" selected="selected">不限</option>
+					
+					<for start="130" end="201">
+					<option value="{$i}" <if condition="$weight[0] eq $i">selected='selected'</if>>{$i}</option>	
+					</for>
+					
+				</select> 到 
+				<select name="weight[]" id="endheight">
+					<option value="0" selected="selected" >不限</option>
+					<for start="130" end="201">
+					<option value="{$i}" <if condition="$weight[1] eq $i">selected='selected'</if>>{$i}</option>
+					</for>
+				</select> 厘米
+			</td>
+		</tr>
+		<tr>
+			<td class="lblock">婚 史 </td>
+			<td class="rblock">
+			<table id="hisid" cellpadding="0" cellspacing="0" align="left" border="0" width="98%">  
+				<tbody>
+				<tr> 
+					<td class="hback" width="20%"> <input onclick="doClick(this,2)" name="hismarriage[]" id="marry[]" value="1" type="checkbox" <if condition="($hismarriage[0] eq 1) OR ($hismarriage[1] eq 1)">checked='checked'</if>> 单身 </td> 
+					<td class="hback" width="20%"> <input onclick="doClick(this,2)" name="hismarriage[]" id="marry[]" value="2" type="checkbox" <if condition="($hismarriage[0] eq 2) OR ($hismarriage[1] eq 2)">checked='checked'</if>> 已婚 </td> 
+					<td class="hback" width="20%"> <input onclick="doClick(this,2)" name="hismarriage[]" id="marry[]" value="3" type="checkbox" <if condition="($hismarriage[0] eq 3) OR ($hismarriage[1] eq 3)">checked='checked'</if>> 离异 </td> 
+					<td class="hback" width="20%"> <input onclick="doClick(this,2)" name="hismarriage[]" id="marry[]" value="4" type="checkbox" <if condition="($hismarriage[0] eq 4) OR ($hismarriage[1] eq 4)">checked='checked'</if>> 丧偶 </td> 
+				</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<tr>
+			<td class="lblock">交友类别</td>
+			<td class="rblock">
+			<table cellpadding="0" cellspacing="0" align="left" border="0" width="98%">
+				<tbody>
+				<tr> 
+					<td class="hback" width="20%"> <input onclick="doClick(this,2)" name="type[]" id="lovesort[]" value="1" type="checkbox" <if condition="($type[0] eq 1) OR ($type[1] eq 1)">checked='checked'</if>> 朋友 </td> 
+					<td class="hback" width="20%"> <input onclick="doClick(this,2)" name="type[]" id="lovesort[]" value="2" type="checkbox" <if condition="($type[0] eq 2) OR ($type[1] eq 2)">checked='checked'</if>> 知己 </td> 
+					<td class="hback" width="20%"> <input onclick="doClick(this,2)" name="type[]" id="lovesort[]" value="3" type="checkbox" <if condition="($type[0] eq 3) OR ($type[1] eq 3)">checked='checked'</if>> 恋爱 </td> 
+					<td class="hback" width="20%"> <input onclick="doClick(this,2)" name="type[]" id="lovesort[]" value="4" type="checkbox" <if condition="($type[0] eq 4) OR ($type[1] eq 4)">checked='checked'</if>> 结婚 </td> 
+				</tr>
+				</tbody>
+			</table>
+			</td>
+		</tr>
+		<script type="text/javascript">		
+		function doClick(obj, num) {
+			var hisid = document.getElementsByName("type[]");
+			var hismarriage = document.getElementsByName("hismarriage[]");
+			var m=0;s=0;
+			for(var i=0;i<hisid.length;i ++){
+				if(hisid[i].checked == true){
+					m=m+1;
+				}
+			}		
+			for(var i=0;i<hismarriage.length;i ++){
+				if(hismarriage[i].checked == true){
+					s=s+1;
+				}
+			}
+			if(m>num){
+				alert("最多选择两项！");
+				obj.checked = false;
+			}			
+			if(s>num){
+				alert("最多选择两项！");
+				obj.checked = false;
+			}
+		}
+		</script>
+		<tr>
+			<td class="lblock">学 历 </td>
+			<td class="rblock">
+				<select name="education[]" id="startedu">
+					<option selected="selected" value="">不限</option>
+					<option value="1" <if condition="$education[0] eq 1">selected='selected'</if>>中专以下学历</option>
+					<option value="2" <if condition="$education[0] eq 2">selected='selected'</if>>中专</option>
+					<option value="3" <if condition="$education[0] eq 3">selected='selected'</if>>大专</option>
+					<option value="4" <if condition="$education[0] eq 4">selected='selected'</if>>本科</option>
+					<option value="5" <if condition="$education[0] eq 5">selected='selected'</if>>硕士</option>
+					<option value="6" <if condition="$education[0] eq 6">selected='selected'</if>>博士</option>
+					<option value="7" <if condition="$education[0] eq 7">selected='selected'</if>>博士后</option>
+				</select> 到 
+				<select name="education[]" id="endedu">
+					<option selected="selected" value="">不限</option>
+					<option value="1" <if condition="$education[1] eq 1">selected='selected'</if>>中专以下学历</option>
+					<option value="2" <if condition="$education[1] eq 2">selected='selected'</if>>中专</option>
+					<option value="3" <if condition="$education[1] eq 3">selected='selected'</if>>大专</option>
+					<option value="4" <if condition="$education[1] eq 4">selected='selected'</if>>本科</option>
+					<option value="5" <if condition="$education[1] eq 5">selected='selected'</if>>硕士</option>
+					<option value="6" <if condition="$education[1] eq 6">selected='selected'</if>>博士</option>
+					<option value="7" <if condition="$education[1] eq 7">selected='selected'</if>>博士后</option>
+				</select>
+			</td>
+		</tr>
+		<!-- 所在地区 -->
+	    <tr>
+			<td class="lblock">所在地区</td>
+			<td class="rblock">
+
+			<select name="area[]" id="province_1"></select>
+			<select name="area[]" id="province_1"><option>{$area.name}</option></select>			
+			</td>
+			
+
+		</tr>
+		<tr>
+			<td class="lblock">诚信星级 </td>
+			<td class="rblock">
+			<select name="star[]" id="star">
+				<option value="">=不限=</option>
+				<option value="1" <if condition="$star[0] eq 1">selected='selected'</if>>1</option>
+				<option selected="selected" value="2" <if condition="$star[0] eq 2">selected='selected'</if>>2</option>
+				<option value="3" <if condition="$star[0] eq 3">selected='selected'</if>>3</option>
+				<option value="4" <if condition="$star[0] eq 4">selected='selected'</if>>4</option>
+				<option value="5" <if condition="$star[0] eq 5">selected='selected'</if>>5</option>
+				<option value="6" <if condition="$star[0] eq 6">selected='selected'</if>>6</option>
+				<option value="7" <if condition="$star[0] eq 7">selected='selected'</if>>7</option>
+				<option value="8" <if condition="$star[0] eq 8">selected='selected'</if>>8</option>
+				<option value="9" <if condition="$star[0] eq 9">selected='selected'</if>>9</option>
+				<option value="10" <if condition="$star[0] eq 10">selected='selected'</if>>10</option>
+			</select>&nbsp;&nbsp;星&nbsp;&nbsp;
+			<select name="star[]" id="starup">
+			<option value=""></option>
+			<option selected="selected" value="1" <if condition="$star[1] eq 1">selected='selected'</if>>以上</option>
+			<option value="2" <if condition="$star[1] eq 2">selected='selected'</if>>以下</option>
+			</select>
+			</td>
+		</tr>
+		<tr>
+			<td class="lblock">有无形象照 </td>
+			<td class="rblock">
+			<input checked="checked" name="ishead" id="avatar" value="1" type="radio" <if condition="$ishead eq 1">checked='checked'</if>>有形象照，
+			<input name="ishead" id="avatar" value="0" type="radio" <if condition="$ishead eq 0">checked='checked'</if>>不限
+			</td>
+		</tr>
+
+		<!-- 提交按钮 -->
+		<tr>
+			<td class="lblock" height="50px"></td>
+			<td class="rblock" colspan="3">				
+			<input name="btn_save" value="提交保存" class="button-red" type="submit">
+			</td>
+		</tr>
+	</tbody>
+	</table>
+	</form>
+	<!--基本资料 End-->
+	  
+	</div>
+	<div class="clear"></div>
+	<!--//div_smallnav_content_hover End-->
+	</div>
+	<div class="clear"></div>
+	<script type="text/javascript">
+	var area1 = <?php echo $areaa;?>;
+
+		//发送一个ajax请求加载一级城市信息
+		$.ajax({
+			url:'__URL__/loaddist',
+			type:'get',
+			dataType:'json',
+			success:function(data){
+				$info = "<option>-不限-</option>";
+				for(var i=0;i<data.length;i++){
+				if(data[i].id != area1){
+						$info += "<option value='"+data[i].id+"'>"+data[i].name+"</option>";
+					}else{
+						$info += "<option value='"+data[i].id+"' selected='selected'>"+data[i].name+"</option>";
+					}
+				}			
+				$("#province_1").html($info);
+			},
+		});	
+		$("#province_1").change(function(){		
+			citys();		
+		});			
+		//做级联选择事件操作
+		function citys(){
+			//获取事件源节点对象	
+			var sel = $("#province_1");
+			var uid = sel.val();//获取下拉框值
+			sel.nextAll().remove();
+			$.ajax({
+				url:'__URL__/loaddist',
+				type:'get',
+				data:{upid:uid},
+				dataType:'json',
+				success:function(data){				
+					if(data==null) return;
+					$info = "<select name='area[]' id='cityid'><option>-不限-</option>";
+					for(var i=0;i<data.length;i++){
+						$info += "<option value='"+data[i].id+"'>"+data[i].name+"</option>";	
+					}
+					$info +="</select>";
+					sel.after($info);
+				},
+			});		
+		}	
+
+	</script>
+</block>

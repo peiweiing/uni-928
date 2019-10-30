@@ -1,0 +1,134 @@
+<extend name="Public/member" />
+<block name="mainright">
+<div class="main_right">
+    <div class="div_">个人中心 &gt;&gt; 设置形象照</div>
+    <!--TAB BEGIN-->
+    <div class="tab_list">
+		<div class="tab_nv">
+			<ul>
+				<li class="tab_item"><a href="__MODULE__/PhotoAlbum/index">我的相册</a></li>
+				<li class="tab_item"><a href="__MODULE__/PhotoAlbum/add">上传相册</a></li>
+				<li class="tab_item current"><a href="__URL__/set">设置形象照</a></li>
+			</ul>
+		</div>
+    </div>
+	<!--TAB END-->
+	<link rel="stylesheet" href="__PUBLIC__/css/default.css">
+    <div class="div_smallnav_content_hover">
+	<div class="item_title item_margin"><p>设置形象照</p><span class="shadow"></span></div>
+	<table class="user-table table-margin lh35" cellpadding="0" cellspacing="0" border="0" width="98%">
+	<tbody>
+		<tr>
+			<td colspan="2"><div class="nav-tips">您可以将需要的部分拖到白色形象框内，以裁切出满意的形象照。 </div></td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<table cellpadding="0" cellspacing="0" border="0" width="600px">
+			<tbody>
+				<tr>
+					<td align="center" valign="top" width="300px">
+						<div style="position: relative; background-color: rgb(255, 255, 255);" id="bgDiv">
+						<div style="position: absolute; z-index: 200;" id="dragDiv">
+							<div id="rRightDown"> </div>
+							<div id="rLeftDown"> </div>
+							<div id="rRightUp"> </div>
+							<div id="rLeftUp"> </div>
+							<div id="rRight"> </div>
+							<div id="rLeft"> </div>
+							<div id="rUp"> </div>
+							<div id="rDown"></div>
+						</div>
+							<img id="preview" src="__PUBLIC__/Uploads/pic/{$pic}" style="max-width:300px;_width:expression(this.width > 300 ? '300px' : this.width);max-height:300px;_height:expression(this.height > 300 ? '300px' : this.height);position: absolute; left: 0px; top: 0px;">
+						</div>
+						<br>					
+					</td>						
+					<td align="center" valign="top">
+					<form onsubmit="return doSubmit()" action="__URL__/set" method="post" id="woform">
+						<table class="user-table table-margin lh25" style="margin-left:10px;" cellpadding="0" cellspacing="0" border="0" width="90%">
+							<tbody>
+								<tr>
+									<td >
+										<div id="caijianhou">
+									
+										</div>
+									</td>
+								<div class="clear"> </div>	
+									<span id="tupian" name="{$pic}" style="diplay:none;"><span>
+								</tr>
+								<tr>
+									<td><b>效果预览</b></td>
+								</tr>
+								<tr>
+									<td><font color="#999999">形象照大小为185x227像素</font></td>
+								</tr>
+								<tr>
+									<td align="left">
+										1、请上传您的单人真实照片，要求五官清晰，近期生活照片，确保审核通过；<br>
+										2、请勿上传：非本人、戴墨镜、戴口罩、侧面、背影、与现年龄不符、多人合影、裸露、带有政治色彩等照片，否则将予以删除；<br>
+										3、请勿上传模糊、非主流、明星、网络红人、低俗暴力等照片，否则将予以删除。
+									</td>
+								</tr>			
+								<tr>
+									<td align="center" height="60px">
+	
+										<input onclick="doJcrop()" value="裁剪保存" name="cropper" style="cursor:pointer;" class="button-red" type="submit">		
+							
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+					<link rel="stylesheet" href="__PUBLIC__/jcrop_zh/css/jquery.Jcrop.css" type="text/css" />
+					<script type="text/javascript" src="__PUBLIC__/jcrop_zh/js/jquery.Jcrop.js"></script>
+					<script type="text/javascript"> 
+						var picname=null;
+						var cx=0,cy=0,cw=0,ch=0;							
+
+						picname = $("#tupian").attr("name");//保存图片名称
+
+						$("#preview").Jcrop({onChange:showCoords,onSelect:showCoords}).appendTo("#bgDiv");	
+		
+						//裁剪框的选中和调整大小自动触发此函数
+						function showCoords(obj){
+							//获取裁剪信息：起始坐标和宽、高；
+							cx = obj.x;
+							cy = obj.y;
+							cw = obj.w;
+							ch = obj.h;
+						}
+						var caijianhou = $("#caijianhou").val();
+						//执行裁剪处理
+						function doJcrop(){
+							$.ajax({
+								url:"__URL__/doCrop",
+								type:"post",
+								data:{picname:picname,cx:cx,cy:cy,cw:cw,ch:ch},
+								dataType:'text',
+								success:function(){
+									$("<img name='pic' src='__PUBLIC__/Uploads/pic/"+picname+"?id="+Math.random()+"'/>").Jcrop({onChange:showCoords,onSelect:showCoords}).appendTo("#caijianhou");										
+								}
+							});	
+						
+						}
+						var caijianhou = documentElementById("caijianhou").value();
+						function doSubmit(){
+							if(caijianhou == null){
+								return false;
+							}else{
+								alert("设置成功！");
+							}
+						}
+					</script>
+					</td>
+				</tr>
+			</tbody>
+			</table>
+			</td>
+		</tr>
+	</tbody>
+	</table>
+	</div>
+	<!--//div_smallnav_content_hover End-->	
+</div>
+<div class="clear"> </div>
+</block>

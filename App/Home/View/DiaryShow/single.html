@@ -1,0 +1,121 @@
+<extend name="Public/base"/>
+<block name="maincontent">
+<div class="ce member">
+<include file="Public:search"/>
+    <div class="left ri">
+      <div class="search_sort">
+        <div id="rank" class="search_sle">你的位置：<a  href="__MODULE__/Index">首页</a> &gt;&gt; <a  href="__MODULE__/DiaryShow/index">心情日记</a> &gt;&gt; 正文 </div>
+      </div>
+      <div class="content">
+        <h1>{$info.title}</h1>
+        <div class="jian">
+		<if condition="$info.weather neq null">天气：{$info.weather}&nbsp;&nbsp;</if>
+		<if condition="$info.feel neq null">天气：{$info.feel}&nbsp;&nbsp;</if>发表时间：{$info.addtime|date="m-d i:s",###}  人气：<font id="json_hits">{$info.views}</font>&nbsp;&nbsp;&nbsp;&nbsp;<a  href="#comment">我要评论</a></div>
+        <div class="real">
+
+	      <div class="topj" style="line-height:40px;"> 
+		  <a  href="__MODULE__/HomePage/index/id/{$user.id}" class="topimg">
+			<img src="__PUBLIC__/Uploads/pic/{$user.avatar}" border="0" height="227" width="185">
+		  </a> 发表人：
+			<if condition="$user.gender eq '男'"><img src="__PUBLIC__/images/f2fde8e7d8aa2a10.gif" class="" border="0"><else/><img src="__PUBLIC__/images/87197a0d51022068.gif" class="" border="0"></if>
+		  <a  href="__MODULE__/HomePage/index/id/{$user.id}">{$user.username}</a>
+		  <br>
+            <span>{$user.age}岁 {$user.provinceid} {$user.cityid} {$user.height}CM {$user.marrystatus} {$user.salary}</span><br>
+			<a  href="javascript:void(0);" class="sg" onclick="showBox('message',{$user.id})" ><img src="__PUBLIC__/images/f.gif"></a>
+			<a  href="javascript:void(0);" class="sg" onclick="showBox('greet',{$user.id})"  ><img src="__PUBLIC__/images/zh.gif"></a>
+		  </div>
+		  <div style="clear:both"></div>
+		  <div  style="width:100%;">
+			{$info.content}
+		  </div>
+		  </div>
+        <div class="comments">
+			<ul style="list-style:none;">
+			</ul>
+		  <a name="comment">
+          <h2 style="margin-top:5px;">发表评论：</h2>
+		  <input name="id" id="diaryid" value="{$info.id}" type="hidden">
+		  <table style="line-height:25px;" border="0" cellpadding="5" cellspacing="5" width="100%">
+		    <tbody>
+			<tr>
+			  <td><textarea style="width:98.6%;height:90px;resize:none;" class="comment_textarea" id="commentcontent" name="content"></textarea></td>
+			</tr>
+			<tr>
+			  <td>验证码：
+			  <input id="checkcode" name="checkcode" class="checkcode" maxlength="6" type="text"> <img id="getCode" onclick="refeshCode()" src="__MODULE__/Login/getCode" align="middle"> <a  href="javascript:void(0);" onclick="refeshCode()"> 换一张</a>
+			  </td>
+			</tr>
+			<tr>
+			  <if condition="$Think.session.user eq null">
+			  <td>
+			  	只有登录会员才可以查看评论和回复! <a  href="__MODULE__/Login/index" >登录</a> 或者 <a  href="__MODULE__/Login/register">免费注册</a>
+			  </td>
+			  <else/>
+			  <td>
+				欢迎您：{$Think.session.user.username} 
+				<a id="btn_roll" class="btn_b3 btn" name="btn_roll">
+					<span onclick="addComment()">提交评论</span>
+				</a>
+			  </td>
+<script type="text/javascript">
+	showComment();
+	//鼠标移入显示删除按钮
+	$('.comment_span').live('mouseover',function(){
+		var comment_span = $(this);
+		var cmuserid = $(this).attr('name');
+		if(cmuserid=="{$Think.session.user.id}"){
+			comment_span.children('.comment_del').show();
+		}
+	});
+	//鼠标移出隐藏删除按钮
+	$('.comment_span').live('mouseout',function(){
+		$(this).children('.comment_del').hide();
+	});
+	
+	//显示回复按钮
+	var touserid = null;
+	var comid = null;
+	//为回复按钮添加点击事件
+	$('.comment_reply').live("click",function(){
+		var comment_reply = $(this);
+		comid = comment_reply.parent().attr('id');
+		touserid = comment_reply.parent().attr('name');
+		if(touserid == "{$Think.session.user.id}"){
+			proMess('不可以对自己回复');
+			$("div[name='text_reply']").css({display:'none'});
+			return;
+		}
+		$("div[name='text_reply']").css({display:"none"});
+		comment_reply.parent().parent().parent().children("div[name='text_reply']").css({display:"block"});
+	});
+</script>
+			  </if>
+			</tr>
+		  </tbody>
+		  </table>     
+        </div>
+      </div>
+    </div>
+
+    <div class="right yue1">
+		<h2>热门日记</h2>
+		<ul class="list_blog">
+		<volist name="hotdiary" id="hot">
+		 <li><a  href="__URL__/single/id/{$hot.id}" title="{$hot.title}">{$hot.title}</a> </li>
+		 </volist>
+		</ul>
+		<h2><img src="__PUBLIC__/images/crown.png"> 推荐会员</h2>
+		<volist name='recuser' id='rec'>
+	    <div class="img_list">
+			<a  href="__MODULE__/HomePage/index/id/{$rec.userid}" title="{$rec.user.username}" target="_blank">
+			<img src="__PUBLIC__/Uploads/pic/{$rec.user.avatar}" class="h3h" height="96" width="80">
+			</a><br>
+			<img src="__PUBLIC__/images/{$rec.icon}"/>
+			{$rec.user.username}
+		</div>
+		</volist>
+	    <div style="clear:both;"></div>
+    </div>
+   <div style="clear:both;"></div>
+  </div>
+</block>

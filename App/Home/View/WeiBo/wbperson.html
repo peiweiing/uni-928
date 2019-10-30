@@ -1,0 +1,245 @@
+<extend name='Public/base' />
+<block name='maincontent'>
+<div class="search_max w960 online_page">
+<include file="Public:search"/>
+    <div class="container app_mood" id="ICFeedsContainer">
+      <div class="main_wrap bg3">
+        <div class="main bg bor3">
+
+          <div class="bo3 comments">
+            <ul>
+		    <div class="fbk">
+		    <img src="__PUBLIC__/images/send.png" style="margin-left:52px;">
+			<form action='' method='post' name='form' onsubmit='return doSubmit();'>
+			<div class="tex"><textarea id="content"  onkeyup="textCounter();" name="content"></textarea></div>
+			<div class="texb">
+			  只能输入<span class="zs" id="counter">140</span>个字 
+			  <input type='submit' id="btn_roll" value='' style="width:90px;height:28px;border:0; background:url(__PUBLIC__/images/gbweibo.gif) no-repeat left top"/>
+			</div>
+          </div> 
+
+              <li>
+                <div class="lou"> 
+				  <a href="" target="_blank" class="head" title="查看资料"><img src="__PUBLIC__/Uploads/pic/{$allInfo['avatar']}" border="0" height="61" width="50"> </a>
+                  <div class="weinei1"> 
+				  <span class="you"><a href="http://www.yyw1314.com/index.php?c=weibo&amp;a=list&amp;type=user&amp;uid=184630" title="查看TA的微播"><b>{$allInfo['username']}</b></a>：</span>
+				  {$allInfo['text']}
+				  </div>
+                  <div style="clear:both"></div>
+                  <div class="huifu">
+				  <font color="#999999">{$allInfo['time']}</font>&nbsp;
+				  <a href="javascript:void(0)" onclick="showBox('greet',{$allInfo['uid']});">打招呼</a> 
+				  <a href="javascript:void(0)" onclick="showBox('message',{$allInfo['uid']});">写信件</a> 
+				  <a href="__MODULE__/HomePage/index/id/{$allInfo['uid']}" target="_blank">看资料</a> 
+				  <a href="javascript:void(0);" onclick="return doReview();" id='adas'>评论</a> ({$wbpnum})
+				  </div>
+                </div>
+                <div style="clear:both"></div>
+				{$disTpl}
+				<!--评论微博-->
+                <div id="comdiv_adas" style="display:none" class="pin">
+				<form action='__MODULE__/WbPerson/insert' method='post' target='myform' >
+				  <input name="comid_adas" id="comid_adas" value="{$allInfo['id']}" type="hidden">
+				  <table style="line-height:25px;" border="0" cellpadding="5" cellspacing="5" width="600px">
+				    <tbody><tr>
+					  <td id="reply_uid_adas" align="right;" width="100px;"></td>
+					  <td width="400px;"><textarea name="comment_361" id="comment_361" style="width:95%;height:30px;overflow:hidden;"></textarea></td>
+					  <td>
+					  <a href="javascript:void(0);" class="btn_c2" id="btn_comment_361" onclick="return comment('{$allInfo['id']}');"><span>提交评论</span></a>							  
+					  </td>
+					</tr>
+				  </tbody></table>
+				</form>
+                </div>
+				
+				<!--回复评论-->
+				<div id="comdiv_adass" style="display:none" class="pin">
+				<form action='__MODULE__/WbPerson/insert' method='post' target='myform' >
+				  <input name="comid_adas" id="comid_adass" value="" type="hidden">
+				  <table style="line-height:25px;" border="0" cellpadding="5" cellspacing="5" width="600px">
+				    <tbody><tr>
+					  <td id="reply_uid_adas" align="right;" width="100px;"></td>
+					  <td width="400px;"><textarea name="comment_362" id="comment_362" style="width:95%;height:30px;overflow:hidden;"></textarea></td>
+					  <td>
+					  <a href="javascript:void(0);" class="btn_c2" id="btn_comment_362" onclick="return huiFu();"><span>提交评论</span></a>							  
+					  </td>
+					</tr>
+				  </tbody></table>
+				</form>
+                </div>
+                <div style="clear:both"></div>
+              </li>
+              <div style="clear:both"></div>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar author_display lite_hide">
+		
+
+        <div class="profile bg">
+          <div class="avatar"><a><span class="skin_portrait_round"></span><img src="__PUBLIC__/Uploads/pic/{$allInfo['avatar']}" border="0" height="227" width="185"></a></div>
+          <div class="bd">
+            <div class="name"><span title="{$allInfo['avatar']}"><span>{$allInfo['username']}</span></span></div>
+            <div class="feed_num"><a href="">{$num}</a>条微播</div>
+            <div class="feed_num"><a href="javascript:void(0)" onclick="showBox('greet',{$allInfo['uid']});">打招呼</a></div>
+            <div class="feed_num"><a href="javascript:void(0)" onclick="showBox('message',{$allInfo['uid']});">写信件</a></div>
+			<div class="feed_num"><a href="javascript:void(0);" onclick="jbox_send_gift('184630');">赠送礼物</a></div>
+            <div class="feed_num"><a href="http://www.yyw1314.com/home/184630" target="_blank">查看资料</a></div>
+          </div>
+          <div class="box_shadow"></div>
+        </div>
+
+
+        <!--二级导航 开始-->
+        <div class="sub_menu bbor3">
+          <ul>
+            <li class="nav_home"> <a href="__MODULE__/WbSquare/index"><i></i>微播广场</a> </li>
+            <li class="nav_my current"> <a href="__MODULE__/MyWb/index/id/{$Think.session.user.id}"><i></i>{$allInfo['username']}的微播</a> </li>
+
+            <li class="nav_hot"> <a href="__MODULE__/MyWb/index/id/{$Think.session.user.id}"><i></i>我的微播</a> </li>
+			          </ul>
+        </div>
+
+        <div class="or3">
+          <div><b>最新日记</b></div>
+          <ul>
+			<volist name='newdiary' id='vo'>
+			<li class="nav_my"> <a href="__MODULE__/DiaryShow/single/id/{$vo.id}" class="c_tx" target="_blank" title="{$vo['title']}"> ◈ {$vo['title']}</a> </li>
+		  </volist>
+		  </ul>
+        </div>
+
+      </div>
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+  <div style="clear:both;"></div>
+  <script type='text/javascript'>
+  var uids = {$Think.session.user.id};
+  var nowid = {$allInfo['uid']};
+	function doReview(){
+			var div = document.getElementById("comdiv_adas");
+			var div1 = document.getElementById('comdiv_adass');
+			if(div.style.display == 'none'){
+				div.style.display = 'block';
+				div1.style.display = 'none';
+			}else{
+				div.style.display = 'none';
+			}
+		return false;
+	}
+	var userid = null;
+	function doHuifu(id){
+		
+		userid = id;
+		var div = document.getElementById('comdiv_adass');
+		var div1 = document.getElementById("comdiv_adas");
+		if(div.style.display == 'none'){
+				div.style.display = 'block';
+				div1.style.display = 'none';
+			}else{
+				div.style.display = 'none';
+			}
+		return false;
+	}
+	
+	function comment(id){
+		$.ajax({
+			url:'__MODULE__/WbPerson/insertP',
+			type:'post',
+			dataType:'json',
+			data:{id:id,content:$('#comment_361').val()},
+			success:function(info){
+			$('#reply_uid_adas').empty();
+				if(info['error'] == true){
+					var datawb = "";
+					datawb += "<div class='weinei1'>"; 
+					datawb += "<a href=\"\" target=\"_blank\" class=\"head\" title=\"查看资料\" style=\"height:30px; width:30px\">";
+					datawb += "<img src='__PUBLIC__/Uploads/pic/"+info['data']['avatar']+"' border='0' style='height:30px;width:30px;' />";
+					datawb += "</a>";
+					datawb += "<span class=\"you\"><a href=\"\" title=\"查看TA的微播\"><b>"+info['data']['fname']+"</b></a>";
+					datawb += " 对<a href=''title=\"查看TA的微播\"><b>"+info['data']['jname']+"</b></a>说：</span>";
+					datawb += info['data']['content'];
+					datawb += "</div>";
+					datawb += "<div style=\"clear:both\"></div>";
+					datawb +="<div class=\"huifu\">";
+					datawb += "<font color=\"#999999\">"+info['data']['time']+"</font>&nbsp;";
+					datawb += "<a href=\"javascript:void(0);\" onclick=\"return doHuifu("+info['data']['id']+");\" id='adas' >回复</a>";
+					datawb += "</div>";
+					$('#comdiv_adas').before(datawb);
+					$('#comment_361').val('');
+					$('#comdiv_adas').css('display','none');
+				}else{
+					$('#reply_uid_adas').append(info['data']);
+					
+				}
+			}
+		});
+	}
+	
+	function huiFu(){
+		$.ajax({
+			url:'__MODULE__/WbPerson/insertH',
+			type:'post',
+			dataType:'json',
+			data:{id:userid,content:$('#comment_362').val()},
+			success:function(info){
+				if(info['error'] == true){
+					var datawb = "";
+					datawb += "<div class='weinei1' style='width:500px;'>"; 
+					datawb += "<a href=\"\" target=\"_blank\" class=\"head\" title=\"查看资料\" style=\"height:30px; width:30px\">";
+					datawb += "<img src='__PUBLIC__/Uploads/pic/"+info['data']['avatar']+"' border='0' style='height:30px;width:30px;' />";
+					datawb += "</a>";
+					datawb += "<span class=\"you\"><a href=\"\" title=\"查看TA的微播\"><b>"+info['data']['fname']+"</b></a>";
+					datawb += "对<a href=''title=\"查看TA的微播\"><b>"+info['data']['jname']+"</b></a>说：</span>";
+					datawb += info['data']['content'];
+					datawb += "</div>";
+					datawb += "<div style=\"clear:both\"></div>";
+					datawb +="<div class=\"huifu\">";
+					datawb += "<font color=\"#999999\">"+info['data']['time']+"</font>&nbsp;";
+					datawb += "<a href=\"javascript:void(0);\" onclick=\"return doHuifu();\" id='adas'>回复</a>";
+					datawb += "</div>";
+					$('#hkuang'+userid).parent().after(datawb);
+					$('#comment_362').val('');
+					$('#comdiv_adass').css('display','none');
+					
+				}else{
+					alert(info['data']);
+				}
+			}
+		});
+	}
+	
+		function doSubmit(){
+			if(0<$('#content').val().length && $('#content').val().length < 140){
+				$('.xxoo').empty();
+				$.ajax({
+					url:'__MODULE__/WeiBo/insert',
+					type:'post',
+					dataType:'json',
+					data:{content:$('#content').val()},
+					success:function(info){
+						if(info['error'] == false){
+							$('.texb').before("<div>{info['data']}</div>");
+						}else{
+							alert('发表成功，在微博广场显示');
+							location.replace('__MODULE__/WbSquare/index');
+						}
+					}
+				});
+			}else{
+				$('.xxoo').remove();
+				$('.texb').prepend("<strong><span style=\"color:red;size:25px\" class='xxoo'>内容不能为空</span></strong>");
+			}
+			return false;
+		}
+		
+		function textCounter(){
+			
+			var hanzi = document.getElementById('content').value.length;
+			var num = parseFloat(140)-parseFloat(hanzi);
+			$('#counter').html(num);
+		}
+  </script>
+  </block>
