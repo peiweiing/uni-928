@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "dependencies": {
-    "sass-loader": "^8.0.0",
+    "sass-loader": "^13.2.0",
     "uni-simple-router": "^1.2.5"
   },
   "devDependencies": {},
